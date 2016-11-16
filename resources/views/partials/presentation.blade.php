@@ -1,0 +1,15 @@
+<div class="row">
+          <ul class="nav nav-tabs ">
+            <li role="presentation" class="active warning margin font"><a href="#">General Discussion Forums</a></li>
+          </ul>
+          <div class="panel panel-default">
+            <div class="topics">
+              <ul>
+              @foreach($categories as $category)
+              <li role="presentation" ><a href="{{route('category', ['category' => $category->name])}}">{{str_replace("&", " & " ,$category->name)}}</a></li>
+              
+              @endforeach
+              </ul>
+            </div>
+          </div>
+        </div>

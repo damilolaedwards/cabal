@@ -1,0 +1,1 @@
+<h3 class="text-center top lead">{{\App\Institution::find($advert->institution_id)->name}} Campus</h3>

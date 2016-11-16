@@ -1,0 +1,42 @@
+ @extends('maindefault')
+
+@section('content')
+@include('partials.messageactivenavigation')
+@include('partials.alerts')
+<div class="row">
+<div class="panel panel-default">
+ 
+  <div class="panel-heading">
+  
+    <h3 class="panel-title">Sent messages</h3>
+  </div>
+  <div class="panel-body">
+  	 @if (!$messages->count())
+  	 <p class="text-muted">No messages yet</p>
+  	  @else
+          @foreach($messages as $message)
+<div class="media text-align3">
+<a class="pull-left" href="{{ route('profile',['username' => \App\User::find($message->reciever_id)->username])}}">
+<img class= "media-object img-circle" alt="{{\App\User::find($message->sender_id)->username}}"  width="48" height="48" src="{{asset(\App\User::find($message->reciever_id)->getProfileImage())}}">
+</a>
+<div class="media-body">
+
+{{$message->body}}
+<br/>
+
+<p class="text-muted"><small>To: <a href="{{route('profile',['username' => \App\User::find($message->reciever_id)->username])}}"><span >{{\App\User::find($message->reciever_id)->username}}</span></a><a class="pull-right" href="{{route('message.sent.delete',['messageId' => $message->id])}}">&nbsp; delete </a> </small> <small class="pull-right"><span>{{ $message->created_at->diffForHumans() }} | </span></small></p>
+
+<hr/>
+          </div>
+          </div>
+           @endforeach
+              @endif
+
+              <div class="text-center">
+              {{$messages->render()}}
+              </div>
+          </div>
+          </div>
+          </div>
+         
+@stop

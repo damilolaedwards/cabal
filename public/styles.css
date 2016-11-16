@@ -1,0 +1,226 @@
+body{
+width: 100%;
+background-image:url("1.png");
+overflow-wrap: break-word;
+
+}
+.body{
+border: 2px solid #eee;
+border-radius: 3px;
+margin-top: -20px;
+
+}
+
+ 
+textarea{
+	overflow:hidden;
+}
+.message_to{
+	background-color: #eee;
+	padding:5px;
+}
+
+iframe{
+	display: block;
+  max-width: 100%;
+
+}	
+.less-padding{
+	padding-bottom: 2px;
+}
+.panel-footer{
+	background-color: #e8e2e2;
+	
+}
+}
+.sent_message{
+	padding: 2px;
+	margin:7px;
+}
+a:hover{
+text-decoration: none;
+}
+.header{
+background-color:#3299CC;
+margin-top: -70px;
+
+}
+.first-login{
+margin-top: 10px;
+margin-bottom: 10px;
+}
+.navbar-default .navbar-brand {
+color:white;
+position: absolute;
+}
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+color: #fff;
+}
+.presentation{
+padding-top: 8px;
+margin-bottom: 15px;
+padding-bottom: 10px;
+.
+}
+.list-group-item, .panel-body{
+padding-left: 10px;
+padding-right:10px;
+}
+.reply-godown{
+padding-left: 10px;
+padding-right:30px;	
+}
+
+.forum-body{
+padding: 3px;
+}
+.panel-forum{
+margin-left: -15px;
+margin-right: -15px;
+
+}
+.forum-title{
+margin-left: -10px;
+color: #23527c;
+}
+
+.usercolor{
+color: #402d2d;
+}
+
+.text-align2{
+margin-top: -10px;
+}
+.text-align{
+margin-top: -20px;
+}
+.text-align3{
+	margin-top: -5px;
+}
+.topics li{
+display: inline-block;
+padding: 1%;
+
+font-size:120%
+}
+.form-controller {
+width:auto;
+display:inline-block;
+}
+.topics{
+padding-top: 5px;
+padding-bottom: 10px;
+margin-left: -30px;
+}
+
+.top{
+margin-top: 10px;
+margin-bottom: -10px;
+background-color: #eee;
+padding-top: 12px;
+padding-bottom: 12px;
+border: 2px solid #3299CC;
+border-radius:3px;
+
+}
+.font{
+font-size:120%;
+
+}
+.font-less{
+	font-size: 17px;
+	font-family: 'Rasa', serif;
+}
+.panel-footerforum{
+	padding-bottom: 5px;
+	margin-bottom: 8px;
+}
+
+.delete{
+	margin-left: 10px;
+}
+.pull-up{
+	margin-top: -15px;
+}
+.marketplace{
+margin-top: -20px;
+}
+.forum-header{
+
+margin-top: 0px;
+}
+.playfair{
+	font-family: 'Playfair Display', serif;
+	font-size: 16px;
+}
+.view_button{
+float: right;
+margin-top: 10px;
+}
+.footer{
+
+margin-top:-30px;
+}
+.panel-foot{
+margin-top: -15px;
+}
+.panel{
+margin: 0px;
+
+}
+footer{
+	margin-bottom: 0px;
+	
+	
+}
+
+.darkblue{
+	color: #23527c;
+
+}
+.profile{
+	padding: 0px
+}
+li{
+	display: inline-block;
+	list-style: none;
+}
+.message{
+	padding-top: 0px;
+	padding-bottom:0px;
+	
+}
+.justify{
+	margin-bottom: 6px;
+}
+@media (min-width: 318px) {
+  .nav-tabs.nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+  .nav-tabs.nav-justified > li > a {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+  padding-right: unset;
+  padding-left: unset;
+  margin-right: auto;
+  margin-left: auto;
+}
+.navbar-brand {
+	padding-left: 30px;
+}
+}
+.footer_set{
+	margin-bottom: -10px;
+	display: block;
+	margin-left: -40px;
+}
+img{
+  max-width: 100%;
+  
+}
+
