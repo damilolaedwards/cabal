@@ -31,6 +31,31 @@ function campuslike(id) {
         return false;
 }
 
+function campusdislike(id) {
+
+    event.preventDefault();
+    var topicId = id;
+   
+    var isLike = true;
+    var baseUrl = window.location.origin;
+  
+    $.ajax({
+        method: 'POST',
+        url: baseUrl + '/forum/' + topicId + '/dislike',
+        data: {isLike: isLike, topicId: topicId}
+    })
+        .done(function(data) {
+        var likes = data.id;
+      
+    document.getElementById("campustopicdislike" + topicId).innerHTML = likes;
+        })
+        .fail(function(data){
+            console.log('Failed');
+            console.log(data);
+        });
+
+        return false;
+}
 function eventlike(id) {
 
     event.preventDefault();

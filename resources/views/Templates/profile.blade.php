@@ -33,7 +33,9 @@
         @if (Auth::user()->hasFriendRequestsPending($user))
         <p class="text-muted">Waiting for {{$user->getUsername() }} to accept your request.</p>
         @elseif(Auth::user()->hasFriendRequestRecieved($user))
+        <p>
         <a class="btn btn-primary" href="{{route('friend.accept', ['username' => $user->username]) }}">Accept friend request</a>
+        </p>
         @elseif (Auth::user()->isFriendsWith($user))
         <p class="text-center text-muted">You and {{$user->getUsername() }} are friends.</p>
         @elseif (Auth::user()->id !== $user->id)

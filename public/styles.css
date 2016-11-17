@@ -5,16 +5,15 @@ overflow-wrap: break-word;
 
 }
 .body{
-border: 2px solid #eee;
-border-radius: 3px;
-margin-top: -20px;
+	margin-top: -20px;
 
 }
 
- 
-textarea{
-	overflow:hidden;
-}
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 10px; 
+
 .message_to{
 	background-color: #eee;
 	padding:5px;
@@ -213,6 +212,10 @@ li{
 .navbar-brand {
 	padding-left: 30px;
 }
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 10px; 
 }
 .footer_set{
 	margin-bottom: -10px;

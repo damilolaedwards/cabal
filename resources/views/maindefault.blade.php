@@ -34,8 +34,9 @@
   </head>
   <body>
     
-    <nav class="navbar navbar-default header" role="navigation">
+    <nav class="navbar navbar-default header row" role="navigation">
       <div class="container">
+     
         <div class="navbar-header ">
           <a href="{{route('homepage')}}"class="navbar-brand ">
             CampusCabal
@@ -46,15 +47,15 @@
       </div>
     </nav>
     <div class="container">
-    <div class="body col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-    
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+    <div class="row body">
    
 
        
     @yield('content')
    
     
-  
+  </div>
     </div>
 
 </div>
