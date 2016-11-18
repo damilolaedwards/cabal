@@ -202,6 +202,14 @@ li{
   .nav-tabs.nav-justified > li > a {
     margin-bottom: 0;
   }
+  .navbar-brand {
+  	color:white;
+  float: left;
+  height: 50px;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
 }
 
 @media (max-width: 768px) {
