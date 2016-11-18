@@ -8,6 +8,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Rasa:500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>CampusCabal</title>
     <meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
@@ -34,9 +35,8 @@
   </head>
   <body>
     
-    <nav class="navbar navbar-default header row" role="navigation">
+    <nav class="navbar navbar-default header" role="navigation">
       <div class="container">
-     
         <div class="navbar-header ">
           <a href="{{route('homepage')}}"class="navbar-brand ">
             CampusCabal
@@ -47,15 +47,16 @@
       </div>
     </nav>
     <div class="container">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-    <div class="row body">
+    <div class=" body col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12
+    ">
+    
    
 
        
     @yield('content')
    
     
-  </div>
+  
     </div>
 
 </div>
