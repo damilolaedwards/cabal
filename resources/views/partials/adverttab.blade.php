@@ -38,7 +38,7 @@
              
               <a href="#">
 
-                <img class="media-object" src="{{asset($advert->getAdvertImage())}}"  width="64" height="64" alt="image" style="max-width: unset;">
+                <img class="media-object" src="{{asset($advert->getAdvertImage())}}"  width="64" height="64" alt="image">
               </a>
       
             </div>

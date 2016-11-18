@@ -19,7 +19,7 @@
             <span class="label label-danger">Ad</span>
              <h4>{{ucfirst(strtolower($advert->title))}}</h4>
              <p>
-                <img src="{{asset($advert->getAdvertImage())}}" alt="image" class="img-responsive img-rounded" style="max-width: unset;">
+                <img src="{{asset($advert->getAdvertImage())}}" alt="image" class="img-responsive img-rounded" width="320" height="240"">
                 </p>
                 @if($advert->advertfile && $advert->advertfile !== NULL)
                 <p>

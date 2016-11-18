@@ -34,7 +34,7 @@
           <div class="media">
             <div class="media-left media-middle">
               <a href="#">
-                <img class="media-object" src="{{asset($event->getEventImage())}}" width="64" height="64" alt="..." style="max-width: unset;">
+                <img class="media-object" src="{{asset($event->getEventImage())}}" width="64" height="64" alt="..." >
               </a>
             </div>
             <div class="media-body">
