@@ -6,7 +6,7 @@
               <div class="media">
             <div class="media-left">
               <a href="#">
-                <img class="thumbnail" src="{{asset(Auth::user()->getUserProfileImage())}}" width="40" height="40" alt="{{Auth::user()->getUsername()}}" style="max-width: unset;" >
+                <img class="thumbnail" src="{{asset(Auth::user()->getUserProfileImage())}}" width="40" height="40" alt="{{Auth::user()->getUsername()}}" >
               </a>
             </div>
            
