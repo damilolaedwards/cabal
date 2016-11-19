@@ -1,6 +1,6 @@
 <div class="row">
           <ul class="nav nav-tabs ">
-            <li role="presentation" class="active warning margin font"><a href="#">General Discussion Forums</a></li>
+            <li role="presentation" class="active warning margin garamond-bare"><a href="#">General Discussion Forums</a></li>
           </ul>
           <div class="panel panel-default">
             <div class="topics">

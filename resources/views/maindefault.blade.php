@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
+    <meta name="csrf_token" content="{{ csrf_token() }}">
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Rasa:500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>CampusCabal</title>
     <meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
@@ -60,7 +62,20 @@
     </div>
 
 </div>
-    
+     <script type="text/javascript">
+            var csrfToken = $('[name="csrf_token"]').attr('content');
+
+            setInterval(refreshToken, 3600000); // 1 hour 
+
+            function refreshToken(){
+                $.get('refresh-csrf').done(function(data){
+                    csrfToken = data; // the new token
+                });
+            }
+
+            setInterval(refreshToken, 3600000); // 1 hour 
+
+        </script>
        <script src="{{ URL::asset('js/jquery.js') }}"></script>
     <script src="{{ URL::asset('js/function.js') }}"></script>
      <script src="{{ URL::asset('js/likes.js') }}"></script>

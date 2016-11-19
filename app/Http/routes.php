@@ -13,18 +13,17 @@
 /*
 Login page (home)
 */
+Route::get('refresh-csrf', function(){
+    return csrf_token();
+});
+
 Route::post('forum/{postId}/post/like', [
 	'uses'=>'\App\Http\Controllers\CampusPostController@Like',
 	'as'=>'campuspost.like',
 	'middleware' => ['auth'],
 	]);
 
-	Route::post('forum/{postId}/post/dislike', [
-	'uses'=>'\App\Http\Controllers\CampusPostController@disLike',
-	'as'=>'campuspost.dislike',
-	'middleware' => ['auth'],
-	]);
-
+	
 	Route::get('forum/{postId}/post/report', [
 	'uses'=>'\App\Http\Controllers\CampusPostController@getReport',
 	'as'=>'campuspost.report',
@@ -469,11 +468,7 @@ Campus forum
 	'middleware' => ['auth'],
 	]);	
 
-	Route::post('forum/{topicId}/dislike', [
-	'uses'=>'\App\Http\Controllers\CampusTopicController@Dislike',
-	'as'=>'campustopic.dislike',
-	'middleware' => ['auth'],
-	]);	
+	
 
 	Route::get('forum/{topicId}/{topicSlug}/{postId}/post/image1/delete', [
 	'uses'=>'\App\Http\Controllers\CampusPostController@deleteFirstImage',
@@ -606,11 +601,7 @@ General forum
 	'middleware' => ['auth'],
 	]);
 
-	Route::post('/{category}/{topicId}/{postId}/post/dislike', [
-	'uses'=>'\App\Http\Controllers\GeneralPostController@Dislike',
-	'as'=>'generalpost.dislike',
-	'middleware' => ['auth'],
-	]);
+	
 
 	Route::get('/{category}/{topicId}/{slug}/{postId}/post/report', [
 	'uses'=>'\App\Http\Controllers\GeneralPostController@getReport',
@@ -648,12 +639,7 @@ General forum
 	'middleware' => ['auth'],
 	]);
 
-	Route::post('/{category}/{topicId}/dislike', [
-	'uses'=>'\App\Http\Controllers\GeneralTopicController@Dislike',
-	'as'=>'generaltopic.dislike',
-	'middleware' => ['auth'],
-	]);
-
+	
 	Route::post('/{category}/{topicId}/like', [
 	'uses'=>'\App\Http\Controllers\GeneralTopicController@Like',
 	'as'=>'generaltopic.like',

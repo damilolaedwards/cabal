@@ -33,6 +33,14 @@ iframe{
 	background-color: #e8e2e2;
 	 padding: 2px 15px 2px;
 }
+.garamond{
+	font-family: 'EB Garamond', serif;
+	font-size: 22px;
+}
+.garamond-bare{
+	font-family: 'EB Garamond', serif;
+	font-size: 20px;
+}
 }
 .sent_message{
 	padding: 2px;

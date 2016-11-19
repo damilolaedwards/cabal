@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
+    <meta name="csrf_token" content="{{ csrf_token() }}">
     <meta name="author" content="">
     <title>CampusCabal</title>
     <!-- Bootstrap Core CSS -->
@@ -47,7 +48,20 @@
     
        <script src="{{ URL::asset('js/jquery.js') }}"></script>
     <!-- Bootstrap Core JavaScript -->
+     <script type="text/javascript">
+            var csrfToken = $('[name="csrf_token"]').attr('content');
 
+            setInterval(refreshToken, 3600000); // 1 hour 
+
+            function refreshToken(){
+                $.get('refresh-csrf').done(function(data){
+                    csrfToken = data; // the new token
+                });
+            }
+
+            setInterval(refreshToken, 3600000); // 1 hour 
+
+        </script>
     <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
     </body>
   </html>
