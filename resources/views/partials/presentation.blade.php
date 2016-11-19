@@ -6,7 +6,7 @@
             <div class="topics">
               <ul>
               @foreach($categories as $category)
-              <li role="presentation" ><a href="{{route('category', ['category' => $category->name])}}">{{str_replace("&", " & " ,$category->name)}}</a></li>
+              <li role="presentation" class="playfair3"><a href="{{route('category', ['category' => $category->name])}}">{{str_replace("&", " & " ,$category->name)}}</a></li>
               
               @endforeach
               </ul>
