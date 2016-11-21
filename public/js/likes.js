@@ -31,31 +31,7 @@ function campuslike(id) {
         return false;
 }
 
-function campusdislike(id) {
 
-    event.preventDefault();
-    var topicId = id;
-   
-    var isLike = true;
-    var baseUrl = window.location.origin;
-  
-    $.ajax({
-        method: 'POST',
-        url: baseUrl + '/forum/' + topicId + '/dislike',
-        data: {isLike: isLike, topicId: topicId}
-    })
-        .done(function(data) {
-        var likes = data.id;
-      
-    document.getElementById("campustopicdislike" + topicId).innerHTML = likes;
-        })
-        .fail(function(data){
-            console.log('Failed');
-            console.log(data);
-        });
-
-        return false;
-}
 function eventlike(id) {
 
     event.preventDefault();
@@ -161,31 +137,6 @@ function campuspostlike(id) {
         return false;
 }
 
-function campuspostdislike(id) {
-
-    event.preventDefault();
-    var postId = id;
-   
-    var isLike = true;
-    var baseUrl = window.location.origin;
-  
-    $.ajax({
-        method: 'POST',
-        url: baseUrl + '/forum/' + postId + '/post/dislike',
-        data: {isLike: isLike, postId: postId}
-    })
-        .done(function(data) {
-        var likes = data.id;
-       
-    document.getElementById("campuspostdislike" + postId).innerHTML = likes;
-        })
-        .fail(function(data){
-            console.log('Failed');
-            console.log(data);
-        });
-
-        return false;
-}
 
 function generalpostlike(id, category, postId) {
 
@@ -205,7 +156,7 @@ function generalpostlike(id, category, postId) {
         .done(function(data) {
         var likes = data.id;
       
-    document.getElementById("generalpostlike" + postId).innerHTML = likes;
+    document.getElementById("generalpostlike" + post).innerHTML = likes;
         })
         .fail(function(data){
             console.log('Failed');
@@ -216,33 +167,7 @@ function generalpostlike(id, category, postId) {
 }
 
 
-function generalpostdislike(id, category, postId) {
 
-    event.preventDefault();
-    var topicId = id;
-    var cat = category;
-    var post = postId
-   
-    var isLike = true;
-    var baseUrl = window.location.origin;
-  
-    $.ajax({
-        method: 'POST',
-        url: baseUrl + '/' + cat + '/' + topicId + '/' + post + '/post'+ '/dislike',
-        data: {isLike: isLike, postId: postId}
-    })
-        .done(function(data) {
-        var likes = data.id;
-      
-    document.getElementById("generalpostdislike" + postId).innerHTML = likes;
-        })
-        .fail(function(data){
-            console.log('Failed');
-            console.log(data);
-        });
-
-        return false;
-}
 
 
 
@@ -275,32 +200,6 @@ function generaltopiclike(id, category) {
 }
 
 
-function generaltopicdislike(id, category) {
-
-    event.preventDefault();
-    var topicId = id;
-    var cat = category;
-   
-    var isLike = true;
-    var baseUrl = window.location.origin;
-  
-    $.ajax({
-        method: 'POST',
-        url: baseUrl + '/' + cat + '/' + topicId + '/dislike',
-        data: {isLike: isLike, topicId: topicId}
-    })
-        .done(function(data) {
-        var likes = data.id;
-     
-    document.getElementById("generaltopicdislike" + topicId).innerHTML = likes;
-        })
-        .fail(function(data){
-            console.log('Failed');
-            console.log(data);
-        });
-
-        return false;
-}
 
 
 

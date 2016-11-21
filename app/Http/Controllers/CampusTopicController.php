@@ -83,8 +83,8 @@ class CampusTopicController extends Controller
 	}
 
 	public function viewCampusTopic($id){
-		 $campuslikes = \App\Like::where('topic_id', $id)->count();
-    		$campusdislikes = \App\Dislike::where('topic_id', $id)->count();
+		 $campustopiclikes = \App\Like::where('topic_id', $id)->count();
+    		
 		$emotionfaces = array(':smile:', ':sad:', ':arrow:', ':cool:', ':cry:', ':grin:', ':confused:', ':bigeyes:', ':evil:', ':exclaim:', ':geek:', ':idea:', ':lol:', ':mad:', ':green:', ':neutral:', ':question:', ':happy:', ':redface:', ':rolleyes:', ':surprised:', ':devil:', ':wink:');
 
 		$emotions = array('smile', 'sad', 'arrow', 'cool', 'cry', 'grin', 'confused', 'bigeyes', 'evil', 'exclaim', 'geek', 'idea', 'lol', 'mad', 'green', 'neutral', 'question', 'happy', 'redface', 'rolleyes', 'surprised', 'devil', 'wink');
@@ -95,7 +95,7 @@ class CampusTopicController extends Controller
 		$campustopic = \App\Campustopic::where('id', $id)->first();
 		$campusposts = \App\Campuspost::where('topic_id', $id)->paginate(40);
 
-		return view('Templates.forumview')->with('campustopic', $campustopic)->with('images', $images)->with('emotions', $emotions)->with('emotionfaces', $emotionfaces)->with('campusposts', $campusposts)->with('campuslikes', $campuslikes)->with('campusdislikes', $campusdislikes);
+		return view('Templates.forumview')->with('campustopic', $campustopic)->with('images', $images)->with('emotions', $emotions)->with('emotionfaces', $emotionfaces)->with('campusposts', $campusposts)->with('campustopiclikes', $campustopiclikes);
 	}
 
 	public function Like(Request $request){
@@ -126,36 +126,7 @@ class CampusTopicController extends Controller
 
 	}
 		
-	public function Dislike(Request $request){
-		
-		$topic_id = $request['topicId'];
-		
-		$is_like = $request['isLike'] === 'true';
-		$topic = \App\Campustopic::find($topic_id);
-		if(!$topic){
-			return null;
-		}
-		$user = \Auth::user();
-		$dislike = $user->dislikes()->where('topic_id', $topic_id)->first();
-		\Log::debug($dislike);
-		$update = true;
-		if ($dislike == null){  
-			
-			$dislike = new \App\Dislike();
-
-		}
-		$dislike->dislike = $is_like;
-		$dislike->user_id = $user->id;
-		$dislike->topic_id = $topic->id;
-		$dislike->save();
-		 $trial =\App\Dislike::where('topic_id', $topic_id)->count();
-		 $myLikes = ['id' => $trial];
-		 return 
-		 response()->json($myLikes);
-
-	}
-
-
+	
 	public function getUpdateTopic($topicId){
 
 		$topic = \App\Campustopic::find($topicId);
@@ -306,9 +277,7 @@ public function closeThread($topicId){
 
 $closedtopic = \App\Campustopic::find($topicId);
 
-	if(!$closedtopic || Auth::user()->role != 'adminstrator'){
-			return redirect()->back();
-		}
+	
 		$closedtopic->thread_closed = 1;
 			$closedtopic->save();
 		
@@ -321,9 +290,7 @@ public function openThread($topicId){
 
 $closedtopic = \App\Campustopic::find($topicId);
 
-	if(!$closedtopic || Auth::user()->role != 'adminstrator'){
-			return redirect()->back();
-		}
+	
 		$closedtopic->thread_closed = 0;
 			$closedtopic->save();
 		

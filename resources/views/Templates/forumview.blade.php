@@ -2,10 +2,14 @@
 
 @section('content')
 @include('partials.navigation')
-@include('partials.alerts')
+
 <div class="row">
+
+@if(Auth::user()->institution_id !== $campustopic->institution_id)
 @include('partials.campusinstitutionheader')
+@endif
 <br/>
+@include('partials.alerts')
 <h3 class="text-center forum-header">Forum</h3>
           
           
@@ -48,16 +52,16 @@
                   </div>
                   <?php
                   $campuslikes = 'campustopiclike'.$campustopic->id;
-                  $campusdislike = 'campustopicdislike'.$campustopic->id;
+                 
                   ?>
                   <div class="panel-footer panel-bottom"  value="{{$campustopic->id}}">
-                  <span id="{{$campuslikes}}">{{\App\Like::where('topic_id', $campustopic->id)->count()}}</span>
+                  @if($campustopiclikes  !== 0)<span id="{{$campuslikes}}">{{$campustopiclikes}}</span>@endif
 
                   <a onclick="campuslike({{$campustopic->id}})" data-id="{{$campustopic->id}}" class="like" href="#">&nbsp;Like</a>
 
                    &nbsp;  &nbsp;
-                   <span id="{{$campusdislike}}">{{\App\Dislike::where('topic_id', $campustopic->id)->count()}}</span>
-                   <a onclick="campusdislike({{$campustopic->id}})" data-id="{{$campustopic->id}}" class="dislike" href="#">&nbsp;Dislike</a> @if($campustopic->user_id !== Auth::user()->id)
+                   
+                    @if($campustopic->user_id !== Auth::user()->id)
 
                    <a href="{{route('campustopic.report', ['topicId' => $campustopic->id, 'topicSlug' => $campustopic->slug])}}">&nbsp;  Report</a>
 
@@ -181,7 +185,7 @@
           <script type="text/javascript">
             var token = '{{Session::token()}}';
             var urlLike = '{{route('campustopic.like', ['topicId' => $campustopic->id, 'slug' => $campustopic->slug])}}';
-             var urlDislike = '{{route('campustopic.dislike', ['topicId' => $campustopic->id, 'slug' => $campustopic->slug])}}';
+             
              
           </script>
 @stop

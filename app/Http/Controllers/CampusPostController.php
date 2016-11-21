@@ -125,38 +125,6 @@ public function Like(Request $request){
 
 	}
 
-	public function disLike(Request $request){  
-		
-		$post_id = $request['postId'];
-		
-		$is_like = $request['isLike'] === 'true';
-		$post = \App\Campuspost::find($post_id);
-		 
-		if(!$post){
-			return null;
-		}
-		$user = \Auth::user();
-	$dislike = $user->campuspostdislikes()->where('post_id', $post_id)->first();
-
-		$update = true;
-
-		if ($dislike == null){  
-			
-			$dislike = new \App\Postdislike();
-
-		}
-		$dislike->dislike = $is_like;
-		$dislike->user_id = $user->id;
-		$dislike->post_id = $post->id;
-		$dislike->save();
-		 $trial =\App\Postdislike::where('post_id', $post_id)->count();
-
-		 $myLikes = ['id' => $trial];
-
-		 return 
-		 response()->json($myLikes);
-
-	}
 	
 	public function postUpdatePost(Request $request, $topicId, $topicSlug, $postId){
 		$post = \App\Campuspost::find($postId);

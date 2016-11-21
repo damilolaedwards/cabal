@@ -2,11 +2,13 @@
 
 @section('content')
 @include('partials.navigation')
-@include('partials.alerts')
-<div class="row">
-@include('partials.forumheader')
 
-         
+<div class="row">
+
+<br/> 
+@include('partials.alerts') 
+@include('partials.forumheader')
+       
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <p class="panel-title forum-title"><a href="#">{{ucfirst(strtolower($topic->title))}}</a>  <a href="{{ route('profile',['username' => \App\User::find($topic->user_id)->username])}}"><span class="usercolor">&nbsp;by &nbsp;{{\App\User::find($topic->user_id)->username}}</span></a></p>
@@ -42,16 +44,16 @@
 
                   <?php
                   $generaltopiclike = 'generaltopiclike'.$topic->id;
-                  $generaltopicdislike = 'generaltopicdislike'.$topic->id;
+                  $generaltopiclikecount = \App\GeneralTopicLike::where('topic_id', $topic->id)->count();
                   ?>
                   <div class="panel-footer">
-                  <span id="{{ $generaltopiclike}}">{{\App\GeneralTopicLike::where('topic_id', $topic->id)->count()}}</span>
+                  @if($generaltopiclikecount !== 0)<span id="{{ $generaltopiclike}}">{{$generaltopiclikecount}}</span>@endif
 
                   <a onclick="generaltopiclike({{$topic->id}}, {{\App\Category::find($topic->category_id)->id}})" data-id="{{$topic->id}}"  href="#">&nbsp;Like</a>
 
                    &nbsp;  &nbsp;
-                   <span id="{{ $generaltopicdislike}}">{{\App\GeneralTopicDislike::where('topic_id', $topic->id)->count()}}</span>
-                   <a onclick="generaltopicdislike({{$topic->id}}, {{\App\Category::find($topic->category_id)->id}})" data-id="{{$topic->id}}"  href="#">&nbsp;Dislike &nbsp;</a> @if($topic->user_id == Auth::user()->id || Auth::user()->role == 'administrator')<a href="{{route('generaltopic.update', ['category' => \App\Category::find($topic->category_id)->name, 'topicId' => $topic->id, 'slug' => $topic->slug])}}">&nbsp;Edit</a>@endif 
+                   
+                    @if($topic->user_id == Auth::user()->id || Auth::user()->role == 'administrator')<a href="{{route('generaltopic.update', ['category' => \App\Category::find($topic->category_id)->name, 'topicId' => $topic->id, 'slug' => $topic->slug])}}">&nbsp;Edit</a>@endif 
                     <a href="#reply" class="pull-right">reply</a>
                    </div> 
                   </div>

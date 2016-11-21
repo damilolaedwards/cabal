@@ -5,9 +5,9 @@
   <!-- Nav tabs -->
   <div class="shown.bs.tab">
   <ul class="nav nav-tabs nav-justified font" role="tablist" id="myTab">
-    <li role="presentation" ><a href="{{route('homepage')}}">Forum</a></li>
-    <li role="presentation" class="active"><a href="{{route('advert.index')}}">Marketplace</a></li>
-    <li role="presentation"><a href="{{route('event.index')}}">Events</a></li>
+    <li role="presentation" class="garamond"><a href="{{route('homepage')}}">Forum</a></li>
+    <li role="presentation" class="active garamond"><a href="{{route('advert.index')}}">Marketplace</a></li>
+    <li role="presentation" class="garamond"><a href="{{route('event.index')}}">Events</a></li>
     
   </ul>
 </div>

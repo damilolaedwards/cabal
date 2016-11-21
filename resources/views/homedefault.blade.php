@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <title>CampusCabal</title>
     <!-- Bootstrap Core CSS -->
-    <script src="{{ URL::asset('js/smiley.js') }}"></script>
+  
    <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{ URL::asset('css/portfolio-item.css') }}" rel="stylesheet">

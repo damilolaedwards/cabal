@@ -1,0 +1,27 @@
+body{
+	background:url("banner1.jpg");
+background-repeat: no-repeat; 
+    background-position: center;
+    background-attachment: fixed;       
+    webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
+    height:100%,width:100%
+max-width: 100%;
+
+
+}
+.paris{
+	
+	font-size: 48px;
+	font-family: 'Parisienne', cursive;
+	color: white;
+	text-align: center;
+}
+hr{
+	color: white;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	max-width: 100%;
+}

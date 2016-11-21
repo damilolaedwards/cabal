@@ -12,7 +12,16 @@
 */
 /*
 Login page (home)
+
+
 */
+Route::get('/landing', [
+	'uses'=>'\App\Http\Controllers\AuthController@getLanding',
+	'as'=>'landing',
+	'middleware' => ['guest'],
+	]);
+
+
 Route::get('refresh-csrf', function(){
     return csrf_token();
 });

@@ -1,4 +1,4 @@
-<div class="row ">
+<div class="row hidden-lg">
         <div class="jumbotron presentation">
           <ul class="nav nav-pills " id="supernav">
             <li role="presentation"  class="active" ><a href="{{route('homepage')}}">Home</a></li>

@@ -1,5 +1,6 @@
 @extends('maindefault')
 @section('content')
+<br class="visible-lg" />
 @include('partials.navigation')
 @include('partials.presentation')
 

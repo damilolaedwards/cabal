@@ -10,7 +10,10 @@ use Carbon\Carbon;
 use Mail;
 class AuthController extends Controller
 {
-	
+	public function getLanding(){
+		return view('Templates.landing');
+	}
+
 	public function getHome(){
 		return view('Templates.login');
 	}

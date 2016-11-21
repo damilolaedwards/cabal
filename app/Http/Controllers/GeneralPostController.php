@@ -113,38 +113,7 @@ public function GeneralPostReply(Request $request, $category, $topic_id){
 
 	}
 
-	public function Dislike(Request $request){  
-		
-		$post_id = $request['postId'];
-		
-		$is_like = $request['isLike'] === 'true';
-		$post = \App\GeneralPost::find($post_id);
-		if(!$post){
-			return null;
-		}
-		$user = \Auth::user();
-	$dislike = $user->generalpostdislikes()->where('post_id', $post_id)->first();
-
-		$update = true;
-
-		if ($dislike == null){  
-			
-			$dislike = new \App\GeneralPostDislike();
-
-		}
-		$dislike->dislike = $is_like;
-		$dislike->user_id = $user->id;
-		$dislike->post_id = $post->id;
-		$dislike->save();
-		$trial =\App\GeneralPostDislike::where('post_id', $post_id)->count();
-
-		 $myLikes = ['id' => $trial];
-
-		 return 
-		 response()->json($myLikes);
-
-	}
-
+	
 	public function getGeneralPostUpdate($category, $topicId, $slug, $postId){
 		
 		$post = \App\GeneralPost::find($postId);

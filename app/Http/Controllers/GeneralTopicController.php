@@ -280,34 +280,7 @@ public function Like(Request $request){
 
 	}
 		
-	public function Dislike(Request $request){
-		
-		$topic_id = $request['topicId'];
-		
-		$is_like = $request['isLike'] === 'true';
-		$topic = \App\GeneralTopic::find($topic_id);
-		if(!$topic){
-			return null;
-		}
-		$user = \Auth::user();
-		$dislike = $user->generaltopicdislikes()->where('topic_id', $topic_id)->first();
-		\Log::debug($dislike);
-		$update = true;
-		if ($dislike == null){  
-			
-		$dislike = new \App\GeneralTopicDislike();
-
-		}
-		$dislike->dislike = $is_like;
-		$dislike->user_id = $user->id;
-		$dislike->topic_id = $topic->id;
-		$dislike->save();
-		 $trial =\App\GeneralTopicDislike::where('topic_id', $topic_id)->count();
-		 $myLikes = ['id' => $trial];
-		 return 
-		 response()->json($myLikes);
-
-	}
+	
 
 	public function getReport($category, $topicId){
 $topic = \App\GeneralTopic::find($topicId);
@@ -320,9 +293,7 @@ public function closeThread($category, $topicId){
 
 $closedtopic = \App\GeneralTopic::find($topicId);
 
-	if(!$closedtopic || Auth::user()->role != 'adminstrator'){
-			return redirect()->back();
-		}
+	
 		$closedtopic->thread_closed = 1;
 			$closedtopic->save();
 		
@@ -335,9 +306,7 @@ public function openThread($category, $topicId){
 
 $closedtopic = \App\GeneralTopic::find($topicId);
 
-	if(!$closedtopic || Auth::user()->role != 'adminstrator'){
-			return redirect()->back();
-		}
+	
 		$closedtopic->thread_closed = 0;
 			$closedtopic->save();
 		
