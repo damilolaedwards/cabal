@@ -37,7 +37,7 @@
 
                   
                   <div class="panel-footer" value="{{$post->id}}" >
-                  <span id="{{$campuspostlike}}">@if($campuspostlikecount  !== 0){{ $campuspostlikecount}}</span>@endif
+                  <span id="{{$campuspostlike}}">@if($campuspostlikecount  !== 0){{ $campuspostlikecount}} @endif</span>
 
                   <a onclick="campuspostlike({{$post->id}})" href="#" data-like="{{route('campuspost.like', ['postId' => $post->id])}}" class="campuspostlike" >&nbsp;Like</a>
                    &nbsp;
