@@ -2,6 +2,7 @@
 
 @section('content')
 @include('partials.messageactivenavigation')
+<br class="visible-lg" />
 @include('partials.alerts')
 <div class="row">
 <div class="panel panel-default">

@@ -2,12 +2,13 @@
 
 @section('content')
 @include('partials.navigation')
-@include('partials.alerts')
-       
-        
+
          
 <div class="row">
+@include('partials.alerts')
+@if(Auth::user()->institution_id !== $advert->institution_id)
           @include('partials.advertinstitutionheader')
+          @endif
         <h3 class="text-center">Marketplace</h3>
       
         <div class="panel panel-default">
@@ -79,16 +80,16 @@
             <div class="text-center" value="{{$advert->id}}">
             &nbsp;
              
-            <a onclick="advertlike({{$advert->id}})" class="btn btn-primary justify advertlike" data-id="{{$advert->id}}" href="#" role="button">&nbsp;<span class="badge" id="{{$advertlike}}">{{$advertlikecount}}</span>&nbsp;Like</a>
+            <a onclick="advertlike({{$advert->id}})" class="btn btn-primary justify advertlike" data-id="{{$advert->id}}" href="#" role="button">&nbsp;<span class="badge" id="{{$advertlike}}">@if($advertlikecount  !== 0){{$advertlikecount}}@endif </span> &nbsp;<i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i></a>
            
               &nbsp;
               <a class="btn btn-success justify" href="whatsapp://send?text={{$advert->title. ' ' .Request::url()}}" data-action="share/whatsapp/share">Share on Whatsapp</a>
              
               &nbsp;
               @if(Auth::user()->id === $advert->user_id || Auth::user()->role == 'administrator')
-              <a class="btn btn-info justify" href="{{route('advert.edit',['advertId' => $advert->id, 'slug' => $advert->slug])}}" role="button">Edit</a>
+              <a class="btn btn-info justify" href="{{route('advert.edit',['advertId' => $advert->id, 'slug' => $advert->slug])}}" role="button"><i class="fa fa-pencil-square-o fa-lg"></i> Edit</a>
                &nbsp;
-              <a class="btn btn-danger justify" href="{{route('advert.delete',['advertId' => $advert->id, 'slug' => $advert->slug])}}" role="button">Delete</a>
+              <a class="btn btn-danger justify" href="{{route('advert.delete',['advertId' => $advert->id, 'slug' => $advert->slug])}}" role="button"><i class="fa fa-trash-o fa-lg"></i> Delete</a>
               @endif
               </div>
                 <br/>

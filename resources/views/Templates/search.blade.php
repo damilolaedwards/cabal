@@ -1,6 +1,7 @@
 @extends('maindefault')
 
 @section('content')
+<br class="visible-lg" />
 @include('partials.navigation')
 <div class="row">
 <div class="panel panel-default">

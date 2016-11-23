@@ -1,1 +1,1 @@
- <h3 class="text-center top lead">{{\App\Institution::find(\Auth::user()->institution_id)->name}} Campus</h3>
+ <h3 class="text-center top lead playfair2">{{\App\Institution::find(\Auth::user()->institution_id)->name}} Campus</h3>

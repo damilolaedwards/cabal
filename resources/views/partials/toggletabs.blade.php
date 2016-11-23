@@ -7,9 +7,9 @@
   <!-- Nav tabs -->
   <div class="shown.bs.tab">
   <ul class="nav nav-tabs nav-justified font" role="tablist" id="myTab">
-    <li role="presentation" class="active"><a href="{{route('homepage')}}">Forum</a></li>
-    <li role="presentation" ><a href="{{route('advert.index')}}">Marketplace</a></li>
-    <li role="presentation"><a href="{{route('event.index')}}">Events</a></li>
+    <li role="presentation" class="active garamond"><a href="{{route('homepage')}}">Forum</a></li>
+    <li role="presentation" class="garamond"><a href="{{route('advert.index')}}">Marketplace</a></li>
+    <li role="presentation" class="garamond"><a href="{{route('event.index')}}">Events</a></li>
     
   </ul>
 </div>
@@ -33,7 +33,7 @@ Welcome to CampusCabal!
               @foreach ($topics as $topic)
     <li class="list-group-item clearfix "><a href="{{ route('campustopic.view',['slug' => $topic->getTopicSlug(), 'id' => $topic->getTopicId()]) }}" class="darkblue font-less" >
 {{ucfirst(strtolower($topic->title))}}
-    </a><span class="pull-right"><small>&nbsp;By&nbsp;<strong ><a href="{{route('profile',['username' => \App\User::find($topic->user_id)->username])}}">{{$topic->user->getUsername()}}</a>&nbsp; &nbsp;</strong>{{$topic->created_at->diffForHumans()}}</small></span></li>
+    </a><span class="pull-right"><small>&nbsp;By&nbsp;<strong class="text-muted"><a href="{{route('profile',['username' => \App\User::find($topic->user_id)->username])}}">{{$topic->user->getUsername()}}</a>&nbsp; &nbsp;</strong>{{$topic->created_at->diffForHumans()}}</small></span></li>
      @endforeach
           {!! $topics->render() !!}
          

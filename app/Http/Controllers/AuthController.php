@@ -10,7 +10,10 @@ use Carbon\Carbon;
 use Mail;
 class AuthController extends Controller
 {
-	
+	public function getLanding(){
+		return view('Templates.landing');
+	}
+
 	public function getHome(){
 		return view('Templates.login');
 	}
@@ -120,7 +123,7 @@ public function postFirstSignUp(Request $request)
 		$user = Auth::user();
             $user->last_login_at = Carbon::now();
             $user->save();
-		return redirect()->intended('homepage');
+		return redirect()->intended('home');
 	  }
 
 	 

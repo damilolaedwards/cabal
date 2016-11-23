@@ -32,17 +32,20 @@
                     </div>
                     <?php
                     $campuspostlike = 'campuspostlike'.$post->id;
-                    $campuspostdislike = 'campuspostdislike'.$post->id;
+                    $campuspostlikecount = \App\Postlike::where('post_id', $post->id)->count();
                     ?>
 
                   
                   <div class="panel-footer" value="{{$post->id}}" >
-                  <span id="{{$campuspostlike}}">{{\App\Postlike::where('post_id', $post->id)->count()}}</span>
+                  <span id="{{$campuspostlike}}">@if($campuspostlikecount  !== 0){{ $campuspostlikecount}}</span>@endif
 
                   <a onclick="campuspostlike({{$post->id}})" href="#" data-like="{{route('campuspost.like', ['postId' => $post->id])}}" class="campuspostlike" >&nbsp;Like</a>
-                   &nbsp; &nbsp;<span id="{{ $campuspostdislike}}">{{\App\Postdislike::where('post_id', $post->id)->count()}}</span> 
-                   <a onclick="campuspostdislike({{$post->id}})" href="#" data-dislike="{{route('campuspost.dislike', ['postId' => $post->id])}}" class="campuspostdislike" data-id="{{$post->id}}">Dislike</a> &nbsp;  
-                   <a href="{{route('campuspost.report', ['postId' => $post->id])}}">Report</a> @if($post->user_id == Auth::user()->id || Auth::user()->role == 'administrator') 
+                   &nbsp;
+                    &nbsp;
+                    @if($post->user_id !== Auth::user()->id)  
+                   <a href="{{route('campuspost.report', ['postId' => $post->id])}}">Report</a>
+                   @endif
+                    @if($post->user_id == Auth::user()->id || Auth::user()->role == 'administrator') 
                    <a href="{{route('campuspost.update', ['postId' => $post->id, 'topicSlug' => \App\Campustopic::find($post->topic_id)->slug, 'topicId' => $post->topic_id])}}">&nbsp;&nbsp;Edit</a>@endif <a href="#reply" class="pull-right">reply</a>
                    </div>
                    

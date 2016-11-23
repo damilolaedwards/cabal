@@ -2,12 +2,11 @@
 
 @section('content')
 @include('partials.navigation')
+<div class="row">
 @include('partials.alerts')
-       
-        
-        
-        <div class="row">
+        @if(Auth::user()->institution_id !== $event->institution_id)
           @include('partials.eventinstitutionheader')
+          @endif
         <h3 class="text-center">Events</h3>
 
         <div class="panel panel-default">
@@ -81,18 +80,18 @@
 
               
               
-              <a onclick="eventlike({{$event->id}})" class="btn btn-primary justify eventlike" data-id="{{$event->id}}" href="#" role="button"><span class="badge" id="{{$eventlike}}">{{$eventlikecount}}</span>&nbsp;Like</a>
+              <a onclick="eventlike({{$event->id}})" class="btn btn-primary justify eventlike" data-id="{{$event->id}}" href="#" role="button"><span class="badge" id="{{$eventlike}}">@if($eventlikecount  !== 0){{$eventlikecount}}@endif</span> &nbsp;<i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i></a>
               &nbsp;
               
-              <a onclick="eventgoing({{$event->id}})" class="btn btn-primary justify eventgoing" data-id="{{$event->id}}" href="#" role="button"><span class="badge" id="{{$eventgoing}}">{{$eventgoingcount}}</span>&nbsp;Going</a>
+              <a onclick="eventgoing({{$event->id}})" class="btn btn-primary justify eventgoing" data-id="{{$event->id}}" href="#" role="button"><span class="badge" id="{{$eventgoing}}">@if($eventgoingcount  !== 0) {{$eventgoingcount}} @endif</span>&nbsp;Going</a>
               &nbsp;
 
              <a class="btn btn-success justify" href="whatsapp://send?text={{$event->name. ' ' .Request::url()}}" data-action="share/whatsapp/share">Share on Whatsapp</a>
                &nbsp;
                @if(Auth::user()->id == $event->user_id || Auth::user()->role == 'administrator')
-              <a class="btn btn-info justify" href="{{route('event.edit',['eventId' => $event->id, 'slug' => $event->slug])}}" role="button">Edit</a>
+              <a class="btn btn-info justify" href="{{route('event.edit',['eventId' => $event->id, 'slug' => $event->slug])}}" role="button"><i class="fa fa-pencil-square-o fa-lg"></i> Edit</a>
                &nbsp;
-              <a class="btn btn-danger justify" href="{{route('event.delete',['eventId' => $event->id, 'slug' => $event->slug])}}" role="button">Delete</a>
+              <a class="btn btn-danger justify" href="{{route('event.delete',['eventId' => $event->id, 'slug' => $event->slug])}}" role="button"><i class="fa fa-trash-o fa-lg"></i> Delete</a>
               @endif
               </div>
              

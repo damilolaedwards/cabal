@@ -5,12 +5,15 @@ overflow-wrap: break-word;
 
 }
 .body{
-border: 2px solid #eee;
+
 border-radius: 3px;
 margin-top: -20px;
 
 }
-
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
 .nav>li>a {
     position: relative;
     display: block;
@@ -29,9 +32,29 @@ iframe{
 .less-padding{
 	padding-bottom: 2px;
 }
+.padding{
+	padding-right: 20px;
+	padding-left: 20px;
+	
+}
+.move_down{
+	margin-top: 8px;
+}
+.padding_left{
+	margin-left: 60px;
+}
+
 .panel-footer{
 	background-color: #e8e2e2;
-	
+	 padding: 2px 15px 2px;
+}
+.garamond{
+	font-family: 'EB Garamond', serif;
+	font-size: 21px;
+}
+.garamond-bare{
+	font-family: 'EB Garamond', serif;
+	font-size: 20px;
 }
 }
 .sent_message{
@@ -42,7 +65,6 @@ a:hover{
 text-decoration: none;
 }
 .header{
-background-color:#3299CC;
 margin-top: -70px;
 
 }
@@ -51,7 +73,7 @@ margin-top: 10px;
 margin-bottom: 10px;
 }
 .navbar-default .navbar-brand {
-color:white;
+color:black;
 position: absolute;
 }
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
@@ -111,7 +133,8 @@ display:inline-block;
 .topics{
 padding-top: 5px;
 padding-bottom: 10px;
-margin-left: -30px;
+margin-left: -20px;
+padding-left: 5px;
 }
 
 .top{
@@ -129,7 +152,7 @@ font-size:120%;
 
 }
 .font-less{
-	font-size: 17px;
+	font-size: 18px;
 	font-family: 'Rasa', serif;
 }
 .panel-footerforum{
@@ -153,6 +176,15 @@ margin-top: 0px;
 .playfair{
 	font-family: 'Playfair Display', serif;
 	font-size: 16px;
+}
+.playfair2{
+	font-family: 'Playfair Display', serif;
+	font-size: 22px;
+}
+.playfair3{
+	font-family: 'Playfair Display', serif;
+	font-size: 18px;
+	font-weight: bold;
 }
 .view_button{
 float: right;
@@ -213,6 +245,10 @@ li{
 }
 
 @media (max-width: 768px) {
+	.font-less{
+	font-size: 17px;
+	font-family: 'Rasa', serif;
+}
   .container {
   padding-right: 0px;
   padding-left: 0px;
@@ -233,8 +269,19 @@ li{
 	display: block;
 	margin-left: -40px;
 }
-img{
-  max-width: 100%;
-  
+.badge-warning {
+background-color: #d58512;
+margin: -30px 0px 0px -10px;
+}
+
+.badge-warning-notif {
+background-color: #d58512;
+margin: -30px 0px 0px -15px;
+}
+
+
+a.text_undecor{
+text-decoration: none; color:#777;
+
 }
 
