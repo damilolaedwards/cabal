@@ -1,8 +1,9 @@
 @extends('maindefault')
 @section('content')
 @include('partials.navigation')
-@include('partials.alerts')
+
 <div class="row">
+@include('partials.alerts')
 <div class="panel panel-default">
   <div class="panel-body">
   <blockquote>

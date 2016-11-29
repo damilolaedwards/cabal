@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => '',
-        'secret' => '',
+        'domain' => 'sci.ng',
+        'secret' => 'key-44yuwzjc920rdahdig2p3p0s3ohnah75',
     ],
 
     'mandrill' => [
@@ -36,3 +36,5 @@ return [
     ],
 
 ];
+
+
