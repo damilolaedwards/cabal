@@ -22,9 +22,7 @@ Route::get('/landing', [
 	]);
 
 
-Route::get('refresh-csrf', function(){
-    return csrf_token();
-});
+
 
 Route::post('forum/{postId}/post/like', [
 	'uses'=>'\App\Http\Controllers\CampusPostController@Like',

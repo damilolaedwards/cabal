@@ -99,20 +99,6 @@
      <script src="{{ URL::asset('js/likes.js') }}"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
-  <script type="text/javascript">
-            var csrfToken = $('[name="csrf_token"]').attr('content');
-
-            setInterval(refreshToken, 3600000); // 1 hour 
-
-            function refreshToken(){
-                $.get('refresh-csrf').done(function(data){
-                    csrfToken = data; // the new token
-                });
-            }
-
-            setInterval(refreshToken, 3600000); // 1 hour 
-
-        </script>
   
 
 

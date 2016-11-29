@@ -90,7 +90,7 @@ function advertlike(id) {
     var advertId = id;
    
     var isLike = true;
-    var baseUrl = window.location.origin;
+   var baseUrl = window.location.origin;
   
     $.ajax({
         method: 'POST',

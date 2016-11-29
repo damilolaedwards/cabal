@@ -23,7 +23,7 @@
 
           <small>&nbsp; &copy CampusCabal {{date('Y')}}. All Rights Reserved </small>
        
-         <ul class="footer_set">
+         <ul class="list-inline">
          <li><small><a href="{{route('disclaimer')}}">Disclaimer</a></small></li>
          <li>&nbsp;</li>
          <li><small><a href="{{route('rules')}}">Rules & Regulations</a></small></li>
