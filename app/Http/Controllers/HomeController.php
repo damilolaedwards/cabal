@@ -80,7 +80,7 @@ class HomeController extends Controller
  	Mail::send('email.contact', $data, function ($message)  use ($data){
     $message->from($data['email']);
     $message->subject($data['subject']);
-    $message->to('Admin@campuscabal.com');
+    $message->to('damilolaedwards@gmail.com');
 });
  	return redirect()->back()->with('info', 'Message successfully sent!');
  }

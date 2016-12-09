@@ -93,7 +93,7 @@ public function postFirstSignUp(Request $request)
 		);
 		 $request->session()->flush();
 		Mail::send('email.welcome', $mydata, function ($message)  use ($mydata){
-    $message->from('noreply@campuscabal.com');
+    $message->from('noreply.CampusCabal.com');
     $message->subject('Welcome to CampusCabal');
     $message->to($mydata['email']);
 		

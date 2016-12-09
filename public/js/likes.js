@@ -68,7 +68,7 @@ function eventgoing(id) {
   
     $.ajax({
         method: 'POST',
-        url: baseUrl + '/event/' + eventId + '/like',
+        url: baseUrl + '/event/' + eventId + '/going',
         data: {isLike: isLike, eventId: eventId}
     })
         .done(function(data) {

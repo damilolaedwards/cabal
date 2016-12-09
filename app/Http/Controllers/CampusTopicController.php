@@ -313,7 +313,7 @@ public function postReport(Request $request){
 	 Mail::send('email.campustopic', $data, function ($message)  use ($data){
     $message->from('noreply@campuscabal.com');
     $message->subject('Report');
-    $message->to('Admin@campuscabal.com');
+    $message->to('damilolaedwards@gmail.com');
 });
 	 return redirect($request->reporturl)->with('info', 'Report successfully sent!');
 }

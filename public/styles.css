@@ -243,8 +243,13 @@ li{
   line-height: 20px;
 }
 }
-
+.fit{
+		margin-top: 75px;
+	}
 @media (max-width: 768px) {
+	.fit{
+		margin-top: 150px;
+	}
 	.font-less{
 	font-size: 17px;
 	font-family: 'Rasa', serif;
