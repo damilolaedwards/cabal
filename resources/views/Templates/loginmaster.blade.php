@@ -10,34 +10,10 @@
     <title>CampusCabal</title>
     <!-- Bootstrap Core CSS -->
   
-   <link href="{{ URL::asset('/css/bootstrap.min.css') }}" rel="stylesheet">
+   <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
-    <style type="text/css">
-body {
-
-
-    background-color: #000; 
-    background-image: url("campus.jpg"); 
-    background-repeat: no-repeat; 
-    background-position: center;
-    background-attachment: fixed;       
-    webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; 
-   
-  
-
-    html { height:100%,width:100%}
-
-
-}
-
-
-    </style>
-   
-   
-        
+    <link href="{{ URL::asset('css/portfolio-item.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('styles.css') }}">
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -61,11 +37,14 @@ body {
     </nav>
     <div class="container">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-  
+   @include('partials.alerts')
+
+
+    @yield('content')
   </div>  
 </div>
 
-     
+      @include('partials.loginfooter')
     
        <script src="{{ URL::asset('js/jquery.js') }}"></script>
     <!-- Bootstrap Core JavaScript -->
@@ -83,7 +62,6 @@ body {
             setInterval(refreshToken, 3600000); // 1 hour 
 
         </script>
-       
     <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
     </body>
   </html>

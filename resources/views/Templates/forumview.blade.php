@@ -27,19 +27,19 @@
                     
                     @if($campustopic->forumimage1 !==NULL)
                     <p>
-                    <img src="{{asset($campustopic->getFirstImage())}}" alt="image" class="img-responsive antimoderate" >
+                    <img src="{{asset($campustopic->getFirstImage())}}" alt="image" class="img-responsive " >
                     </p>
                     
                     @endif
                     @if($campustopic->forumimage2 !==NULL)
                     <p>
-                    <img src="{{asset($campustopic->getSecondImage())}}" alt="image" class="img-responsive antimoderate">
+                    <img src="{{asset($campustopic->getSecondImage())}}" alt="image" class="img-responsive">
                     </p>
                     
                      @endif
                     @if($campustopic->forumimage3 !==NULL)
                     <p>
-                    <img src="{{asset($campustopic->getThirdImage())}}" alt="image" class="img-responsive antimoderate" >
+                    <img src="{{asset($campustopic->getThirdImage())}}" alt="image" class="img-responsive" >
                     </p>
                     
                      @endif
