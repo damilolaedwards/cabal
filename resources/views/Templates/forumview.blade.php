@@ -102,7 +102,7 @@
           </div>
            <a name="reply"></a>
                     <div class="form-group {{ $errors->has('postbody') ?  ' has-error' : '' }}">
-                  <textarea class="form-control textbox" name="postbody" rows="3" id="myTextarea" placeholder="What's on your mind?"></textarea>
+                  <textarea class="form-control textbox" name="postbody" rows="3" id="myTextarea"></textarea>
                    @if($errors->has('postbody'))
               <span class="help-block">{{$errors->first('postbody')}}</span>
               @endif

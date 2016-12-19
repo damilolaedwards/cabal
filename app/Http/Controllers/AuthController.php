@@ -87,6 +87,12 @@ public function postFirstSignUp(Request $request)
 			'month' => $request->input('month'),
 			'year' => $request->input('year'),
 			]);
+
+		Message::create([
+			'sender_id' => 1,
+			'reciever_id' => User::where('username', $request->input('username'))->firstOrFail()->id,
+			'body' => 'Welcome to CampusCabal',
+			]);
 		 $mydata = array(
 		'username' => $request->input('username'), 
 		'email' => $data[0]['email'],

@@ -81,7 +81,7 @@
           <a name="reply"></a>
                     <div class="form-group {{ $errors->has('postbody') ?  ' has-error' : '' }}">
                     <a name="reply"></a>
-                  <textarea class="form-control" name="postbody" rows="3" id="myTextarea" placeholder="What's on your mind?"></textarea>
+                  <textarea class="form-control" name="postbody" rows="3" id="myTextarea"></textarea>
                    @if($errors->has('postbody'))
               <span class="help-block">{{$errors->first('postbody')}}</span>
               @endif

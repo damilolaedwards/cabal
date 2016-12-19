@@ -24,11 +24,6 @@
   <div class="panel-heading"><strong class="font-less">All Topics</strong></div>
 <!-- List group -->
   <ul class="list-group">
-  
-    <li class="list-group-item clearfix "><a href="{{route('welcome')}}" class="darkblue font-less" >
-Welcome to CampusCabal!
-    </a></li>
-              
              
               @foreach ($topics as $topic)
     <li class="list-group-item clearfix "><a href="{{ route('campustopic.view',['slug' => $topic->getTopicSlug(), 'id' => $topic->getTopicId()]) }}" class="darkblue font-less" >

@@ -25,9 +25,7 @@
        
          <ul class="list-inline">
          <li><small><a href="{{route('disclaimer')}}">Disclaimer</a></small></li>
-         <li>&nbsp;</li>
-         <li><small><a href="{{route('rules')}}">Rules & Regulations</a></small></li>
-         <li>&nbsp;</li>
+         <!--<li>&nbsp;</li> -->
          <li><small><a href="{{route('contact')}}">Contact</a></small></li>
         
            </ul>

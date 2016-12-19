@@ -108,7 +108,7 @@ style="font-family: Arial, &#039;Helvetica &#039;, Helvetica, sans-serif; color:
                          <p style="margin-top: 0; color: #74787E; font-size: 12px; line-height: 1.5em;">
                                          
    &copy; {{date('Y')}}
-                                            <a style="color: #3869D4;" href="{{url('/')}}" target="_blank">CampusCabal</a>
+                                            <a style="color: #3869D4;" href="https://campuscabal.com" target="_blank">CampusCabal</a>
                                             All rights reserved.
     
                                     </p>

@@ -54,15 +54,15 @@
           
        <div class="visible-lg">
         <p class="padding_left navbar-right move_down"><a class="text_undecor" href="{{ route('profile',['username' => Auth::user()->username]) }}"><img class="img-circle " src="{{asset(Auth::user()->getUserProfileImage())}}" width="30" height="30" alt="{{Auth::user()->getUsername()}}" ><span class="text-muted"> {{Auth::user()->username}}</span></a></p>
-        <span class="text-muted padding navbar-right move_down"><i class="fa fa-bell-o fa-2x" aria-hidden="true"></i> <a class="text_undecor" href="{{route('notification')}}">        Notification @if($requestcount  !== 0)<span class="badge badge-warning-notif">
+        <span class="text-muted padding navbar-right move_down"><i class="fa fa-bell-o fa-2x" aria-hidden="true"></i> <a class="text_undecor" href="{{route('notification')}}"> @if($requestcount  !== 0)<span class="badge badge-warning-notif">
               {{$requestcount}}
-           </span>@endif</a></span>
+           </span>@endif Notification</a></span>
          
-         <span class="text-muted padding navbar-right move_down" style="padding-left: 60px;"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i> <a class="text_undecor" href="{{ route('messages') }}" > Messages @if($unreadmessages !== 0)<span class="badge badge-warning">
+         <span class="text-muted padding navbar-right move_down" style="padding-left: 60px;"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i> <a class="text_undecor" href="{{ route('messages') }}" >@if($unreadmessages !== 0)<span class="badge badge-warning">
                {{$unreadmessages}}
             
             
-            </span>@endif</a></span>
+            </span> @endif Messages</a></span>
          
          
 

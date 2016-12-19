@@ -24,16 +24,18 @@ class MessageController extends Controller
 		return view('Templates.messages')->with('messages', $messages);
 	
 	}	
-	
-	
+
 	public function getSentMessages()
 	{
 		$messages = \App\Message::where(function($query){
 		return $query->where('sender_id', Auth::user()->id);
-	})->orderBy('created_at','desc')->paginate(20);	
+	})->orderBy('created_at','desc')->paginate(20);
+		
 		return view('Templates.sentmessages')->with('messages', $messages);
 	
-	}		
+	}	
+	
+	
 	
 
 
@@ -47,11 +49,11 @@ public function createMessage(Request $request){
 	$userid = Auth::user()->id;
 	$this->validate($request, [
         	'message_body' => 'required',
-        	'message_to' => 'required|integer',
+        	
         	
         	]);
 
-	\Auth::user()->messages()->create([
+	\App\Messages::->create([
 		'body' => $request->input('message_body'),
 		'sender_id' => ($userid),
 		'reciever_id' =>$request->input('message_to') ,
@@ -66,7 +68,8 @@ public function deleteMessage($messageId){
 		return redirect()->back();
 	}
 	
-	$message_to_delete->delete();
+	$message_to_delete->deleted = 1;
+	$message_to_delete->save();
 	return redirect()->back()->with('info', 'message successfully deleted!');
 }
 
@@ -78,7 +81,8 @@ public function deleteSentMessage($messageId){
 		return redirect()->back();
 	}
 	
-	$message_to_delete->delete();
+	$message_to_delete->deleted = 1;
+	$message_to_delete->save();
 	return redirect()->back()->with('info', 'message successfully deleted!');
 }
 }
