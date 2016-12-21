@@ -3,8 +3,9 @@
 @section('content')
 @include('partials.navigation')
   <div class="row">
-  @include('partials.institutionheader')
-    <br/>    
+  <br class="visible-lg" />
+  <h3 class="text-center forum-header text-muted">Campus Forum</h3>
+       
 
           <div class="panel panel-default">
             <div class="panel-body">

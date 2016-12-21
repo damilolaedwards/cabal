@@ -8,7 +8,7 @@
 @if(Auth::user()->institution_id !== $campustopic->institution_id)
 @include('partials.campusinstitutionheader')
 @endif
-<br/>
+<br class="visible-lg" />
 @include('partials.alerts')
 <h3 class="text-center forum-header text-muted">Campus Forum</h3>
           

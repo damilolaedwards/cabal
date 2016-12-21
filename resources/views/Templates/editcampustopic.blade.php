@@ -4,8 +4,9 @@
 @include('partials.navigation')
 
 <div class="row">
+<br class="visible-lg" />
+<h3 class="text-center forum-header text-muted">Campus Forum</h3>
 
-<br/>
           <div class="panel panel-default">
             <div class="panel-body">
             <div class="page-header text-muted text-center" style="margin-top: 0px; padding-bottom: 0px;" >

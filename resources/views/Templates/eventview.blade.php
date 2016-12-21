@@ -86,7 +86,7 @@
               <a onclick="eventgoing({{$event->id}})" class="btn btn-primary justify eventgoing" data-id="{{$event->id}}" href="#" role="button"><span class="badge" id="{{$eventgoing}}">@if($eventgoingcount  !== 0) {{$eventgoingcount}} @endif</span>&nbsp;Going</a>
               &nbsp;
 
-             <a class="btn btn-success justify visible-xs visible-sm" href="whatsapp://send?text={{$event->name. ' ' .Request::url()}}" data-action="share/whatsapp/share">Share on Whatsapp</a>
+             <a class="btn btn-success justify hidden-md hidden-lg" href="whatsapp://send?text={{$event->name. ' ' .Request::url()}}" data-action="share/whatsapp/share">Share on Whatsapp</a>
                &nbsp;
                @if(Auth::user()->id == $event->user_id || Auth::user()->role == 'administrator')
               <a class="btn btn-info justify" href="{{route('event.edit',['eventId' => $event->id, 'slug' => $event->slug])}}" role="button"><i class="fa fa-pencil-square-o fa-lg"></i> Edit</a>
