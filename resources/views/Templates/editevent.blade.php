@@ -3,7 +3,7 @@
 @include('partials.navigation')
 <div class="row">
 @include('partials.institutionheader')
-        <h3 class="text-center">Events</h3>
+        <h3 class="text-center text-muted">Campus Events</h3>
 
   <div class="panel panel-default">
     <div class="panel-body">

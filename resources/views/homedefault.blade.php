@@ -12,7 +12,7 @@
   
    <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="{{ URL::asset('css/portfolio-item.css') }}" rel="stylesheet">
+    
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('styles.css') }}">
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

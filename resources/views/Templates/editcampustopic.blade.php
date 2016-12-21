@@ -4,12 +4,12 @@
 @include('partials.navigation')
 
 <div class="row">
-@include('partials.institutionheader')
+
 <br/>
           <div class="panel panel-default">
             <div class="panel-body">
-            <div class="page-header text-align">
-            <h3><small>Edit Topic</small></h3>
+            <div class="page-header text-muted text-center" style="margin-top: 0px; padding-bottom: 0px;" >
+            <p class="lead">Edit Topic</p>
 
           </div>
           <form class="form-vertical" role="form" method="post" action="{{route('campustopic.update',['topicId' => $topic->id, 'topicSlug' => $topic->slug])}}" enctype="multipart/form-data">

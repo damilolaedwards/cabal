@@ -9,7 +9,6 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Rasa:500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
    
@@ -26,7 +25,7 @@
         
     <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="{{ URL::asset('css/portfolio-item.css') }}" rel="stylesheet">
+    
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('styles.css') }}">
  
     
@@ -54,11 +53,11 @@
           
        <div class="visible-lg">
         <p class="padding_left navbar-right move_down"><a class="text_undecor" href="{{ route('profile',['username' => Auth::user()->username]) }}"><img class="img-circle " src="{{asset(Auth::user()->getUserProfileImage())}}" width="30" height="30" alt="{{Auth::user()->getUsername()}}" ><span class="text-muted"> {{Auth::user()->username}}</span></a></p>
-        <span class="text-muted padding navbar-right move_down"><i class="fa fa-bell-o fa-2x" aria-hidden="true"></i> <a class="text_undecor" href="{{route('notification')}}"> @if($requestcount  !== 0)<span class="badge badge-warning-notif">
+        <span class="text-muted padding navbar-right move_down"> <a class="text_undecor" href="{{route('notification')}}"><i class="fa fa-bell-o fa-2x" aria-hidden="true"></i> @if($requestcount  !== 0)<span class="badge badge-warning-notif">
               {{$requestcount}}
            </span>@endif Notification</a></span>
          
-         <span class="text-muted padding navbar-right move_down" style="padding-left: 60px;"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i> <a class="text_undecor" href="{{ route('messages') }}" >@if($unreadmessages !== 0)<span class="badge badge-warning">
+         <span class="text-muted padding navbar-right move_down" style="padding-left: 60px;"> <a class="text_undecor" href="{{ route('messages') }}" ><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i>@if($unreadmessages !== 0)<span class="badge badge-warning">
                {{$unreadmessages}}
             
             

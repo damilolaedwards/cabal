@@ -3,12 +3,12 @@
 @section('content')
 @include('partials.navigation')
 <div class="row">
-@include('partials.alerts')
+
         @if(Auth::user()->institution_id !== $event->institution_id)
           @include('partials.eventinstitutionheader')
           @endif
-        <h3 class="text-center">Events</h3>
-
+        <h3 class="text-center text-muted">Campus Events</h3>
+        @include('partials.alerts')
         <div class="panel panel-default">
             <div class="panel-body">
             
@@ -80,13 +80,13 @@
 
               
               
-              <a onclick="eventlike({{$event->id}})" class="btn btn-primary justify eventlike" data-id="{{$event->id}}" href="#" role="button"><span class="badge" id="{{$eventlike}}">@if($eventlikecount  !== 0){{$eventlikecount}}@endif</span> &nbsp;<i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i></a>
+              <a onclick="eventlike({{$event->id}})" class="btn btn-primary justify eventlike" data-id="{{$event->id}}" href="#" role="button"><span class="badge" id="{{$eventlike}}">@if($eventlikecount  !== 0){{$eventlikecount}}@endif</span> Like&nbsp;<i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i></a>
               &nbsp;
               
               <a onclick="eventgoing({{$event->id}})" class="btn btn-primary justify eventgoing" data-id="{{$event->id}}" href="#" role="button"><span class="badge" id="{{$eventgoing}}">@if($eventgoingcount  !== 0) {{$eventgoingcount}} @endif</span>&nbsp;Going</a>
               &nbsp;
 
-             <a class="btn btn-success justify" href="whatsapp://send?text={{$event->name. ' ' .Request::url()}}" data-action="share/whatsapp/share">Share on Whatsapp</a>
+             <a class="btn btn-success justify visible-xs visible-sm" href="whatsapp://send?text={{$event->name. ' ' .Request::url()}}" data-action="share/whatsapp/share">Share on Whatsapp</a>
                &nbsp;
                @if(Auth::user()->id == $event->user_id || Auth::user()->role == 'administrator')
               <a class="btn btn-info justify" href="{{route('event.edit',['eventId' => $event->id, 'slug' => $event->slug])}}" role="button"><i class="fa fa-pencil-square-o fa-lg"></i> Edit</a>

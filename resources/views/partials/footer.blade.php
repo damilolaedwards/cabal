@@ -1,6 +1,6 @@
 
 <div class="row">
-              <div class="panel panel-default ">
+              <div class="panel panel-default " style="margin-bottom: -40px;">
   <div class="panel-body ">
    @if (Auth::check())
               <div class="media">

@@ -3,6 +3,7 @@
 @include('partials.navigation')
 
 <div class="row">
+<br/>
 @include('partials.alerts')
 <div class="panel panel-default">
   <div class="panel-body">

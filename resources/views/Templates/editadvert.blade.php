@@ -3,8 +3,11 @@
 @section('content')
 @include('partials.navigation')
 <div class="row">
-@include('partials.institutionheader')
-        <h3 class="text-center">Marketplace</h3>
+ @if(Auth::user()->institution_id !== $advert->institution_id)
+          @include('partials.eventinstitutionheader')
+          @endif
+
+        <h3 class="text-center text-muted">Campus Marketplace</h3>
      <div class="panel panel-default panel-forum">
         <div class="panel-body">
          <p class="lead">*Edit Ad</p>

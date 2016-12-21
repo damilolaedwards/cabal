@@ -24,12 +24,19 @@
   <div class="panel-heading"><strong class="font-less">All Topics</strong></div>
 <!-- List group -->
   <ul class="list-group">
-             
+              @if (!$topics->count())
+             <div class="panel panel-default">
+  <div class="panel-body">
+              <p class="help-block">No Topic yet.</p>
+              </div>
+              </div>
+              @else
               @foreach ($topics as $topic)
     <li class="list-group-item clearfix "><a href="{{ route('campustopic.view',['slug' => $topic->getTopicSlug(), 'id' => $topic->getTopicId()]) }}" class="darkblue font-less" >
 {{ucfirst(strtolower($topic->title))}}
     </a><span class="pull-right"><small>&nbsp;By&nbsp;<strong class="text-muted"><a href="{{route('profile',['username' => \App\User::find($topic->user_id)->username])}}">{{$topic->user->getUsername()}}</a>&nbsp; &nbsp;</strong>{{$topic->created_at->diffForHumans()}}</small></span></li>
      @endforeach
+     @endif
           {!! $topics->render() !!}
          
   </ul>

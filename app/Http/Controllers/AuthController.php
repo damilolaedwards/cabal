@@ -8,6 +8,8 @@ use Auth;
 use Session;
 use Carbon\Carbon;
 use Mail;
+use App\Message;
+
 class AuthController extends Controller
 {
 	public function getLanding(){
@@ -99,7 +101,7 @@ public function postFirstSignUp(Request $request)
 		);
 		 $request->session()->flush();
 		Mail::send('email.welcome', $mydata, function ($message)  use ($mydata){
-    $message->from('noreply.CampusCabal.com');
+    $message->from('noreply@CampusCabal.com');
     $message->subject('Welcome to CampusCabal');
     $message->to($mydata['email']);
 		
@@ -129,7 +131,7 @@ public function postFirstSignUp(Request $request)
 		$user = Auth::user();
             $user->last_login_at = Carbon::now();
             $user->save();
-		return redirect()->intended('home');
+		return redirect()->intended('homepage');
 	  }
 
 	 

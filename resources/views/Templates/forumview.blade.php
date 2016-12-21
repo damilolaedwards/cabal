@@ -10,7 +10,7 @@
 @endif
 <br/>
 @include('partials.alerts')
-<h3 class="text-center forum-header">Forum</h3>
+<h3 class="text-center forum-header text-muted">Campus Forum</h3>
           
           
            

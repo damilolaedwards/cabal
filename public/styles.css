@@ -2,7 +2,7 @@ body{
 width: 100%;
 background-image:url("1.png");
 overflow-wrap: break-word;
-
+ padding-top: 70px;
 }
 .body{
 
@@ -165,6 +165,7 @@ font-size:120%;
 }
 .pull-up{
 	margin-top: -15px;
+	margin-bottom: -20px;
 }
 .marketplace{
 margin-top: -20px;
@@ -203,7 +204,7 @@ margin: 0px;
 }
 footer{
 	margin-bottom: 0px;
-	
+	margin: 40px 0;
 	
 }
 
