@@ -15,7 +15,7 @@
   	 <p class="text-muted">No messages yet</p>
   	  @else
           @foreach($messages as $message)
-           @if($message->deleted == 0 )
+           @if($message->sender_deleted == 0 )
 <div class="media text-align3">
 <a class="pull-left visible-lg" href="{{ route('profile',['username' => \App\User::find($message->reciever_id)->username])}}">
 <img class= "media-object img-circle" alt="{{\App\User::find($message->sender_id)->username}}"  width="48" height="48" src="{{asset(\App\User::find($message->reciever_id)->getProfileImage())}}">

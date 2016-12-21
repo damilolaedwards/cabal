@@ -68,7 +68,7 @@ public function deleteMessage($messageId){
 		return redirect()->back();
 	}
 	
-	$message_to_delete->deleted = 1;
+	$message_to_delete->reciever_deleted = 1;
 	$message_to_delete->save();
 	return redirect()->back()->with('info', 'message successfully deleted!');
 }
@@ -81,7 +81,7 @@ public function deleteSentMessage($messageId){
 		return redirect()->back();
 	}
 	
-	$message_to_delete->deleted = 1;
+	$message_to_delete->sender_deleted = 1;
 	$message_to_delete->save();
 	return redirect()->back()->with('info', 'message successfully deleted!');
 }

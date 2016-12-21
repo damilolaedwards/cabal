@@ -15,8 +15,8 @@ class CreateDeletedmessagesTable extends Migration
         Schema::table('messages', function (Blueprint $table) {
             
             
-            $table->boolean('deleted')->default(0);
-            
+            $table->boolean('sender_deleted')->default(0);
+            $table->boolean('reciever_deleted')->default(0);
                
         });
     }
@@ -28,6 +28,8 @@ class CreateDeletedmessagesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('deletedmessages');
+        Schema::table('messages', function ($table) {
+    $table->dropColumn(['sender_deleted', 'reciever_deleted']);
+});
     }
 }
