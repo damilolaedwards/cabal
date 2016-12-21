@@ -12,13 +12,14 @@ use App\Message;
 
 class AuthController extends Controller
 {
-	public function getLanding(){
+	public function getHome(){
+		if (Auth::check()) {
+    return view('Templates.homepage');
+}else
 		return view('Templates.landing');
 	}
 
-	public function getHome(){
-		return view('Templates.login');
-	}
+	
 	public function getFirstSignUp(Request $request)
 	{
 		if(Session::has('user'))
@@ -131,7 +132,7 @@ public function postFirstSignUp(Request $request)
 		$user = Auth::user();
             $user->last_login_at = Carbon::now();
             $user->save();
-		return redirect()->intended('homepage');
+		return redirect()->intended(url('/'));
 	  }
 
 	 

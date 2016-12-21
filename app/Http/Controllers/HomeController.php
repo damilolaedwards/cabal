@@ -8,7 +8,7 @@ class HomeController extends Controller
 {
 	public function getHome()
 	{	
-		if (\Auth::check()) {
+		if (Auth::check()) {
 
 
 			
@@ -24,7 +24,7 @@ class HomeController extends Controller
 		
 		return view('Templates.homepage')->with('topics', $topics)->with('categories', $categories); 
 	}
-	return view('home');
+	return view('Templates.landing');
 	}
 
 

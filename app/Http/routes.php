@@ -15,11 +15,7 @@ Login page (home)
 
 
 */
-Route::get('/', [
-	'uses'=>'\App\Http\Controllers\AuthController@getLanding',
-	'as'=>'landing',
-	'middleware' => ['guest'],
-	]);
+
 
 
 
@@ -110,10 +106,10 @@ Authentication
 	'middleware' => ['guest'],
 	]);
 
-	Route::get('/home', [
+	Route::get('/', [
 	'uses'=>'\App\Http\Controllers\HomeController@getHome',
 	'as'=>'homepage',
-	'middleware' => ['auth'],
+	
 	]);
 
 	Route::get('/logout', [
