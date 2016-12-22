@@ -77,7 +77,7 @@ public function getUserId(){
     return $this->belongsToMany('\App\User', 'friends', 'friend_id','user_id');
  }
  public function friends(){
-    return $this->friendsOfMine()->wherePivot('accepted',true)->get()->merge($this->friendOf()->wherePivot('accepted', true)->get());
+    return $this->friendsOfMine()->wherePivot('accepted',true)->paginate(2)->merge($this->friendOf()->wherePivot('accepted', true)->paginate(2));
 }
  public function friendRequests(){
     return $this->friendsOfMine()->wherePivot('accepted',false)->paginate(20);

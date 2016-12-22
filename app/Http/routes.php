@@ -17,7 +17,9 @@ Login page (home)
 */
 
 
-
+Route::get('refresh-csrf', function(){
+    return csrf_token();
+});
 
 
 Route::post('forum/{postId}/post/like', [

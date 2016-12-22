@@ -88,6 +88,9 @@
           @foreach($user->friends() as $userfriend)
                <li class="list-group-item clearfix">@include('partials.userblock')</li>
               @endforeach
+               <div class="text-center">
+   {!! $userfriend->render() !!}
+   </div>
               @endif
           
            </div>
