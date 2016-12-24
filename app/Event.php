@@ -25,7 +25,7 @@ class Event extends Model
 		return $this->eventimage_2;
 	}elseif ($this->eventimage_3) {
 		return $this->eventimage_3;
-	}else return 'placeholder.png';
+	}else return 'placeholder.jpg';
 	}
 	public function getEventImage2(){
 		if($this->eventimage_2){   

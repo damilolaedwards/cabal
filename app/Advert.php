@@ -23,7 +23,7 @@ class Advert extends Model
 		return $this->advertimage2;
 	}elseif ($this->advertimage3) {
 		return $this->advertimage3;
-	}else return 'placeholder.png';
+	}else return 'placeholder.jpg';
 	}
 	 
 	public function getAdvertImage2(){
