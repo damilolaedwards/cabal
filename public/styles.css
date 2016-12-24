@@ -3,6 +3,7 @@ width: 100%;
 background-image:url("1.png");
 overflow-wrap: break-word;
  padding-top: 70px;
+
 }
 .body{
 
@@ -290,4 +291,6 @@ a.text_undecor{
 text-decoration: none; color:#777;
 
 }
-
+html, body {
+  overflow-x: hidden;
+}
