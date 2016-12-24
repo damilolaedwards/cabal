@@ -80,7 +80,7 @@
             <div class="text-center" value="{{$advert->id}}">
             &nbsp;
              
-            <a onclick="advertlike({{$advert->id}})" class="btn btn-primary justify advertlike" data-id="{{$advert->id}}" href="#" role="button">&nbsp;<span class="badge" id="{{$advertlike}}">@if($advertlikecount  !== 0){{$advertlikecount}}@endif </span> Like&nbsp;<i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i></a>
+            <a onclick="advertlike({{$advert->id}})" class="btn btn-primary justify advertlike" data-id="{{$advert->id}}" href="#" role="button">&nbsp; @if($advertlikecount  !== 0)<span class="badge" id="{{$advertlike}}">{{$advertlikecount}} </span>@endif Like&nbsp;<i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i></a>
            
               &nbsp;
               <a class="btn btn-success justify hidden-md hidden-lg" href="whatsapp://send?text={{$advert->title. ' ' .Request::url()}}" data-action="share/whatsapp/share">Share on Whatsapp</a>
