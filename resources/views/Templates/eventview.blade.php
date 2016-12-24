@@ -80,10 +80,10 @@
 
               
               
-              <a onclick="eventlike({{$event->id}})" class="btn btn-primary justify eventlike" data-id="{{$event->id}}" href="#" role="button">@if($eventlikecount  !== 0)<span class="badge" id="{{$eventlike}}">{{$eventlikecount}}</span>@endif Like&nbsp;<i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i></a>
+              <a onclick="eventlike({{$event->id}})" class="btn btn-primary justify eventlike" data-id="{{$event->id}}" href="#" role="button"><span @if($eventlikecount  !== 0) class="badge" @endif id="{{$eventlike}}">@if($eventlikecount  !== 0) {{$eventlikecount}} @endif</span> Like&nbsp;<i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i></a>
               &nbsp;
               
-              <a onclick="eventgoing({{$event->id}})" class="btn btn-primary justify eventgoing" data-id="{{$event->id}}" href="#" role="button">@if($eventgoingcount  !== 0)<span class="badge" id="{{$eventgoing}}"> {{$eventgoingcount}} </span>@endif &nbsp;Going</a>
+              <a onclick="eventgoing({{$event->id}})" class="btn btn-primary justify eventgoing" data-id="{{$event->id}}" href="#" role="button"><span @if($eventgoingcount  !== 0) class="badge" @endif id="{{$eventgoing}}">@if($eventgoingcount  !== 0)  {{$eventgoingcount}} @endif </span> &nbsp;Going</a>
               &nbsp;
 
              <a class="btn btn-success justify hidden-md hidden-lg" href="whatsapp://send?text={{$event->name. ' ' .Request::url()}}" data-action="share/whatsapp/share">Share on Whatsapp</a>
