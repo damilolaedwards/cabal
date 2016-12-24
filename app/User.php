@@ -1,7 +1,8 @@
 <?php
 
 namespace App;
-
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Collection;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -77,7 +78,24 @@ public function getUserId(){
     return $this->belongsToMany('\App\User', 'friends', 'friend_id','user_id');
  }
  public function friends(){
-    return $this->friendsOfMine()->wherePivot('accepted',true)->paginate(2)->merge($this->friendOf()->wherePivot('accepted', true)->paginate(2));
+   
+    //Get current page form url e.g. &page=6
+        $currentPage = LengthAwarePaginator::resolveCurrentPage();
+
+        //Create a new Laravel collection from the array data
+        $collection = new Collection($this->friendsOfMine()->wherePivot('accepted',true)->get()->merge($this->friendOf()->wherePivot('accepted', true)->get()));
+
+        //Define how many items we want to be visible in each page
+        $perPage = 10;
+
+        //Slice the collection to get the items to display in current page
+        $currentPageSearchResults = $collection->slice(($currentPage - 1) * $perPage, $perPage)->all();
+
+        //Create our paginator and pass it to the view
+        $paginatedSearchResults= new LengthAwarePaginator($currentPageSearchResults, count($collection), $perPage);
+
+        return  $paginatedSearchResults;
+    
 }
  public function friendRequests(){
     return $this->friendsOfMine()->wherePivot('accepted',false)->paginate(20);
