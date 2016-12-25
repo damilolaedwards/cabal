@@ -27,7 +27,7 @@
     <nav class="navbar navbar-default header" role="navigation">
       <div class="container">
         <div class="navbar-header ">
-          <a href="{{route('Auth.login')}}"class="navbar-brand">
+          <a href="{{route('homepage')}}"class="navbar-brand">
             CampusCabal
           </a>
           

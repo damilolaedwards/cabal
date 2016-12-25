@@ -101,7 +101,7 @@
                                 <h4>
                                     <strong>Campus Forum</strong>
                                 </h4>
-                                <p>Share your views, opinions and reactions concerning recent happenings and outside your campus.
+                                <p>Share your views, opinions and reactions concerning recent happenings within and outside your campus.
 </p>
                                 
                             </div>
