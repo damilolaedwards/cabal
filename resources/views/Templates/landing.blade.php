@@ -20,7 +20,7 @@
 
     <!-- Custom Fonts -->
     <link href="css/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,11 +38,21 @@
 
     <!-- Header -->
     <header id="top" class="header">
-        <div class="text-vertical-center">
-            <h1 style="color: white;">Start Bootstrap</h1>
-            <h3>Free Bootstrap Themes &amp; Templates</h3>
+    
+        <div class="text-vertical-center ">
+            
+            <h1 class="landing" style="color: white;">Welcome to CampusCabal</h1>
+           
             <br>
-            <a href="{{route('Auth.login')}}" class="btn btn-dark btn-lg">Find Out More</a>
+            <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
+            <a href="{{route('Auth.login')}}" class="btn btn-dark btn-lg "><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+            <br/>
+            <br/>
+            <a href="{{route('Auth.firstsignup')}}" class="btn btn-dark btn-lg btn-block"><i class="fa fa-address-card-o" aria-hidden="true"></i> Register</a>
+         
+           
+            
+            </div>
         </div>
     </header>
 
@@ -51,8 +61,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
-                    <p class="lead">This theme features some wonderful photography courtesy of <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a>.</p>
+                    <h2>Redefine your campus experience.</h2>
+                    <p class="lead">It takes less than a minute to become a member of this expanding community.</p>
                 </div>
             </div>
             <!-- /.row -->
@@ -66,19 +76,19 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-10 col-lg-offset-1">
-                    <h2>What's in</h2>
+                    <h2>What's inside</h2>
                     <hr class="small">
                     <div class="row">
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-cloud fa-stack-1x text-primary"></i>
+                                <i class="fa fa-comments-o fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>General Forum</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <p>Interact with students of other institutions; participate in the top/trending discussions in areas like politics, sports romance etc.</p>
                                 
                             </div>
                         </div>
@@ -86,12 +96,13 @@
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-compass fa-stack-1x text-primary"></i>
+                                <i class="fa fa-commenting-o fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>Campus Forum</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <p>Share your views, opinions and reactions concerning recent happenings and outside your campus.
+</p>
                                 
                             </div>
                         </div>
@@ -99,12 +110,12 @@
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-flask fa-stack-1x text-primary"></i>
+                                <i class="fa fa-shopping-cart fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>Campus Marketplace</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <p>The ideal place for buyers to meet sellers on campus, promoting trade and entrepreneurship.</p>
                                 
                             </div>
                         </div>
@@ -112,12 +123,12 @@
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-shield fa-stack-1x text-primary"></i>
+                                <i class="fa fa-calendar fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Service Name</strong>
+                                    <strong>Campus Events</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <p>Get everyone informed about upcoming campus events; The perfect event board for all and sundry. </p>
                                 
                             </div>
                         </div>
