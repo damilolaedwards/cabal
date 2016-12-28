@@ -121,6 +121,11 @@ public function getUserId(){
         'accepted' => true,
         ]);
  }
+
+public function ignoreFriendRequest(User $user){
+    $this->friendRequests()->where('id',$user->id)->first()->pivot->delete();
+ }
+
  public function isFriendsWith(User $user){
     return (bool) $this->friends()->where('id', $user->id)->count();
  }

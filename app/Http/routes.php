@@ -220,6 +220,12 @@ Friends
 	'middleware' => ['auth'],
 	]);
 
+	Route::get('/friends/ignore/{username}', [
+	'uses'=>'\App\Http\Controllers\FriendController@getIgnore',
+	'as'=>'friend.ignore',
+	'middleware' => ['auth'],
+	]);
+
 	Route::post('/friends/delete/{username}', [
 	'uses'=>'\App\Http\Controllers\FriendController@postDelete',
 	'as'=>'friend.delete',

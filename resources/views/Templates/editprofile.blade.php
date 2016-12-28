@@ -3,7 +3,7 @@
 @section('content')
 @include('partials.profileactivenavigation')
 
-
+<br class="visible-lg"/>
  <div class="row">
         <div class="panel panel-default">
           <div class="panel-body">
@@ -69,6 +69,11 @@
        @foreach($friends as $user)
         <li class="list-group-item clearfix">@include('partials.userprofileblock')</li>
        @endforeach
+        <div class="text-center">
+   {!! $friends->setPath('')->render() !!}
+
+
+   </div>
        @endif
       
           </div>

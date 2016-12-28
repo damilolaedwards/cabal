@@ -42,6 +42,19 @@ class FriendController extends Controller
 	return redirect()->route('profile',['username' => $user->username]);
 }
 
+public function getIgnore($username){
+		$user = \App\User::where('username',$username)->first();
+
+		if(!$user){
+			return redirect()->route('profile',['username' => $user->username]);
+	}
+	if(!\Auth::user()->hasFriendRequestRecieved($user)){  
+	return redirect()->route('homepage');
+}
+	\Auth::user()->ignoreFriendRequest($user);
+	return redirect()->back();
+}
+
 	public function postDelete($username){
 		$user = \App\User::where('username', $username)->first();
 		if (!\Auth::user()->isFriendsWith($user)){
