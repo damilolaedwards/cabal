@@ -3,7 +3,8 @@ width: 100%;
 background-image:url("1.png");
 overflow-wrap: break-word;
  padding-top: 70px;
-
+padding: 0px;
+margin: 0px;
 }
 .body{
 
@@ -292,8 +293,7 @@ text-decoration: none; color:#777;
 
 }
 html, body {
-padding: 0px;
-margin: 0px;
+
   overflow-x: hidden;
    height: 100%;
 }
