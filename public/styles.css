@@ -232,6 +232,12 @@ li{
     display: table-cell;
     width: 1%;
   }
+  html {
+
+  overflow-x: hidden;
+
+}
+
   .nav-tabs.nav-justified > li > a {
     margin-bottom: 0;
   }
@@ -288,12 +294,5 @@ margin: -30px 0px 0px -15px;
 
 a.text_undecor{
 text-decoration: none; color:#777;
-
-}
-html {
-
-  overflow-x: hidden;
-   
-    
 
 }
