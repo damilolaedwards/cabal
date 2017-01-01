@@ -2,9 +2,11 @@ body{
 width: 100%;
 background-image:url("1.png");
 overflow-wrap: break-word;
- padding-top: 70px;
+padding: 0;
+margin: 0;
 
 }
+
 .body{
 
 border-radius: 3px;
@@ -65,10 +67,7 @@ iframe{
 a:hover{
 text-decoration: none;
 }
-.header{
-margin-top: -70px;
 
-}
 .first-login{
 margin-top: 10px;
 margin-bottom: 10px;
