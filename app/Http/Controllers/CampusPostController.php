@@ -59,8 +59,8 @@ class CampusPostController extends Controller
 			if($request->hasfile('postfile')){ 
 			$file = $request->file('postfile');
 		$filename = time(). "-" .$file->getClientOriginalName();
-		$file->move(public_path('/campuspostfile/') ,$filename);
-		$filepath = '/campuspostfile/'.$filename;
+		$file->move(public_path('/campuspostfiles/') ,$filename);
+		$filepath = '/campuspostfiles/'.$filename;
 	}else{
 				$filepath = null;
 			}
