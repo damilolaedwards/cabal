@@ -290,8 +290,10 @@ a.text_undecor{
 text-decoration: none; color:#777;
 
 }
-html, body {
+html {
 
   overflow-x: hidden;
-   height: 100%;
+   
+    
+
 }
