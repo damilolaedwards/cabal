@@ -41,7 +41,7 @@
     
         <div class="text-vertical-center ">
             
-            <h1 class="landing" style="color: white;">Welcome to CampusCabal</h1>
+            <h1 class="landing" style="color: #d7d8aa;">Welcome to CampusCabal</h1>
            
             <br>
             <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">

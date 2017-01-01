@@ -24,7 +24,7 @@
 </a>
 <div class="media-body">
 <p>
-{{$message->body}}
+{!! nl2br(e($message->body)) !!}
 </p>
 <p class="text-muted"><small><a href="{{ route('profile',['username' => \App\User::find($message->sender_id)->username]) }}">{{\App\User::find($message->sender_id)->username}}</a> | {{ $message->created_at->diffForHumans() }}</small>
 <span class="pull-right">

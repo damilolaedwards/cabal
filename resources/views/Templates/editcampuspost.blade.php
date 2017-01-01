@@ -28,7 +28,7 @@
           </div>
         <div class="form-group {{ $errors->has('postbody') ?  ' has-error' : '' }}">
             
-            <textarea class="form-control" rows="7" id="myTextarea" name="postbody">{{Request::old('postbody') ?: $post->body}}</textarea>
+                       <textarea class="form-control" rows="7" id="myTextarea" name="postbody">{{Request::old('postbody') ?: $post->body }}</textarea>
              @if($errors->has('postbody'))
               <span class="help-block">{{$errors->first('postbody')}}</span>
               @endif

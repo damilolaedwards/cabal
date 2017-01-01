@@ -82,7 +82,7 @@ $(function() {
 	
 	$('#myTextarea').keyup(function(){ // When keyup in the textarea (when you pull up the key)
 		var text = textWithSmilies($(this).val()); // Call function "textWithSmilies" and change smilies BBCode by their icon
-		$('#myTextarea').html(text); // Display in div=output markup
+		// Display in div=output markup
 	});
 });
 
