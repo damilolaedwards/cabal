@@ -53,7 +53,7 @@ public function createMessage(Request $request){
         	
         	]);
 
-	\App\Messages::create([
+	\App\Message::create([
 		'body' => $request->input('message_body'),
 		'sender_id' => ($userid),
 		'reciever_id' =>$request->input('message_to') ,

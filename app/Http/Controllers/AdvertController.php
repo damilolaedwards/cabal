@@ -43,11 +43,11 @@ class AdvertController extends Controller
         	'advertfile' => 'mimes:pdf,odt,doc,docx|max:4096',
 			]);
 
-
+		
 		if($request->hasfile('advertimage1')){    
 		$image = $request->file('advertimage1');
 		$imagename1 = time(). "-" .$image->getClientOriginalName();
-		Image::make($image->getRealPath())->resize(320,240)->save(public_path('/advertimages/' .$imagename1));
+		Image::make($image->getRealPath())->resize(320,240)->save(public_path('/advertimages/') .$imagename1);
 		$path1 = '/advertimages/'.$imagename1;
 			}
 		else{

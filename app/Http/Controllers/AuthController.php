@@ -94,7 +94,7 @@ public function postFirstSignUp(Request $request)
 		Message::create([
 			'sender_id' => 2,
 			'reciever_id' => User::where('username', $request->input('username'))->firstOrFail()->id,
-			'body' => "Hello, we're glad you are here, here is a quick guide though CampusCabal.\n CampusCabal is an online community for students of all tertiary institutions in Nigeria: Meet people, discuss a number of topics on the General discussion forum with other members, discuss your campus related topic at the Campus forum. Sell and buy goods at the Market place section; Don’t miss any event, post and check for campus events at the Events section. Everything just perfectly works in your favour.\n NOTE: Topics and posts posted at the general discussion forum visible to all members of campus cabal irrespective of their institutions while posts in the campus forum, marketplace and events are only visible to members of your Institution.",
+			'body' => "Hello, we're glad you are here, here is a quick guide though CampusCabal.\n CampusCabal is an online community for students of all tertiary institutions in Nigeria: Meet people, discuss a number of topics on the General discussion forum, discuss your campus related topic at the Campus forum. Sell and buy goods at the Market place section; Don’t miss any event, post and check for campus events at the Events section. Everything just perfectly works in your favour.\n NOTE: Topics and posts posted at the general discussion forum visible to all members of campus cabal irrespective of their institutions while posts in the campus forum, marketplace and events are only visible to members of your Institution.",
 			]);
 		 $mydata = array(
 		'username' => $request->input('username'), 
