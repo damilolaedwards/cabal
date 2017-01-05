@@ -204,7 +204,8 @@ public function Like(Request $request){
 			'postimage3' => $path3,
 			'postfile'  => $filepath,
 		]);
-	return redirect($request->input('campuspostredirect').'#'+$post->id); 
+	$editURL = $request->input('campuspostredirect').'#'+$post->id;
+	return redirect($editURL); 
   }
  
 public function deleteFirstImage($postId){
