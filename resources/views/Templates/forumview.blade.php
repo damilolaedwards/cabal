@@ -78,9 +78,10 @@
                   @include('partials.campuspostblock')
                   
                   @endforeach
+                  
+                  </div>
                   <div class="text-center">
                   {!! $campusposts->render() !!}
-                  </div>
                   </div>
                    @if($campustopic->thread_closed == 0)
                   @if(\App\User::find($campustopic->user_id)->institution_id == \Auth::user()->institution_id)
