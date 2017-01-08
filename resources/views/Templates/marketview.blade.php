@@ -18,7 +18,7 @@
             
             <div class="col-xs-12  col-md-6">
             <span class="label label-danger">Ad</span>
-             <h4>{{ucfirst(strtolower($advert->title))}}</h4>
+             <h4>{!! ucfirst(strtolower(htmlentities($advert->title))) !!}</h4>
              <p>
                 <img src="{{asset($advert->getAdvertImage())}}" alt="image" class="img-responsive img-rounded" width="320" height="240"">
                 </p>
@@ -45,14 +45,14 @@
              @if($advert->description)
               <p class="lead">Description:</p>
               
-               <p class="text-align">{!! str_replace($emotionfaces, $images, Linkify::process($advert->description))!!}</p>
+               <p class="text-align">{!! str_replace($emotionfaces, $images, Linkify::process(htmlentities($advert->description)))!!}</p>
               @else
               <p class="lead">Description:</p>
               <p class="text-align">Not Available</p>
               @endif
                @if($advert->price)
               <p class="lead">Price:</p>
-              <p class="text-align">{{$advert->price}}</p>
+              <p class="text-align">{!! htmlentities($advert->price) !!}</p>
               @else
               <p class="lead">Price:</p>
               <p class="text-align">Not Available</p>
@@ -64,7 +64,7 @@
                 @endif 
                 @if($advert->phone_number)
                <p class="lead">Contact:</p>
-              <p class="text-align">{{$advert->phone_number}}</p>
+              <p class="text-align">{!! htmlentities($advert->phone_number) !!}</p>
               @else
               <p class="lead">Contact:</p>
               <p class="text-align text-muted">Not Available</p>

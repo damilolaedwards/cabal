@@ -2,12 +2,13 @@
 					 <div class="panel panel-default">
 					  
                     <div class="panel-body less-padding">
-                    <a name="{{$post->id}}"></a>
+                    
                    
 
-					                 <p>{!! str_replace($emotionfaces, $images, Linkify::process($post->body))!!}</p>
+					                 <p><a name="{{$post->id}}"></a>{!! str_replace($emotionfaces, $images, Linkify::process(htmlentities($post->body)))!!}</p>
 					@if($post->postimage1 !== NULL)
                     <p>
+
                     <img src="{{asset($post->getFirstImage())}}" alt="image" class="img-responsive antimoderate" >
                     </p>
                     

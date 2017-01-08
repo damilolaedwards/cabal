@@ -80,8 +80,15 @@ class CampusPostController extends Controller
 			'user_id' => \Auth::user()->id,
 			]);
 
-			return redirect()->back();
-	
+			$campusPerPage = $request->input('campusperpage');
+			$campusPageCount = $request->input('campuspagecount');
+			$slug = \App\Campustopic::find($topicId)->slug;
+			$lastPageUrl = $request->input('lastpage');
+			$campusUrlplus = $lastPageUrl + 1;
+	if($campusPageCount == $campusPerPage){
+	return redirect('forum/' . $topicId . '/'. $slug .'/'. '?page=' . $campusUrlplus . '#Z4n3pdOAX'); 
+	}else
+	return redirect('forum/' . $topicId . '/'. $slug .'/'. '?page=' . $lastPageUrl . '#Z4n3pdOAX'); 
 	}
 
 	public function getUpdatePost($topicId, $topicSlug, $postId){
@@ -204,7 +211,8 @@ public function Like(Request $request){
 			'postimage3' => $path3,
 			'postfile'  => $filepath,
 		]);
-	$editURL = $request->input('campuspostredirect').'#'.$post->id;
+	$campuspostIDplus = $post->id - 1;
+	$editURL = $request->input('campuspostredirect').'#'.$campuspostIDplus;
 
 	return redirect($editURL); 
   }

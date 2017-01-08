@@ -3,22 +3,22 @@
 					 
                     <div class="panel-body less-padding">
                    
-					                 <p>{!! str_replace($emotionfaces, $images, Linkify::process($post->body))!!}</p>
+					                 <p><a name="{{$post->id}}"></a>{!! str_replace($emotionfaces, $images, Linkify::process(htmlentities($post->body)))!!}</p>
 				 @if($post->postimage1 !==NULL)
                     <p>
-                    <img src="{{asset($post->getFirstImage())}}" alt="image" class="img-responsive antimoderate" >
+                    <img src="{{asset($post->getFirstImage())}}" alt="image" class="img-responsive " >
                     </p>
                     
                     @endif
                     @if($post->postimage2 !== NULL)
                     <p>
-                    <img src="{{asset($post->getSecondImage())}}" alt="image" class="img-responsive antimoderate" >
+                    <img src="{{asset($post->getSecondImage())}}" alt="image" class="img-responsive" >
                     </p>
                     
                      @endif
                     @if($post->postimage3 !== NULL)
                     <p>
-                    <img src="{{asset($post->getThirdImage())}}" alt="image" class="img-responsive antimoderate">
+                    <img src="{{asset($post->getThirdImage())}}" alt="image" class="img-responsive ">
                     </p>
                     
                      @endif

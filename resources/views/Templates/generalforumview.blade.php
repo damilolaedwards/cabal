@@ -8,13 +8,13 @@
 <br/> 
 @include('partials.alerts') 
 @include('partials.forumheader')
-       
+              @if($generalposts->currentPage() == 1 )
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <p class="panel-title forum-title"><a href="#">{{ucfirst(strtolower($topic->title))}}</a>  <a href="{{ route('profile',['username' => \App\User::find($topic->user_id)->username])}}"><span class="usercolor">&nbsp;by &nbsp;{{\App\User::find($topic->user_id)->username}}</span></a></p>
                   </div>
                   <div class="panel-body less-padding" >
-                    <p>{!! str_replace($emotionfaces, $images, Linkify::process($topic->body))!!}</p>
+                    <p>{!! str_replace($emotionfaces, $images, Linkify::process(htmlentities($topic->body)))!!}</p>
                      @if($topic->forumimage1 !==NULL)
                     <p>
                     <img src="{{asset($topic->getFirstImage())}}" alt="image" class="img-responsive"  id="image"  >
@@ -57,10 +57,12 @@
                     <a href="#reply" class="pull-right">reply</a>
                    </div> 
                   </div>
+                  @endif
                   <div class="panel">
-                  @foreach($topic->posts as $post)
+                  @foreach($generalposts as $post)
                   @include('partials.forumpostsblock')
                   @endforeach
+                  <a name="4qRr5OAp"></a>
                   </div>
                  @if($topic->thread_closed == 0)
                    <div class="panel panel-default">
@@ -81,7 +83,7 @@
           <a name="reply"></a>
                     <div class="form-group {{ $errors->has('postbody') ?  ' has-error' : '' }}">
                     <a name="reply"></a>
-                  <textarea class="form-control" name="postbody" rows="3" id="myTextarea"></textarea>
+                  <textarea class="form-control" name="postbody" rows="3" id="myTextarea">{{{ Request::old('postbody') }}}</textarea>
                    @if($errors->has('postbody'))
               <span class="help-block">{{$errors->first('postbody')}}</span>
               @endif
@@ -121,9 +123,12 @@
               @endif
            </div>
            </div>
-
+          
 
                            <button type="submit" class="btn btn-primary pull-right">Reply</button>
+      <input type="hidden" name="lastcatperpage" value="{{$generalposts->perPage()}}">
+        <input type="hidden" name="lastcatpagecount" value="{{$generalposts->count()}}">
+          <input type="hidden" name="lastcatpage" value="{{$generalposts->lastPage()}}">
            <input type="hidden" name="_token" value="{{Session::token()}}">
 
                 </form>
@@ -157,6 +162,10 @@
    <br/>
 @endif
 @endif
+
+                <div class="text-center">
+                  {!! $generalposts->render() !!}
+                  </div>
                   </div>
 
      

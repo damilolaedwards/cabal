@@ -54,7 +54,7 @@
         <div class="panel panel-default">
          
           <div class="panel-body">
-          {!! str_replace($emotionfaces, $images, Linkify::process($user->personal_text))!!}
+          {!! str_replace($emotionfaces, $images, Linkify::process(htmlentities($user->personal_text)))!!}
           
           </div>
           </div>

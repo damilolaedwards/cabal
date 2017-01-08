@@ -215,10 +215,7 @@ footer{
 .profile{
 	padding: 0px
 }
-li{
-	display: inline-block;
-	list-style: none;
-}
+
 .message{
 	padding-top: 0px;
 	padding-bottom:0px;
@@ -296,3 +293,6 @@ a.text_undecor{
 text-decoration: none; color:#777;
 
 }
+#h2 { position:relative; width:145px; height:50px; overflow:hidden; }
+#h2 span { position:absolute; width:145px; height:50px; left:0; top:0;
+background:url("http://placehold.it/145x50") no-repeat; }

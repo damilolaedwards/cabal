@@ -8,7 +8,7 @@
 <div class="panel panel-default panel-body-general">
   <!-- Default panel contents -->
   <li class="list-group-item"><a class="btn btn-default" href="{{route('generaltopic.create',['name' => $category->name])}}" role="button">Start new discussion</a></li>
-  <div class="panel-heading font-less"><strong>All Topics</strong></div>
+  <div class="panel-heading font-less"><strong><a name="fbXy2yk"></a>All Topics</strong></div>
 <!-- List group -->
   <ul class="list-group">
    @if (!$category->topics->count())
@@ -19,12 +19,15 @@
               </div>
               </div>
               @else
-   @foreach($category->topics as $topic)
-    <li class="list-group-item clearfix"><a href="{{ route('generaltopic.view',['category' => $category->name, 'id' => $topic->id, 'slug' => $topic->slug]) }}" class="darkblue font-less" >{{ucfirst(strtolower($topic->title))}}</a><span class="pull-right"><small>&nbsp;By&nbsp;<strong ><a href="#">{{$topic->user->getUsername()}}</a></strong>&nbsp; {{$topic->created_at->diffForHumans()}}</small></span></li>
+   @foreach($generaltopics as $topic)
+    <li class="list-group-item clearfix"><a href="{{ route('generaltopic.view',['category' => $category->name, 'id' => $topic->id, 'slug' => $topic->slug]) }}" class="darkblue font-less" >{!! ucfirst(strtolower(htmlentities($topic->title)))!!}</a><span class="pull-right"><small>&nbsp;By&nbsp;<strong ><a href="#">{{$topic->user->getUsername()}}</a></strong>&nbsp; {{$topic->created_at->diffForHumans()}}</small></span></li>
     @endforeach
     @endif
   </ul>
   
+</div>
+<div class="text-center">
+{!! $generaltopics->render() !!}
 </div>
 </div>
 <footer>

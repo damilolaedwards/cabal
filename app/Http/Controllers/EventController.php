@@ -116,7 +116,8 @@ class EventController extends Controller
 			'institution_id' => \Auth::user()->institution_id,
 			
 			]);
-		return redirect()->route('event.index');
+		 $eventlocation = route('event.index').'#vSVHgbv9Xs';
+		return redirect($eventlocation);
 	}
 
 	public function Like(Request $request){

@@ -9,16 +9,17 @@ use Auth;
 class GeneralTopicController extends Controller
 {
 
-	public function getCategory($category){
+	public function getCategory($categoryname){
 
-		$category = \App\Category::where('name', $category)->first();
+	 $category = \App\Category::where('name', $categoryname)->first();
 		
 		if (!$category){
 		abort(404);
 	}
-	
 
-	return view('Templates.generalforumtopics')->with('category', $category);
+	$generaltopics = \App\GeneralTopic::where('category_id', $category->id)->orderBy('created_at', 'desc')->paginate(2);
+
+	return view('Templates.generalforumtopics')->with('category', $category)->with('generaltopics', $generaltopics);
 	}
 	public function createGeneralTopic($category){
 		if(Auth::user()->is_banned == 1){
@@ -93,8 +94,8 @@ class GeneralTopicController extends Controller
 			'body' => $request->input('forumbody'),
 			'user_id' => \Auth::user()->id,
 			]);
-
-			return redirect()->route('category',['category' => $category->name]);
+			$categorytopic = route('category',['category' => $category->name]).'#fbXy2yk';
+			return redirect($categorytopic);
 	}
 
 	public function viewGeneralTopic($category, $id){
@@ -107,8 +108,9 @@ class GeneralTopicController extends Controller
 		}
 		$topic= \App\GeneralTopic::where('id', $id)->first();
 		$category = \App\Category::where('name', $category)->first();
-	
-		return view('Templates.generalforumview')->with('topic', $topic)->with('category', $category)->with('images', $images)->with('emotions', $emotions)->with('emotionfaces', $emotionfaces);
+		$generalposts = \App\GeneralPost::where('topic_id', $topic->id)->paginate(40);
+
+		return view('Templates.generalforumview')->with('topic', $topic)->with('category', $category)->with('images', $images)->with('emotions', $emotions)->with('emotionfaces', $emotionfaces)->with('generalposts', $generalposts);
 	}
 	
 

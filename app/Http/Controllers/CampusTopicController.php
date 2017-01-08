@@ -78,8 +78,8 @@ class CampusTopicController extends Controller
 			'body' => $request->input('forumbody'),
 			'user_id' => \Auth::user()->id,
 			]);
-
-			return redirect()->route('homepage');
+			$campuslocation = route('homepage').'#vSVBfc9Xs';
+			return redirect($campuslocation);
 	}
 
 	public function viewCampusTopic($id){
@@ -94,8 +94,8 @@ class CampusTopicController extends Controller
 		}
 		$campustopic = \App\Campustopic::where('id', $id)->first();
 		$campusposts = \App\Campuspost::where('topic_id', $id)->paginate(40);
-
-		return view('Templates.forumview')->with('campustopic', $campustopic)->with('images', $images)->with('emotions', $emotions)->with('emotionfaces', $emotionfaces)->with('campusposts', $campusposts)->with('campustopiclikes', $campustopiclikes);
+		$lastPage = $campusposts->lastPage();
+		return view('Templates.forumview')->with('campustopic', $campustopic)->with('images', $images)->with('emotions', $emotions)->with('emotionfaces', $emotionfaces)->with('campusposts', $campusposts)->with('campustopiclikes', $campustopiclikes)->with('lastPage', $lastPage);
 	}
 
 	public function Like(Request $request){

@@ -78,8 +78,16 @@ public function GeneralPostReply(Request $request, $category, $topic_id){
 			'user_id' => \Auth::user()->id,
 			]);
 
-			return redirect()->back();
+			$slug = \App\GeneralTopic::find($topic_id)->slug;
+			$lastcatPageUrl = $request->input('lastcatpage');
+			$lastcatPagecount = $request->input('lastcatpagecount');
+			$lastcatperpage = $request->input('lastcatperpage');
+			$pageUrlplus = $lastcatPageUrl + 1;
+	if($lastcatPagecount == $lastcatperpage){
+	return redirect($category .'/'. $topic_id . '/'. $slug .'/'. '?page=' . $pageUrlplus . '#4qRr5OAp');	
+	}else		
 	
+	return redirect($category .'/'. $topic_id . '/'. $slug .'/'. '?page=' . $lastcatPageUrl . '#4qRr5OAp');
 	}
 	public function Like(Request $request){  
 
@@ -205,7 +213,11 @@ public function postGeneralPostUpdate(Request $request, $category, $topicId, $sl
 			'postimage3' => $path3,
 			'postfile'  => $filepath,
 		]);
-	return redirect($request->input('generalpostredirect')); 
+	$postIDplus = $post->id - 1;
+	$editpostURL = $request->input('generalpostredirect').'#'.$postIDplus;
+
+	return redirect($editpostURL); 
+	 
   }
  
 public function deleteFirstImage($postId){

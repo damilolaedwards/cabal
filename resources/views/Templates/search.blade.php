@@ -15,7 +15,8 @@
    @include('partials.searchblock')
    @endforeach
    <div class="text-center">
-   {!! $users->render() !!}
+   {!! $users->appends(Request::only('query'))->render() !!}
+   
    </div>
   </div>
 </div>

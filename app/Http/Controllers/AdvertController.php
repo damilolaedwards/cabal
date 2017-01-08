@@ -102,7 +102,8 @@ class AdvertController extends Controller
 			'institution_id' => \Auth::user()->institution_id
 
 			]);
-		return redirect()->route('advert.index');
+		$advertspot = route('advert.index').'#vqRxsv9Xs';
+		return redirect($advertspot);
 	}
 	public function Like(Request $request){
 		

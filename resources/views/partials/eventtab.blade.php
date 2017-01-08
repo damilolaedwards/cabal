@@ -19,7 +19,7 @@
              <a href="{{route('event.post')}}"><div class="btn btn-default">Post new Event</div></a> 
             </div>
             <div class="panel panel-default">
-            <div class="panel-heading"><strong class="font-less">All Events</strong></div></div>
+            <div class="panel-heading"><strong class="font-less"><a name="vSVHgbv9Xs"></a>All Events</strong></div></div>
             </div>
             <div class="list-group marketplace">
          @if (!$events->count())
@@ -38,13 +38,16 @@
               </a>
             </div>
             <div class="media-body">
-              <h4 class="media-heading">{{ucfirst(strtolower($event->name))}}<a class="btn btn-primary view_button" href="{{ route('event.view',['slug' => $event->getEventSlug(), 'id' => $event->getEventId()]) }}" role="button">View</a></h4>
+              <h4 class="media-heading">{!! ucfirst(strtolower(htmlentities($event->name))) !!}<a class="btn btn-primary view_button" href="{{ route('event.view',['slug' => $event->getEventSlug(), 'id' => $event->getEventId()]) }}" role="button">View</a></h4>
     
             </div>
           </div>
           </div>
            @endforeach
+           <a name="vSVHgbv9Xs"></a>
+           <div class="text-center">
            {!! $events->render() !!}
+           </div>
           @endif
           
           </div>

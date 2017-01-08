@@ -17,7 +17,7 @@
             <div class="col-xs-12  col-md-6">
             <span class="label label-primary">Event</span>
             
-             <h4>{{ucfirst(strtolower($event->name))}}</h4>
+             <h4>{!! ucfirst(strtolower(htmlentities($event->name))) !!}</h4>
            <p>
                 <img src="{{asset($event->getEventImage())}}" alt="image" width="320" height="240" class="img-responsive img-rounded" style="max-width: unset;">
                 </p> 
@@ -47,7 +47,7 @@
             <div class="col-md-6">
              @if($event->details)
               <p class="lead">Details:</p>
-              <p class="text-align">{!! str_replace($emotionfaces, $images, Linkify::process($event->details))!!}</p>
+              <p class="text-align">{!! str_replace($emotionfaces, $images, Linkify::process(htmlentities($event->details)))!!}</p>
 
               @else
               <p class="lead">Details:</p>
@@ -55,7 +55,7 @@
               @endif
                @if($event->location)
               <p class="lead">Location:</p>
-              <p class="text-align">{{$event->location}}</p>
+              <p class="text-align">{!! htmlentities($event->location) !!}</p>
                @else
               <p class="lead">Location:</p>
               <p class="text-align text-muted">Not Available</p>
@@ -65,7 +65,7 @@
                @if($event->time)
               
               <p class="lead">Time:</p>
-              <p class="text-align">{{$event->time}}</p>
+              <p class="text-align">{!! htmlentities($event->time) !!}</p>
               @else
               <p class="lead">Time:</p>
               <p class="text-align text-muted">Not Available</p>
@@ -83,7 +83,7 @@
               <a onclick="eventlike({{$event->id}})" class="btn btn-primary justify eventlike" data-id="{{$event->id}}" href="#" role="button"><span @if($eventlikecount  !== 0) class="badge" @endif id="{{$eventlike}}">@if($eventlikecount  !== 0) {{$eventlikecount}} @endif</span> Like&nbsp;<i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i></a>
               &nbsp;
               
-              <a onclick="eventgoing({{$event->id}})" class="btn btn-primary justify eventgoing" data-id="{{$event->id}}" href="#" role="button"><span @if($eventgoingcount  !== 0) class="badge" @endif id="{{$eventgoing}}">@if($eventgoingcount  !== 0)  {{$eventgoingcount}} @endif </span> &nbsp;Going</a>
+              <a onclick="eventgoing({{$event->id}})" class="btn btn-primary justify eventgoing" data-id="{{$event->id}}" href="#" role="button"><span @if($eventgoingcount  !== 0) class="badge" @endif id="{{$eventgoing}}">@if($eventgoingcount  !== 0)  {{$eventgoingcount}} @endif </span> Going &nbsp;<i class="fa fa-calendar" aria-hidden="true"></i></a>
               &nbsp;
 
              <a class="btn btn-success justify hidden-md hidden-lg" href="whatsapp://send?text={{$event->name. ' ' .Request::url()}}" data-action="share/whatsapp/share">Share on Whatsapp</a>

@@ -30,4 +30,15 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
     ];
+
+    public function handle($request) {
+    try {
+        return parent::handle($request);
+    }
+    catch (Exception $e) {
+        echo \View::make('errors.404');
+        exit;
+        // throw $e;
+    }
+}
 }

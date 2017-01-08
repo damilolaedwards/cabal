@@ -24,7 +24,7 @@
 </a>
 <div class="media-body">
 
-{{$message->body}}
+{!! htmlentities($message->body) !!}
 <br/>
 
 <p class="text-muted"><small>To: <a href="{{route('profile',['username' => \App\User::find($message->reciever_id)->username])}}"><span >{{\App\User::find($message->reciever_id)->username}}</span></a><a class="pull-right" href="{{route('message.sent.delete',['messageId' => $message->id])}}">&nbsp; delete </a> </small> <small class="pull-right"><span>{{ $message->created_at->diffForHumans() }} | </span></small></p>
