@@ -1,11 +1,11 @@
 @extends('maindefault')
 @section('title')
-    CampusCabal|Event report
+    CampusCabal | Event report
 @stop
 @section('content')
 @include('partials.navigation')
 <div class="row">
-@include('partials.eventinstitutionheader')
+
 <br/>
 <div class="panel panel-default">
   <div class="panel-body">

@@ -6,10 +6,8 @@
 @include('partials.navigation')
 
 <div class="row">
-
-<br/> 
-@include('partials.alerts') 
 @include('partials.forumheader')
+@include('partials.alerts') 
               @if($generalposts->currentPage() == 1 )
                 <div class="panel panel-default">
                   <div class="panel-heading">

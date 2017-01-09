@@ -1,11 +1,10 @@
 @extends('maindefault')
 @section('title')
-    CampusCabal|Advert report
+    CampusCabal | Advert report
 @stop
 @section('content')
 @include('partials.navigation')
 <div class="row">
-@include('partials.advertinstitutionheader')
 <br/>
 <div class="panel panel-default">
   <div class="panel-body">

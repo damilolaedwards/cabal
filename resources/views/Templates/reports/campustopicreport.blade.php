@@ -1,12 +1,12 @@
 @extends('maindefault')
 @section('title')
-    CampusCabal|Campustopic :: report
+    CampusCabal | Campustopic :: report
 @stop
 @section('content')
 @include('partials.navigation')
 
 <div class="row">
-<h3 class="text-center top lead">{{\App\Institution::find($topic->institution_id)->name}} Campus</h3>
+
 <br/>
 <div class="panel panel-default">
   <div class="panel-body">

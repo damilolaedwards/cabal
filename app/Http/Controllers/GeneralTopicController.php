@@ -17,7 +17,7 @@ class GeneralTopicController extends Controller
 		abort(404);
 	}
 
-	$generaltopics = \App\GeneralTopic::where('category_id', $category->id)->orderBy('created_at', 'desc')->paginate(2);
+	$generaltopics = \App\GeneralTopic::where('category_id', $category->id)->orderBy('created_at', 'desc')->paginate(30);
 
 	return view('Templates.generalforumtopics')->with('category', $category)->with('generaltopics', $generaltopics);
 	}
