@@ -1,6 +1,6 @@
 @extends('maindefault')
 @section('title')
-    CampusCabal | Campus forum::Create topic
+    CampusCabal | Campus forum :: Create topic
 @stop
 @section('content')
 @include('partials.navigation')

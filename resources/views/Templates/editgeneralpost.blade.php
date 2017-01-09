@@ -1,6 +1,6 @@
 @extends('maindefault')
 @section('title')
-    CampusCabal | General post::Edit
+    CampusCabal | General post :: Edit
 @stop
 @section('content')
 @include('partials.navigation')

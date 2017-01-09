@@ -1,6 +1,6 @@
  @extends('maindefault')
 @section('title')
-    CampusCabal | {{$event->name}}
+    CampusCabal | {{$event->name}} - Event
 @stop
 @section('content')
 @include('partials.navigation')

@@ -1,6 +1,6 @@
 @extends('maindefault')
 @section('title')
-    CampusCabal | {{$advert->title}}::Edit
+    CampusCabal | {{$advert->title}} :: Edit
 @stop
 @section('content')
 @include('partials.navigation')

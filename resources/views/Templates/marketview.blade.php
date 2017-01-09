@@ -1,6 +1,6 @@
  @extends('maindefault')
 @section('title')
-    CampusCabal | {{$advert->title}}
+    CampusCabal | {{$advert->title}} - Marketplace
 @stop
 @section('content')
 @include('partials.navigation')

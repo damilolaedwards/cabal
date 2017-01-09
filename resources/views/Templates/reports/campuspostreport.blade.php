@@ -1,6 +1,6 @@
 @extends('maindefault')
 @section('title')
-    CampusCabal|Campus post::report
+    CampusCabal|Campus post :: report
 @stop
 @section('content')
 @include('partials.navigation')
