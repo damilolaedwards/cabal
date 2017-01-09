@@ -1,5 +1,7 @@
 @extends('maindefault')
-
+@section('title')
+  CampusCabal | Edit profile
+@stop
 @section('content')
 @include('partials.profileactivenavigation')
 

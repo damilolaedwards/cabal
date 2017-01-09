@@ -1,5 +1,7 @@
 @extends('maindefault')
-
+@section('title')
+    CampusCabal | {{$category->name}}::Create topic
+@stop
 @section('content')
 @include('partials.navigation')
 <div class="row">

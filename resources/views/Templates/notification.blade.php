@@ -1,5 +1,7 @@
 @extends('maindefault')
-
+@section('title')
+    CampusCabal | Notifications
+@stop
 @section('content')
 @include('partials.notificationactivenavigation')
 <br class="visible-lg" />

@@ -1,5 +1,7 @@
 @extends('maindefault')
-
+@section('title')
+    CampusCabal | {{$category->name}}
+@stop
 @section('content')
 @include('partials.navigation')
 @include('partials.forumheader')

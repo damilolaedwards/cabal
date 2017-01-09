@@ -1,4 +1,7 @@
       @extends('homedefault')
+      @section('title')
+    CampusCabal | Register
+@stop
  @section('content')
    <div class="row">
         <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12 jumbotron">

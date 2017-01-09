@@ -1,4 +1,7 @@
 @extends('maindefault')
+@section('title')
+   CampusCabal | Home
+@stop
 @section('content')
 <br class="visible-lg" />
 @include('partials.navigation')

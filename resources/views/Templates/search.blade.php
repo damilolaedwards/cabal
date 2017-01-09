@@ -1,5 +1,7 @@
 @extends('maindefault')
-
+@section('title')
+    CampusCabal | Search results
+@stop
 @section('content')
 <br class="visible-lg" />
 @include('partials.navigation')

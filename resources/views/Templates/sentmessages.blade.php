@@ -1,5 +1,7 @@
  @extends('maindefault')
-
+@section('title')
+    CampusCabal | Sent messages
+@stop
 @section('content')
 @include('partials.messageactivenavigation')
 <br class="visible-lg"/>

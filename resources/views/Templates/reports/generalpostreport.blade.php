@@ -1,4 +1,7 @@
 @extends('maindefault')
+@section('title')
+    CampusCabal|Generalpost::report
+@stop
 @section('content')
 @include('partials.navigation')
 @include('partials.forumheader')

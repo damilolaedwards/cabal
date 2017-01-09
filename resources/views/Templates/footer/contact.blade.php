@@ -1,4 +1,7 @@
 @extends('maindefault')
+@section('title')
+    CampusCabal | Contact
+@stop
 @section('content')
 @include('partials.navigation')
 

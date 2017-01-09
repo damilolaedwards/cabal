@@ -13,7 +13,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
    
      <link href="{{ URL::asset('css/css/font-awesome.min.css') }}" rel="stylesheet">
-    <title>CampusCabal</title>
+   <title>@yield('title')</title>
+    
     <meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
   <meta property="og:type"          content="website" />
   <meta property="og:title"         content="Your Website Title" />

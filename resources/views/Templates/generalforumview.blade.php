@@ -1,5 +1,7 @@
 @extends('maindefault')
-
+@section('title')
+    CampusCabal | {{$topic->title}}
+@stop
 @section('content')
 @include('partials.navigation')
 

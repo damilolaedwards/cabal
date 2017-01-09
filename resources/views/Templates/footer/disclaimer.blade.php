@@ -1,4 +1,7 @@
 @extends('maindefault')
+@section('title')
+    CampusCabal | Disclaimer
+@stop
 @section('content')
 @include('partials.navigation')
 <br class=" visible-lg" />

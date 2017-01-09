@@ -1,5 +1,7 @@
           @extends('maindefault')
-
+@section('title')
+    CampusCabal | Create message
+@stop
 @section('content')
 @include('partials.messageactivenavigation')
           <div class="row">

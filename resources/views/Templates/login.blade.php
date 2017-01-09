@@ -1,4 +1,7 @@
 @extends('homedefault')
+@section('title')
+    CampusCabal | Login
+@stop
  @section('content')
  
      <div class="row">

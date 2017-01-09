@@ -1,5 +1,7 @@
 @extends('maindefault')
-
+@section('title')
+    CampusCabal | {{$advert->title}}::Edit
+@stop
 @section('content')
 @include('partials.navigation')
 <div class="row">

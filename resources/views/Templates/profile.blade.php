@@ -1,5 +1,7 @@
  @extends('maindefault')
-
+@section('title')
+    CampusCabal | profile
+@stop
 @section('content')
 @include('partials.profileactivenavigation')
 <br class="visible-lg" />

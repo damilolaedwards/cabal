@@ -1,4 +1,7 @@
 @extends('maindefault')
+@section('title')
+    CampusCabal | Create event
+@stop
 @section('content')
 @include('partials.navigation')
 <div class="row">

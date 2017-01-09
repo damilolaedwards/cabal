@@ -1,4 +1,7 @@
 @extends('homedefault')
+@section('title')
+    CampusCabal | Reset Password
+@stop
  @section('content')
 <div class="row" >
        
