@@ -1,4 +1,4 @@
-          @extends('maindefault')
+@extends('maindefault')
 @section('title')
     CampusCabal | Create message
 @stop

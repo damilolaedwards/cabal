@@ -1,5 +1,5 @@
-      @extends('homedefault')
-      @section('title')
+@extends('homedefault')
+@section('title')
     CampusCabal | Register
 @stop
  @section('content')
