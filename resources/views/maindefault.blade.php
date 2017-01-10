@@ -38,7 +38,7 @@
     <![endif]-->
   </head>
   <body>
-    
+    <div style="overflow:hidden">
     <nav class="navbar navbar-default header" role="navigation">
       <div class="container">
         <div class="navbar-header ">
@@ -117,6 +117,6 @@
         </script>
 
 
-    
+    </div>
     </body>
   </html>
