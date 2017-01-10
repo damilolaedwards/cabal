@@ -226,7 +226,7 @@ footer{
 .justify{
 	margin-bottom: 6px;
 }
-@media (min-width: 318px) {
+@media (min-width: 310px) {
   .nav-tabs.nav-justified > li {
     display: table-cell;
     width: 1%;
