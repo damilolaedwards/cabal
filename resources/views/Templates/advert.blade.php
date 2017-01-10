@@ -13,6 +13,8 @@
 
 @include('partials.adverttab')
 
+ <footer>
   @include('partials.footer')
+  </footer>
  
 @stop

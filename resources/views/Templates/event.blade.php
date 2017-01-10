@@ -11,6 +11,8 @@
  </div>
 @include('partials.eventtab')
 
+ <footer>
   @include('partials.footer')
+  </footer>
 
 @stop
