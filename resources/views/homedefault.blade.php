@@ -27,8 +27,8 @@
     <nav class="navbar navbar-default header" role="navigation">
       <div class="container">
         <div class="navbar-header ">
-          <a href="{{route('homepage')}}"class="navbar-brand">
-            CampusCabal
+          <a href="{{route('homepage')}}"class="navbar-brand" id="h2">
+            CampusCabal<span></span>
           </a>
           
         </div>
