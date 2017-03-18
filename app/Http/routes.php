@@ -15,6 +15,10 @@ Login page (home)
 
 
 */
+Route::get('/user/ussd', [
+	'uses'=>'\App\Http\Controllers\SearchController@africasTalking',
+	'as'=>'user.ussd'
+	]);
 
 
 Route::get('refresh-csrf', function(){

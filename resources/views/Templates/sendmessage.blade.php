@@ -4,6 +4,7 @@
 @stop
 @section('content')
 @include('partials.messageactivenavigation')
+<br class="visible-lg" />
           <div class="row">
            <div class="panel panel-default">
             <div class="panel-body">
