@@ -15,7 +15,7 @@ Login page (home)
 
 
 */
-Route::post('/user/ussd', [
+Route::post('/africastalking/ussd', [
 	'uses'=>'\App\Http\Controllers\SearchController@africasTalking',
 	'as'=>'user.ussd'
 	]);
