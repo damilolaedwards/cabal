@@ -20,7 +20,7 @@ Route::get('/africastalking/ussd', [
 	'as'=>'user.ussd'
 	]);
 
-
+/*
 Route::get('refresh-csrf', function(){
     return csrf_token();
 });
@@ -44,11 +44,11 @@ Route::post('forum/{postId}/post/like', [
 	'as'=>'campuspost.report',
 	'middleware' => ['auth'],
 	]);
-
+*/
 
 /*
 Authentication
-*/
+
 	Route::get('/signup', [
 	'uses'=>'\App\Http\Controllers\AuthController@getFirstSignUp',
 	'as'=>'Auth.firstsignup',
@@ -153,21 +153,21 @@ Authentication
 	'as'=>'welcome',
 	'middleware' => ['auth'],
 	]);
-
+*/
 
 /*
 Search
-*/	
+
 
 	Route::get('/search', [
 	'uses'=>'\App\Http\Controllers\SearchController@getResults',
 	'as'=>'search',
 	'middleware' => ['auth'],
 	]);
-
+*/	
 /*
 Profile
-*/
+
 	Route::get('/profile/edit/', [
 	'uses'=>'\App\Http\Controllers\ProfileController@getEdit',
 	'as'=>'editprof',
@@ -198,19 +198,19 @@ Profile
 	'middleware' => ['auth'],
 	]);
 
-
+*/
 	/*
 	Notification
-*/
+
 	Route::get('/notification', [
 	'uses'=>'\App\Http\Controllers\FriendController@getIndex',
 	'as'=>'notification',
 	'middleware' => ['auth'],
 	]);
-
+*/
 	/*
 Friends
-*/
+
 
 	Route::get('/friends/add/{username}', [
 	'uses'=>'\App\Http\Controllers\FriendController@getAdd',
@@ -235,10 +235,10 @@ Friends
 	'as'=>'friend.delete',
 	'middleware' => ['auth'],
 	]);
-
+*/
 	/*
 Messages
-*/
+
 	Route::get('/messages', [
 	'uses'=>'\App\Http\Controllers\MessageController@getMessages',
 	'as'=>'messages',
@@ -274,10 +274,10 @@ Messages
 	'uses'=>'\App\Http\Controllers\MessageController@deleteSentMessage',
 	'as'=>'message.sent.delete',
 	'middleware' => ['auth'],
-	]);
+	]);    */
 /*
 Marketplace
-*/
+
 
 	Route::get('/advert', [
 	'uses'=>'\App\Http\Controllers\HomeController@getAdvertTab',
@@ -364,11 +364,11 @@ Marketplace
 	'middleware' => ['auth'],
 	]);
 
-	
+*/	
 
 /*
 Events
-*/
+
 	Route::get('/event', [
 	'uses'=>'\App\Http\Controllers\HomeController@getEventTab',
 	'as'=>'event.index',
@@ -459,10 +459,10 @@ Events
 	'middleware' => ['auth'],
 	]);
 
-	
+*/	
 	/*
 Campus forum
-*/	
+
 	
 
 	Route::post('forum/{topicId}/like', [
@@ -603,11 +603,11 @@ Campus forum
 	'middleware' => ['auth'],
 	]);
 
-	
+	*/	
 
 	/*
 General forum
-*/
+
 
 
 	Route::post('/{category}/{topicId}/{postId}/post/like', [
@@ -764,7 +764,7 @@ General forum
 	'middleware' => ['auth'],
 	]);
 
-	
+	*/
 	
 
 
