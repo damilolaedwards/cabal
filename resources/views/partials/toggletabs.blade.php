@@ -37,7 +37,7 @@ to be considered for addition (and restyled) in version 1.1
               </div>
               @else
               @foreach ($topics as $topic)
-    <li class="list-group-item clearfix "><a href="{{ route('campustopic.view',['slug' => $topic->getTopicSlug(), 'id' => $topic->getTopicId()]) }}" class="darkblue font-less" >
+    <li class="list-group-item clearfix " style="text-align: center;"> >> <a href="{{ route('campustopic.view',['slug' => $topic->getTopicSlug(), 'id' => $topic->getTopicId()]) }}" class="darkblue font-less" >
 {!! ucfirst(strtolower(htmlentities($topic->title))) !!}
     </a><span class="pull-right"><small>&nbsp;By&nbsp;<strong class="text-muted"><a href="{{route('profile',['username' => \App\User::find($topic->user_id)->username])}}">{{$topic->user->getUsername()}}</a>&nbsp; &nbsp;</strong>{{$topic->created_at->diffForHumans()}}</small></span></li>
      @endforeach
