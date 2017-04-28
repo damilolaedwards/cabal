@@ -21,7 +21,7 @@ public function getProfile($username){
 		$emotions = array('smile', 'sad', 'arrow', 'cool', 'cry', 'grin', 'confused', 'bigeyes', 'evil', 'exclaim', 'geek', 'idea', 'lol', 'mad', 'green', 'neutral', 'question', 'happy', 'redface', 'rolleyes', 'surprised', 'devil', 'wink');
 		$images = [];
 		for ($i = 0; $i < count($emotions); $i++) {
-		$images[] = '<img src="/images/smilies/icon_'.$emotions[$i].'.gif " id="addSmiley" alt="$emotions[$i]" />';
+		$images[] = '<img src="/images/smilies/icon_'.$emotions[$i].'.gif " id="addSmiley" alt="" />';
 		}
 	return view('Templates.profile')->with('user', $user)->with('friends', $friends)->with('images', $images)->with('emotions', $emotions)->with('emotionfaces', $emotionfaces);
 }

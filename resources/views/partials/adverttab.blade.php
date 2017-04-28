@@ -1,6 +1,13 @@
 
-        <div class=row>
+        <div class="row text-align">
+{{--
+Institution header removed to avoid repitition 
+to be considered for addition (and restyled) in version 1.1
 @include('partials.institutionheader')
+
+
+--}}
+ 
 <br/>
   <!-- Nav tabs -->
   <div class="shown.bs.tab">

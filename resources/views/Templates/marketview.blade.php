@@ -1,6 +1,6 @@
  @extends('maindefault')
 @section('title')
-    CampusCabal | {{$advert->title}} - Marketplace
+    Mycampus | {{$advert->title}} - Marketplace
 @stop
 @section('content')
 @include('partials.navigation')
@@ -21,23 +21,23 @@
             <div class="col-xs-12  col-md-6">
             <span class="label label-danger">Ad</span>
              <h4>{!! ucfirst(strtolower(htmlentities($advert->title))) !!}</h4>
-             <p>
+             <p style="white-space: unset;">
                 <img src="{{asset($advert->getAdvertImage())}}" alt="image" class="img-responsive img-rounded" width="320" height="240"">
                 </p>
                 @if($advert->advertfile && $advert->advertfile !== NULL)
-                <p>
+                <p style="white-space: unset;">
              <img src="{{asset($advert->getAdvertFile())}}"><a href="{{substr(stristr($advert->advertfile, '-'), 1)}}" download="{{substr(stristr($advert->advertfile, '-'), 1)}}"> Download {{substr(stristr($advert->advertfile, '-'), 1)}}</a>
              </p>
               @endif
               
              <div id="moreimages">
              @if($advert->advertimage2 !== NULL && $advert->advertimage2 !== $advert->getAdvertImage())
-             <p>
+             <p style="white-space: unset;">
              <img src="{{asset($advert->getAdvertImage2())}}" alt="image"  class="img-responsive img-rounded" style="max-width: unset;">
              </p>
              @endif
               @if($advert->advertimage3 !== NULL && $advert->advertimage3 !== $advert->getAdvertImage())
-             <p>
+             <p style="white-space: unset;">
               <img src="{{asset($advert->getAdvertImage3())}}" alt="image"  class="img-responsive img-rounded" style="max-width: unset;">
               </p>
               @endif
@@ -47,13 +47,13 @@
              @if($advert->description)
               <p class="lead">Description:</p>
               
-               <p class="text-align">{!! str_replace($emotionfaces, $images, Linkify::process(htmlentities($advert->description)))!!}</p>
+               <p class="text-align panelverdana">{!! str_replace($emotionfaces, $images, Linkify::process(htmlentities($advert->description)))!!}</p>
               @else
               <p class="lead">Description:</p>
               <p class="text-align">Not Available</p>
               @endif
                @if($advert->price)
-              <p class="lead">Price:</p>
+              <p class="lead" >Price:</p>
               <p class="text-align">{!! htmlentities($advert->price) !!}</p>
               @else
               <p class="lead">Price:</p>

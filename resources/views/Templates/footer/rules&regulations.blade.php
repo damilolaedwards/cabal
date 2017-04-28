@@ -1,6 +1,6 @@
 @extends('maindefault')
 @section('title')
-    CampusCabal | Rules & Regulations
+    Mycampus | Rules & Regulations
 @stop
 @section('content')
 @include('partials.navigation')
@@ -18,14 +18,14 @@
   <li>Don’t insult people, their religion, or tribe. We don’t want people sustaining e-injuries.
 
 </li>
-  <li>Fraudulent schemes aren’t allowed on CampusCabal.
+  <li>Fraudulent schemes aren’t allowed on Mycampus.
 
 </li>
   <li>Don’t threaten other members. Unknowingly, they might be seated next to you. No one enjoys fights.</li>
   <li>We understand you need to get your product to others, post them at the appropriate section.
 
 </li>
-<li>Shun rumours, always verify information before posting them on CampusCabal.
+<li>Shun rumours, always verify information before posting them on Mycampus.
 </li>
 <li>Obey moderators, they’re your friends.
 </li>
@@ -41,7 +41,7 @@
   <li>Don’t share course materials with misleading content.
 
 </li>
-  <li>Don’t promote cultism on CampusCabal.
+  <li>Don’t promote cultism on Mycampus.
 
 </li>
   <li>Don’t scam aspirants of your institutions or other institutions.
@@ -78,7 +78,7 @@
 </li>
   <li>Events shouldn’t be reposted. Do you seek wider viewership? Don’t worry, just update it, and it’ll be seen by a larger audience.
 </li>
-  <li>Verify the type of event. Don’t invite people to dangerous events. We at CampusCabal are keen about your safety and that of others.</li>
+  <li>Verify the type of event. Don’t invite people to dangerous events. We at Mycampus are keen about your safety and that of others.</li>
   <li>Don’t post past events. Invite others earlier. They, too, may wish to be in attendance.
 </li>
 

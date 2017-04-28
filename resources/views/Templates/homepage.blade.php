@@ -1,15 +1,23 @@
 @extends('maindefault')
 @section('title')
-   CampusCabal | Home
+   Mycampus | Home
 @stop
 @section('content')
 <br class="visible-lg" />
 @include('partials.navigation')
-@include('partials.presentation')
+{{--
 
-<div style="padding-top: 10px;">
+@include('partials.presentation')
+--version 1.0
+This is the general forum block removed for simplicity
+   to be added in version 1.1
+
+--}}
+ 
+
+
  @include('partials.alerts')
- </div>
+ 
 @include('partials.toggletabs')
 <footer>
   @include('partials.footer')

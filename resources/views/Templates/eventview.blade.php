@@ -1,6 +1,6 @@
  @extends('maindefault')
 @section('title')
-    CampusCabal | {{$event->name}} - Event
+    Mycampus | {{$event->name}} - Event
 @stop
 @section('content')
 @include('partials.navigation')
@@ -20,11 +20,11 @@
             <span class="label label-primary">Event</span>
             
              <h4>{!! ucfirst(strtolower(htmlentities($event->name))) !!}</h4>
-           <p>
+           <p style="white-space: unset;">
                 <img src="{{asset($event->getEventImage())}}" alt="image" width="320" height="240" class="img-responsive img-rounded" style="max-width: unset;">
                 </p> 
               @if($event->eventfile !== NULL)
-              <p>
+              <p style="white-space: unset;">
              <img src="{{asset($event->getEventFile())}}"><a href="{{substr(stristr($event->eventfile, '-'), 1)}}" download="{{substr(stristr($event->eventfile, '-'), 1)}}"> Download {{substr(stristr($event->eventfile, '-'), 1)}}</a>
             </p>
               @endif
@@ -33,13 +33,13 @@
            @endif
              <div id="moreimages">
              @if($event->eventimage_2 !==NULL && $event->eventimage_2 !== $event->getEventImage())
-            <p>
+            <p style="white-space: unset;">
              <img src="{{asset($event->getEventImage2())}}" alt="image" width="320" height="240" class="img-responsive img-rounded" style="max-width: unset;">
              </p>
              @endif
               @if($event->eventimage_3 !== NULL && $event->eventimage_3 !== $event->getEventImage())
              
-            <p>
+            <p style="white-space: unset;">
               <img src="{{asset($event->getEventImage3())}}" alt="image" width="320" height="240" class="img-responsive img-rounded" style="max-width: unset;">
               </p>
               @endif
@@ -49,7 +49,7 @@
             <div class="col-md-6">
              @if($event->details)
               <p class="lead">Details:</p>
-              <p class="text-align">{!! str_replace($emotionfaces, $images, Linkify::process(htmlentities($event->details)))!!}</p>
+              <p class="text-align panelverdana">{!! str_replace($emotionfaces, $images, Linkify::process(htmlentities($event->details)))!!}</p>
 
               @else
               <p class="lead">Details:</p>

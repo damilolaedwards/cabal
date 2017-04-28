@@ -92,9 +92,9 @@ public function postFirstSignUp(Request $request)
 			]);
 
 		Message::create([
-			'sender_id' => 2,
+			'sender_id' => 1,
 			'reciever_id' => User::where('username', $request->input('username'))->firstOrFail()->id,
-			'body' => "Hello, Welcome to CampusCabal! \n Here is a quick guide though CampusCabal.\n CampusCabal is an online community for students of all tertiary institutions in Nigeria:<ul> <li>Meet people, discuss a number of topics on the General discussion forum.</li> <li>Don't be left out! discuss your campus related topic at the Campus forum.</li> <li>Sell and buy goods at the Campus Market place section.</li> <li>Don’t miss any event, post and check for campus events at the Events section.</li> </ul> Everything just perfectly works in your favour.\n <p>NOTE: Topics and posts posted at the general discussion forum would be visible to all members of CampusCabal irrespective of their institutions while posts in the campus forum, marketplace and events are only visible to members of your Institution.</p> ",
+			'body' => "Hello, Welcome to Mycampus! \n Here is a quick guide though Mycampus.\n Mycampus is an online community for students of all tertiary institutions in Nigeria:<ul> <li>Meet people, discuss a number of topics on the General discussion forum.</li> <li>Don't be left out! discuss your campus related topic at the Campus forum.</li> <li>Sell and buy goods at the Campus Market place section.</li> <li>Don’t miss any event, post and check for campus events at the Events section.</li> </ul> Everything just perfectly works in your favour.\n <p>NOTE: Topics and posts posted at the general discussion forum would be visible to all members of Mycampus irrespective of their institutions while posts in the campus forum, marketplace and events are only visible to members of your Institution.</p> ",
 			]);
 		 $mydata = array(
 		'username' => $request->input('username'), 
@@ -102,8 +102,8 @@ public function postFirstSignUp(Request $request)
 		);
 		 $request->session()->flush();
 		Mail::send('email.welcome', $mydata, function ($message)  use ($mydata){
-    $message->from('noreply@CampusCabal.com');
-    $message->subject('Welcome to CampusCabal');
+    $message->from('noreply@mycampus.ng');
+    $message->subject('Welcome to Mycampus');
     $message->to($mydata['email']);
 		
 		

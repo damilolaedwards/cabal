@@ -1,6 +1,6 @@
 @extends('maindefault')
 @section('title')
-    CampusCabal | Create message
+    Mycampus | Create message
 @stop
 @section('content')
 @include('partials.messageactivenavigation')

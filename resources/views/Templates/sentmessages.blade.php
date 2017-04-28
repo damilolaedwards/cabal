@@ -1,6 +1,6 @@
  @extends('maindefault')
 @section('title')
-    CampusCabal | Sent messages
+    Mycampus | Sent messages
 @stop
 @section('content')
 @include('partials.messageactivenavigation')

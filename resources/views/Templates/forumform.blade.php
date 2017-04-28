@@ -1,12 +1,12 @@
 @extends('maindefault')
 @section('title')
-    CampusCabal | Campus forum :: Create topic
+    Mycampus | Campus forum :: Create topic
 @stop
 @section('content')
 @include('partials.navigation')
 <div class="row">
-@include('partials.institutionheader')
-<br/>
+
+<br class="visible-lg"/>
          <div class="panel panel-default">
         <div class="panel-body">
          <p class="lead">*New Discussion</p>

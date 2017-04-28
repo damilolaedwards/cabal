@@ -20,7 +20,7 @@ class EventController extends Controller
 		$emotions = array('smile', 'sad', 'arrow', 'cool', 'cry', 'grin', 'confused', 'bigeyes', 'evil', 'exclaim', 'geek', 'idea', 'lol', 'mad', 'green', 'neutral', 'question', 'happy', 'redface', 'rolleyes', 'surprised', 'devil', 'wink');
 		$images = [];
 		for ($i = 0; $i < count($emotions); $i++) {
-		$images[] = '<img src="/images/smilies/icon_'.$emotions[$i].'.gif " id="addSmiley" alt="$emotions[$i]" />';
+		$images[] = '<img src="/images/smilies/icon_'.$emotions[$i].'.gif " id="addSmiley" alt="" />';
 		}
 		return view('Templates.eventview')->with('event',$event)->with('images', $images)->with('emotions', $emotions)->with('emotionfaces', $emotionfaces)->with('eventlikecount', $eventlikecount)->with('eventgoingcount', $eventgoingcount);
 
@@ -385,7 +385,7 @@ public function postReport(Request $request){
 		'reporturl' => $request->reporturl,
 		);
 	 Mail::send('email.event', $data, function ($message)  use ($data){
-    $message->from('noreply@campuscabal.com');
+    $message->from('noreply@mycampus.ng');
     $message->subject('Report');
     $message->to('damilolaedwards@gmail.com');
 });

@@ -1,12 +1,12 @@
 @extends('homedefault')
 @section('title')
-    CampusCabal | Login
+    Mycampus | Login
 @stop
  @section('content')
  
      <div class="row">
         <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12 jumbotron">
-          <p class="lead">Login to CampusCabal</p>
+          <p class="lead">Login to Mycampus</p>
           <form class="form-vertical" role="form" method="post" action="{{route('Auth.login')}}">
             <div class="form-group {{ $errors->has('email') ?  ' has-error' : '' }}" >
               <label for="loginEmail" class="control-label">Email / Username</label>
