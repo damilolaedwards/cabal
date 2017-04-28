@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="csrf_token" content="{{ csrf_token() }}">
     <meta name="author" content="">
-    <title>CampusCabal</title>
+    <title>Mycampus</title>
     <!-- Bootstrap Core CSS -->
   
    <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
@@ -28,7 +28,7 @@
       <div class="container">
         <div class="navbar-header ">
           <a href="{{route('Auth.login')}}"class="navbar-brand">
-            CampusCabal
+            Mycampus
           </a>
           
         </div>

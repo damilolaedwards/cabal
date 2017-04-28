@@ -1,6 +1,6 @@
 @extends('maindefault')
 @section('title')
-    CampusCabal | Advert report
+    Mycampus | Advert report
 @stop
 @section('content')
 @include('partials.navigation')

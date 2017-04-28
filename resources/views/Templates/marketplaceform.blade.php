@@ -1,11 +1,11 @@
 @extends('maindefault')
 @section('title')
-    CampusCabal | Create advert
+    Mycampus | Create advert
 @stop
 @section('content')
 @include('partials.navigation')
 <div class="row">
-@include('partials.institutionheader')
+
         <h3 class="text-center">Marketplace</h3>
      <div class="panel panel-default panel-forum">
         <div class="panel-body">

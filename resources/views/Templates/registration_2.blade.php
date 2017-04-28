@@ -1,6 +1,6 @@
 @extends('homedefault')
 @section('title')
-    CampusCabal | Register
+    Mycampus | Register
 @stop
  @section('content')
    <div class="row">

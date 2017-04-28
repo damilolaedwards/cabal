@@ -1,6 +1,6 @@
 @extends('maindefault')
 @section('title')
-    CampusCabal | {{$category->name}} :: Create topic
+    Mycampus | {{$category->name}} :: Create topic
 @stop
 @section('content')
 @include('partials.navigation')

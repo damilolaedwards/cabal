@@ -27,7 +27,7 @@ button {
                         <td style="padding: 25px 0; text-align: center;">
                             <a style="font-family: Arial, &#039;Helvetica &#039;, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #2F3133; text-decoration: none; text-shadow: 0 1px 0 white;" href="{{url('/')}}" target="_blank">
                          
-       CampusCabal
+       Mycampus
                             </a>
                        
  </td>
@@ -54,7 +54,7 @@ button {
    
                                                                            
       <p style="margin-top: 0; color: #74787E; font-size: 16px; line-height: 1.5em;">
-                                               Hi {{$username}}, we’re glad you took out time to sign up at CampusCabal. Your account has been successfully created. Take a step into an entirely new world. Hop in the moving train, login today via {{url('/')}}.
+                                               Hi {{$username}}, we’re glad you took out time to sign up at Mycampus. Your account has been successfully created. Take a step into an entirely new world. Hop in the moving train, login today via {{url('/')}}.
                                             </p>
                 
                         
@@ -62,7 +62,7 @@ button {
 
                                         <p style="margin-top: 0; color: #74787E; font-size: 16px; line-height: 1.5em;">
                           
-                  Regards,<br>Your friends at CampusCabal
+                  Regards,<br>Your friends at Mycampus
                                    
      </p>
                                         
@@ -89,7 +89,7 @@ style="font-family: Arial, &#039;Helvetica &#039;, Helvetica, sans-serif; color:
                          <p style="margin-top: 0; color: #74787E; font-size: 12px; line-height: 1.5em;">
                                          
    &copy; {{date('Y')}}
-                                            <a style="color: #3869D4;" href="https://campuscabal.com" target="_blank">CampusCabal</a>
+                                            <a style="color: #3869D4;" href="https://mycampus.ng" target="_blank">Mycampus</a>
                                             All rights reserved.
     
                                     </p>

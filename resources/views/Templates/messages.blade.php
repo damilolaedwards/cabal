@@ -1,6 +1,6 @@
  @extends('maindefault')
 @section('title')
-    CampusCabal | Messages
+    Mycampus | Messages
 @stop
 @section('content')
 @include('partials.messageactivenavigation')
@@ -25,13 +25,12 @@
 <img class= "media-object" alt="{{\App\User::find($message->sender_id)->username}}" src="{{asset(\App\User::find($message->sender_id)->getProfileImage())}}">
 </a>
 <div class="media-body">
-<p>
+<p class="panelverdana">
  {!! html_entity_decode($message->body) !!}
 </p>
 <p class="text-muted"><small><a href="{{ route('profile',['username' => \App\User::find($message->sender_id)->username]) }}">{{\App\User::find($message->sender_id)->username}}</a> | {{ $message->created_at->diffForHumans() }}</small>
 <span class="pull-right">
-<a href="{{route('message.create',['username' => \App\User::find($message->sender_id)->username])}}">reply </a>|
-<a href="{{route('message.delete',['messageId' => $message->id])}}"> delete</a>
+<a href="{{route('message.create',['username' => \App\User::find($message->sender_id)->username])}}">reply </a> | <a href="{{route('message.delete',['messageId' => $message->id])}}"> delete</a>
 
 </span>
 </p>

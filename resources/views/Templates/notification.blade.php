@@ -1,6 +1,6 @@
 @extends('maindefault')
 @section('title')
-    CampusCabal | Notifications
+    Mycampus | Notifications
 @stop
 @section('content')
 @include('partials.notificationactivenavigation')

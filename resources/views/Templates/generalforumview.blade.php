@@ -1,6 +1,6 @@
 @extends('maindefault')
 @section('title')
-    CampusCabal | {{$topic->title}} - {{$category->name}}
+    Mycampus | {{$topic->title}} - {{$category->name}}
 @stop
 @section('content')
 @include('partials.navigation')
@@ -11,30 +11,30 @@
               @if($generalposts->currentPage() == 1 )
                 <div class="panel panel-default">
                   <div class="panel-heading">
-                    <p class="panel-title forum-title"><a href="#">{{ucfirst(strtolower($topic->title))}}</a>  <a href="{{ route('profile',['username' => \App\User::find($topic->user_id)->username])}}"><span class="usercolor">&nbsp;by &nbsp;{{\App\User::find($topic->user_id)->username}}</span></a></p>
+                    <p class="panel-title forum-title"><a href="#">{{ucfirst(strtolower(htmlentities($topic->title)))}}</a>  <a href="{{ route('profile',['username' => \App\User::find($topic->user_id)->username])}}"><span class="usercolor">&nbsp;by &nbsp;{{\App\User::find($topic->user_id)->username}}</span></a></p>
                   </div>
-                  <div class="panel-body less-padding" >
-                    <p>{!! str_replace($emotionfaces, $images, Linkify::process(htmlentities($topic->body)))!!}</p>
+                  <div class="panel-body less-padding " >
+                    <p class="panelverdana">{!! str_replace($emotionfaces, $images, Linkify::process($topic->linkifyYouTubeURLs(htmlentities($topic->body))))!!}</p>
                      @if($topic->forumimage1 !==NULL)
-                    <p>
+                    <p style="line-height: 5px;">
                     <img src="{{asset($topic->getFirstImage())}}" alt="image" class="img-responsive"  id="image"  >
                     </p>
                    
                     @endif
                     @if($topic->forumimage2 !==NULL)
-                    <p>
+                    <p style="line-height: 5px;">
                     <img src="{{asset($topic->getSecondImage())}}" alt="image" class="img-responsive "  id="image"  >
                     </p>
                     
                      @endif
                     @if($topic->forumimage3 !==NULL)
-                    <p>
+                    <p style="line-height: 5px;">
                     <img src="{{asset($topic->getThirdImage())}}" alt="image" class="img-responsive " >
                     </p>
                     
                      @endif
                       @if($topic->forumfile !== NULL)
-                      <p>
+                      <p style="line-height: 5px;">
              <img src="{{asset($topic->getTopicFile())}}"><a href="{{substr(stristr($topic->forumfile, '-'), 1)}}" download="{{substr(stristr($topic->forumfile, '-'), 1)}}"> Download {{substr(stristr($topic->forumfile, '-'), 1)}}</a>
             </p>
               @endif
@@ -88,7 +88,7 @@
               <span class="help-block">{{$errors->first('postbody')}}</span>
               @endif
                 </div>
-                <p id="show" style="color: #337ab7">Add file</p>
+                <p id="show" style="color: #337ab7"><b>Add file</b></p>
                 <div id="fileinput" style="display: none">
                  <label for="postimage1" class="control-label">Add image</label>
             <div class="form-group {{ $errors->has('postimage1') ?  ' has-error' : '' }}">

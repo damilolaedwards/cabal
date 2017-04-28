@@ -8,7 +8,6 @@
     <meta name="csrf_token" content="{{ csrf_token() }}">
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Rasa:500" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
    
@@ -42,8 +41,8 @@
     <nav class="navbar navbar-default header" role="navigation">
       <div class="container">
         <div class="navbar-header ">
-          <a href="{{route('homepage')}}"class="navbar-brand " id="h2">
-          CampusCabal<span></span>
+          <a href="{{route('homepage')}}" class="navbar-brand" id="h2">
+          Mycampus<span></span>
             
           </a>
            

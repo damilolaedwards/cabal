@@ -104,7 +104,7 @@ class GeneralTopicController extends Controller
 		$emotions = array('smile', 'sad', 'arrow', 'cool', 'cry', 'grin', 'confused', 'bigeyes', 'evil', 'exclaim', 'geek', 'idea', 'lol', 'mad', 'green', 'neutral', 'question', 'happy', 'redface', 'rolleyes', 'surprised', 'devil', 'wink');
 		$images = [];
 		for ($i = 0; $i < count($emotions); $i++) {
-		$images[] = '<img src="/images/smilies/icon_'.$emotions[$i].'.gif " id="addSmiley" alt="$emotions[$i]" />';
+		$images[] = '<img src="/images/smilies/icon_'.$emotions[$i].'.gif " id="addSmiley" alt="" />';
 		}
 		$topic= \App\GeneralTopic::where('id', $id)->first();
 		$category = \App\Category::where('name', $category)->first();
@@ -329,7 +329,7 @@ public function postReport(Request $request){
 		'reporturl' => $request->reporturl,
 		);
 	 Mail::send('email.generaltopic', $data, function ($message)  use ($data){
-    $message->from('noreply@campuscabal.com');
+    $message->from('noreply@mycampus.ng');
     $message->subject('Report');
     $message->to('damilolaedwards@gmail.com');
 });

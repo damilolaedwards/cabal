@@ -294,7 +294,7 @@ public function postReport(Request $request){
 		'reporturl' => $request->reporturl,
 		);
 	 Mail::send('email.generaltopic', $data, function ($message)  use ($data){
-    $message->from('noreply@campuscabal.com');
+    $message->from('noreply@mycampus.ng');
     $message->subject('Report');
     $message->to('damilolaedwards@gmail.com');
 });

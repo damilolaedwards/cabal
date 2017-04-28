@@ -1,6 +1,6 @@
 @extends('maindefault')
 @section('title')
-    CampusCabal | Search results
+    Mycampus | Search results
 @stop
 @section('content')
 <br class="visible-lg" />

@@ -1,6 +1,6 @@
 @extends('maindefault')
 @section('title')
-    CampusCabal | {{$event->name}} :: Edit
+    Mycampus | {{$event->name}} :: Edit
 @stop
 @section('content')
 @include('partials.navigation')

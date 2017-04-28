@@ -12,7 +12,11 @@
   
    <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
-    
+    <style type="text/css">
+      html, body {
+  overflow-x: hidden;
+}
+    </style>
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('styles.css') }}">
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -27,8 +31,8 @@
     <nav class="navbar navbar-default header" role="navigation">
       <div class="container">
         <div class="navbar-header ">
-          <a href="{{route('homepage')}}"class="navbar-brand" id="h2">
-            CampusCabal<span></span>
+          <a href="{{route('homepage')}}" class="navbar-brand" id="h2">
+            Mycampus<span></span>
           </a>
           
         </div>

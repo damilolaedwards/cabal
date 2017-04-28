@@ -1,6 +1,6 @@
  @extends('maindefault')
 @section('title')
-    CampusCabal | profile
+    Mycampus | profile
 @stop
 @section('content')
 @include('partials.profileactivenavigation')
@@ -33,7 +33,9 @@
         <div class="col-md-8 col-md-offset-2 col-xs-12">
         
            <br/>
-        @if (Auth::user()->hasFriendRequestsPending($user))
+           {{--
+            Add friend functionality to be replaced with followers in version 1.1
+            @if (Auth::user()->hasFriendRequestsPending($user))
         <p class="text-muted">Waiting for {{$user->getUsername() }} to accept your request.</p>
         @elseif(Auth::user()->hasFriendRequestRecieved($user))
         <p>
@@ -48,6 +50,8 @@
          </div>
          </p>
         @endif
+           --}}
+        
        
          @if ($user->personaltext($user))
        
@@ -77,6 +81,8 @@
           </div>
            @endif
             <br/>
+            {{--
+            friends to be replaced with followers in version 1.1
           <div class="list-group panel-forum">
         <li class="list-group-item active">
 
@@ -98,6 +104,9 @@
               @endif
           
            </div>
+
+            --}}
+          
         
         
         @if(Auth::user()->role == 'administrator' && $user->is_banned == 0 && $user->id != Auth::user()->id)

@@ -21,7 +21,7 @@
           <div class="text-center pull-up ">
             
 
-          <small>&nbsp; &copy CampusCabal {{date('Y')}}. All Rights Reserved </small>
+          <small>&nbsp; &copy Mycampus {{date('Y')}}. All Rights Reserved </small>
        
          <ul class="list-inline">
          <li><small><a href="{{route('disclaimer')}}">Disclaimer</a></small></li>

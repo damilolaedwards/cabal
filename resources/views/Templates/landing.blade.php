@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CampusCabal</title>
+    <title>Mycampus</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -37,11 +37,12 @@
 
 
     <!-- Header -->
+   
     <header id="top" class="header">
     
         <div class="text-vertical-center ">
             
-            <h1 class="landing" style="color: #d7d8aa;">Welcome to CampusCabal</h1>
+            <h1 class="landing" style="color: #d7d8aa;">Welcome to Mycampus</h1>
            
             <br>
             <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
@@ -55,6 +56,7 @@
             </div>
         </div>
     </header>
+
 
     <!-- About -->
     <section id="about" class="about">
@@ -154,7 +156,7 @@
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     
                     <hr class="small">
-                    <p class="text-muted">Copyright &copy; CampusCabal {{date('Y')}}</p>
+                    <p class="text-muted">Copyright &copy; Mycampus {{date('Y')}}</p>
                 </div>
             </div>
         </div>

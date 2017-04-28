@@ -6,7 +6,7 @@ class InstitutionsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
+     * Only unilorin is available for now, others join in version 1.1
      * @return void
      */
     public function run()
@@ -14,7 +14,7 @@ class InstitutionsTableSeeder extends Seeder
         DB::table('institutions')->insert(array(
 
 
-             array(
+             /*array(
                 'id' => 1,
                 'name' => 'Abdu Gusau Polytechnic',
                 ),
@@ -1565,12 +1565,12 @@ class InstitutionsTableSeeder extends Seeder
                 array(
                 'id' => 371,
                 'name' => 'University of Ibadan',
-                ),
+                ),*/
                 array(
                 'id' => 372,
                 'name' => 'University of Ilorin',
                 ),
-                array(
+                /*array(
                 'id' => 373,
                 'name' => 'University of Jos',
                 ),
@@ -1660,7 +1660,7 @@ class InstitutionsTableSeeder extends Seeder
                 ),
                
            
-           
+           */
            
 
         ));

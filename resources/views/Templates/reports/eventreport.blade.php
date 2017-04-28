@@ -1,6 +1,6 @@
 @extends('maindefault')
 @section('title')
-    CampusCabal | Event report
+    Mycampus | Event report
 @stop
 @section('content')
 @include('partials.navigation')
