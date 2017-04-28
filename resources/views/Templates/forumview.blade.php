@@ -21,7 +21,8 @@
         @if($campusposts->currentPage() == 1 )
                 <div class="panel panel-default">
                   <div class="panel-heading">
-                    <p class="panel-title forum-title"><a href="#">{{ucfirst(strtolower(htmlentities($campustopic->title)))}}</a>  <a href="{{ route('profile',['username' => \App\User::find($campustopic->user_id)->username])}}"><span class="usercolor">&nbsp;by &nbsp;{{\App\User::find($campustopic->user_id)->username}}</span></a></p>
+    <p class="panel-title forum-title"><a href="#" style="font-weight: 700;
+    text-decoration: underline;">{{ucfirst(strtolower(htmlentities($campustopic->title)))}}</a>  <a href="{{ route('profile',['username' => \App\User::find($campustopic->user_id)->username])}}"><span class="usercolor">&nbsp;by &nbsp;{{\App\User::find($campustopic->user_id)->username}} &nbsp;<small > {{$campustopic->created_at->diffForHumans()}} </small></span></a></p>
                   </div>
                   
                   <div class="panel-body less-padding" data-topicid="{{$campustopic->id}}">
@@ -50,7 +51,7 @@
              <img src="{{asset($campustopic->getTopicFile())}}"><a href="{{substr(stristr($campustopic->forumfile, '-'), 1)}}" download="{{substr(stristr($campustopic->forumfile, '-'), 1)}}"> Download {{substr(stristr($campustopic->forumfile, '-'), 1)}}</a>
             </p>
               @endif
-                    <span class="pull-right text-muted"><small>{{ $campustopic->created_at->diffForHumans() }}</small></span>
+                   
                   </div>
                   <?php
                   $campuslikes = 'campustopiclike'.$campustopic->id;
