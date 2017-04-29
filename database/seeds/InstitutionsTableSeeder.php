@@ -11,6 +11,7 @@ class InstitutionsTableSeeder extends Seeder
      */
     public function run()
     {
+        
         DB::table('institutions')->insert(array(
 
 
