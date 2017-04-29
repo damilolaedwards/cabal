@@ -8,7 +8,7 @@
          
 <div class="row">
 
-@if(Auth::user()->institution_id !== $advert->institution_id)
+@if(Auth::check() && Auth::user()->institution_id !== $advert->institution_id)
           @include('partials.advertinstitutionheader')
           @endif
         <h3 class="text-center text-muted">Campus Marketplace</h3>
@@ -22,7 +22,7 @@
             <span class="label label-danger">Ad</span>
              <h4>{!! ucfirst(strtolower(htmlentities($advert->title))) !!}</h4>
              <p style="white-space: unset;">
-                <img src="{{asset($advert->getAdvertImage())}}" alt="image" class="img-responsive img-rounded" width="320" height="240"">
+                <img src="{{asset($advert->getAdvertImage())}}" alt="image" class="img-responsive img-rounded" width="380" height="260"">
                 </p>
                 @if($advert->advertfile && $advert->advertfile !== NULL)
                 <p style="white-space: unset;">
@@ -81,14 +81,14 @@
 
             <div class="text-center" value="{{$advert->id}}">
             &nbsp;
-             
+             @if(Auth::check())
             <a onclick="advertlike({{$advert->id}})" class="btn btn-primary justify advertlike" data-id="{{$advert->id}}" href="#" role="button">&nbsp; <span @if($advertlikecount  !== 0) class="badge" @endif id="{{$advertlike}}">@if($advertlikecount  !== 0) {{$advertlikecount}} @endif </span> Like&nbsp;<i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i></a>
-           
+           @endif
               &nbsp;
               <a class="btn btn-success justify hidden-md hidden-lg" href="whatsapp://send?text={{$advert->title. ' ' .Request::url()}}" data-action="share/whatsapp/share">Share on Whatsapp</a>
              
               &nbsp;
-              @if(Auth::user()->id === $advert->user_id || Auth::user()->role == 'administrator')
+              @if(Auth::check() && (Auth::user()->id === $advert->user_id || Auth::user()->role == 'administrator'))
               <a class="btn btn-info justify" href="{{route('advert.edit',['advertId' => $advert->id, 'slug' => $advert->slug])}}" role="button"><i class="fa fa-pencil-square-o fa-lg"></i> Edit</a>
                &nbsp;
               <a class="btn btn-danger justify" href="{{route('advert.delete',['advertId' => $advert->id, 'slug' => $advert->slug])}}" role="button"><i class="fa fa-trash-o fa-lg"></i> Delete</a>

@@ -6,7 +6,7 @@
 @include('partials.navigation')
 <div class="row">
 
-<br class="visible-lg"/>
+<br class="visible-lg visible-md"/>
          <div class="panel panel-default">
         <div class="panel-body">
          <p class="lead">*New Discussion</p>

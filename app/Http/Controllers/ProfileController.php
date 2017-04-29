@@ -9,8 +9,6 @@ use App\User;
 class ProfileController extends Controller
 {
 public function getProfile($username){
-	$friends = \Auth::user()->friends();
-	$user_id = \Auth::user()->id;
 	$user = \App\User::where('username', $username)->first();
 
 	if (!$user){
@@ -23,7 +21,7 @@ public function getProfile($username){
 		for ($i = 0; $i < count($emotions); $i++) {
 		$images[] = '<img src="/images/smilies/icon_'.$emotions[$i].'.gif " id="addSmiley" alt="" />';
 		}
-	return view('Templates.profile')->with('user', $user)->with('friends', $friends)->with('images', $images)->with('emotions', $emotions)->with('emotionfaces', $emotionfaces);
+	return view('Templates.profile')->with('user', $user)->with('images', $images)->with('emotions', $emotions)->with('emotionfaces', $emotionfaces);
 }
 
 public function getEdit(){

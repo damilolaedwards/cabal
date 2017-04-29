@@ -6,11 +6,12 @@
 @include('partials.navigation')
 
 <div class="row">
-
+@if(Auth::check())
 @if(Auth::user()->institution_id !== $campustopic->institution_id)
 @include('partials.campusinstitutionheader')
 @endif
-<br class="visible-lg" />
+@endif
+<br class="visible-lg visible-md" />
 @include('partials.alerts')
 <h3 class="text-center forum-header text-muted">Campus Forum</h3>
           
@@ -57,6 +58,7 @@
                   $campuslikes = 'campustopiclike'.$campustopic->id;
                  
                   ?>
+                  @if(Auth::check())
                   <div class="panel-footer panel-bottom"  value="{{$campustopic->id}}">
                   @if($campustopiclikes  !== 0)<span id="{{$campuslikes}}">{{$campustopiclikes}}</span>@endif
 
@@ -74,6 +76,7 @@
                     <a href="#reply" class="pull-right">reply</a>
 
                     </div>
+                    @endif
                   </div>
                 @endif
                 
@@ -84,10 +87,13 @@
                   @endforeach
                   <a name="Z4n3pdOAX"></a>
                   </div>
-                 
+                 @if(!Auth::check())
+                 <br>
+                 <p class="bg-info text-center font-less " style="padding: 15px 0px 15px 0px; font-size: 18px;">You are required to <a href="{{route('Auth.login')}}"><strong>Login</strong></a> or <a href="{{route('Auth.firstsignup')}}"><strong>Sign up</strong></a> to participate in this discussion</p>
+                 @endif
 
                    @if($campustopic->thread_closed == 0)
-                  @if(\App\User::find($campustopic->user_id)->institution_id == \Auth::user()->institution_id)
+                  @if(Auth::check() && \App\User::find($campustopic->user_id)->institution_id == \Auth::user()->institution_id)
                    <div class="panel panel-default">
                   <div class="panel-body">
                    <form class="form-vertical" role="form" method="post" action="{{route('campustopic.reply',['topicId' => $campustopic->id,  'topicSlug' => $campustopic->slug])}}" enctype="multipart/form-data">

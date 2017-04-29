@@ -8,14 +8,17 @@ class HomeController extends Controller
 {
 	public function getHome()
 	{	
-		if (Auth::check()) {
+		
 
 
 			
 			$categories = \App\Category::all();
 			
 			$topics = \App\Campustopic::where(function($query){
-			return $query->where('institution_id', Auth::user()->institution_id);
+				/*removed Auth::user()->institution_id and replaced with number which
+				stands for university of ilorin (hardcoded)
+				*/
+			return $query->where('institution_id', 372);
 		})
 		->orderBy('created_at', 'desc')->paginate(30);
 			
@@ -23,15 +26,17 @@ class HomeController extends Controller
 		
 		
 		return view('Templates.homepage')->with('topics', $topics)->with('categories', $categories); 
-	}
-	return view('Templates.landing');
+	
 	}
 
 
  public function getAdvertTab(){
  	$categories = \App\Category::all();
  	$adverts = \App\Advert::where(function($query){
-			return $query->where('institution_id',Auth::user()->institution_id);
+ 		/*removed Auth::user()->institution_id and replaced with number which
+				stands for university of ilorin (hardcoded)
+				*/
+			return $query->where('institution_id', 372);
 		})
 		->orderBy('updated_at', 'desc')->paginate(30);
  	return view('Templates.advert')->with('adverts', $adverts)->with('categories', $categories);
@@ -40,7 +45,11 @@ class HomeController extends Controller
  public function getEventTab(){
  	$categories = \App\Category::all();
  $events = \App\Event::where(function($query){
-			return $query->where('institution_id', Auth::user()->institution_id);
+
+ 	/* removed Auth::user()->institution_id and replaced with number which
+				stands for university of ilorin (hardcoded)
+				*/
+			return $query->where('institution_id', 372);
 		})
 		->orderBy('updated_at', 'desc')->paginate(30);
 		

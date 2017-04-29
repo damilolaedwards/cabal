@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
-
+use Session;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 
@@ -38,7 +38,7 @@ class Authenticate
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);
             } else {
-                return redirect()->guest('/login');
+                return redirect()->guest('/login')->with('info', 'please login or register to proceed.');
             }
         }
 

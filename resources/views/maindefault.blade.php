@@ -41,18 +41,25 @@
     <nav class="navbar navbar-default header" role="navigation">
       <div class="container">
         <div class="navbar-header ">
-          <a href="{{route('homepage')}}" class="navbar-brand" id="h2">
-          Mycampus<span></span>
+          <a href="{{route('homepage')}}" class="navbar-brand" id="h2"> Mycampus<span style="margin-left: 10px;"></span>
             
           </a>
+          @if(!Auth::check())
+          <div class="hidden-lg hidden-md pull-right " style="margin-right: 25px;">
+            <a class="btn btn-primary navbar-btn btn-xs" href="{{route('Auth.login')}}" ><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+
+            <a class="btn btn-info navbar-btn btn-xs" href="{{route('Auth.firstsignup')}}"  ><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
            
+          </div>
+           @endif
         </div>
      
       
       
        
           
-       <div class="visible-lg">
+       <div class="visible-lg visible-md">
+       @if(Auth::check())
         <p class="padding_left navbar-right move_down"><a class="text_undecor" href="{{ route('profile',['username' => Auth::user()->username]) }}"><img class="img-circle " src="{{asset(Auth::user()->getUserProfileImage())}}" width="30" height="30" alt="{{Auth::user()->getUsername()}}" ><span class="text-muted"> {{Auth::user()->username}}</span></a></p>
         <span class="text-muted padding navbar-right move_down"> <a class="text_undecor" href="{{route('notification')}}"><i class="fa fa-bell-o fa-2x" aria-hidden="true"></i> @if($requestcount  !== 0)<span class="badge badge-warning-notif">
               {{$requestcount}}
@@ -63,19 +70,26 @@
             
             
             </span> @endif Messages</a></span>
-         
+         @endif
          
 
  
 
        <form action="{{route('search')}}" role="form" class="navbar-form navbar-right">
+
           <div class="input-group">
             <input type="text" name="query" class="form-control" placeholder="Find people...">
             <span class="input-group-btn">
               <button class="btn btn-default" type="submit">Search</button>
             </span>
             </div>
+            @if(!Auth::check())
+             <a class="btn btn-info" href="{{route('Auth.login')}}"  style="margin-left: 150px;"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
+           
+            <a class="btn btn-primary" href="{{route('Auth.login')}}" style="margin-left: 15px;"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+            @endif
             </form>
+           
         </div>
       </div>
     </nav>

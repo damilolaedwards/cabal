@@ -4,7 +4,7 @@
 </a>
 <div class="media-body">
 <h5 class="media-heading"><a href="{{ route('profile',['username' => $user->username]) }}">
-@if($user->getUsername() == Auth::user()->username)
+@if(Auth::check() && $user->getUsername() == Auth::user()->username)
 	You
 @else  
 {{$user->getUsername()}}  @endif</a></h5>

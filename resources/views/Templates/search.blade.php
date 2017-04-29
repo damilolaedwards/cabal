@@ -3,7 +3,7 @@
     Mycampus | Search results
 @stop
 @section('content')
-<br class="visible-lg" />
+<br class="visible-lg visible-md" />
 @include('partials.navigation')
 <div class="row">
 <div class="panel panel-default">

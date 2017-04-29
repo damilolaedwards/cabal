@@ -13,11 +13,9 @@ use App\Message;
 class AuthController extends Controller
 {
 	public function getHome(){
-		if (Auth::check()) {
+		
     return view('Templates.homepage');
-}else
-		return view('Templates.landing');
-	}
+}
 
 	
 	public function getFirstSignUp(Request $request)
@@ -139,6 +137,6 @@ public function postFirstSignUp(Request $request)
 	 
 	  public function getLogOut(){
 	  	Auth::logout();
-	  	return redirect()->route('Auth.login');
+	  	return redirect()->route('homepage');
 	  }
 	}

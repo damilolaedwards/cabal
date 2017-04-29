@@ -30,14 +30,12 @@ Route::post('forum/{postId}/post/like', [
 	
 	Route::get('forum/{postId}/post/report', [
 	'uses'=>'\App\Http\Controllers\CampusPostController@getReport',
-	'as'=>'campuspost.report',
-	'middleware' => ['auth'],
+	'as'=>'campuspost.report'
 	]);
 
 	Route::post('forum/{postId}/post/report', [
 	'uses'=>'\App\Http\Controllers\CampusPostController@postReport',
-	'as'=>'campuspost.report',
-	'middleware' => ['auth'],
+	'as'=>'campuspost.report'
 	]);
 
 
@@ -121,8 +119,8 @@ Authentication
 
 	Route::get('/disclaimer', [
 	'uses'=>'\App\Http\Controllers\HomeController@getDisclaimer',
-	'as'=>'disclaimer',
-	'middleware' => ['auth'],
+	'as'=>'disclaimer'
+	
 	]);
 
 	Route::get('/rules&regulations', [
@@ -133,14 +131,13 @@ Authentication
 
 	Route::get('/contact', [
 	'uses'=>'\App\Http\Controllers\HomeController@getContact',
-	'as'=>'contact',
-	'middleware' => ['auth'],
+	'as'=>'contact'
 	]);
 
 	Route::post('/contact', [
 	'uses'=>'\App\Http\Controllers\HomeController@postContact',
-	'as'=>'contact',
-	'middleware' => ['auth'],
+	'as'=>'contact'
+	
 	]);
 
 	Route::get('/welcome', [
@@ -156,8 +153,7 @@ Search
 
 	Route::get('/search', [
 	'uses'=>'\App\Http\Controllers\SearchController@getResults',
-	'as'=>'search',
-	'middleware' => ['auth'],
+	'as'=>'search'
 	]);
 
 /*
@@ -177,8 +173,7 @@ Profile
 	
 	Route::get('/user/{username}', [
 	'uses'=>'\App\Http\Controllers\ProfileController@getProfile',
-	'as'=>'profile',
-	'middleware' => ['auth'],
+	'as'=>'profile'
 	]);
 
 	Route::get('/user/{username}/ban', [
@@ -276,8 +271,8 @@ Marketplace
 
 	Route::get('/advert', [
 	'uses'=>'\App\Http\Controllers\HomeController@getAdvertTab',
-	'as'=>'advert.index',
-	'middleware' => ['auth'],
+	'as'=>'advert.index'
+	
 	]);
 
 	Route::get('/advert/{advertId}/{slug}/edit', [
@@ -331,19 +326,17 @@ Marketplace
 	Route::get('/marketplace/{advertId}/{slug}/report', [
 	'uses'=>'\App\Http\Controllers\AdvertController@getReport',
 	'as'=>'advert.report',
-	'middleware' => ['auth'],
+	
 	]);
 
 	Route::post('/marketplace/{advertId}/{slug}/report', [
 	'uses'=>'\App\Http\Controllers\AdvertController@postReport',
-	'as'=>'advert.report',
-	'middleware' => ['auth'],
+	'as'=>'advert.report'
 	]);
 	
 	Route::get('/marketplace/{advertId}/{slug}', [
 	'uses'=>'\App\Http\Controllers\AdvertController@getMarketplace',
-	'as'=>'marketplace.view',
-	'middleware' => ['auth'],
+	'as'=>'marketplace.view'
 	]);
 
 	Route::get('/marketplace/create', [
@@ -366,8 +359,8 @@ Events
 */
 	Route::get('/event', [
 	'uses'=>'\App\Http\Controllers\HomeController@getEventTab',
-	'as'=>'event.index',
-	'middleware' => ['auth'],
+	'as'=>'event.index'
+	
 	]);
 
 	Route::get('/event/{eventId}/{slug}/edit', [
@@ -426,20 +419,17 @@ Events
 
 	Route::get('/event/{eventId}/{slug}/report', [
 	'uses'=>'\App\Http\Controllers\EventController@getReport',
-	'as'=>'event.report',
-	'middleware' => ['auth'],
+	'as'=>'event.report'
 	]);
 
 	Route::post('/event/{eventId}/{slug}/report', [
 	'uses'=>'\App\Http\Controllers\EventController@postReport',
-	'as'=>'event.report',
-	'middleware' => ['auth'],
+	'as'=>'event.report'
 	]);
 
 	Route::get('/event/{id}/{slug}', [
 	'uses'=>'\App\Http\Controllers\EventController@getEvent',
-	'as'=>'event.view',
-	'middleware' => ['auth'],
+	'as'=>'event.view'
 	]);
 
 	Route::get('/event/create', [
@@ -468,14 +458,12 @@ Campus forum
 
 	Route::get('forum/{topicId}/{slug}/report', [
 	'uses'=>'\App\Http\Controllers\CampusTopicController@getReport',
-	'as'=>'campustopic.report',
-	'middleware' => ['auth'],
+	'as'=>'campustopic.report'
 	]);	
 
 	Route::post('forum/{topicId}/{slug}/report', [
 	'uses'=>'\App\Http\Controllers\CampusTopicController@postReport',
-	'as'=>'campustopic.report',
-	'middleware' => ['auth'],
+	'as'=>'campustopic.report'
 	]);	
 
 	
@@ -588,8 +576,8 @@ Campus forum
 
     Route::get('/forum/{id}/{slug}', [
 	'uses'=>'\App\Http\Controllers\CampusTopicController@viewCampusTopic',
-	'as'=>'campustopic.view',
-	'middleware' => ['auth'],
+	'as'=>'campustopic.view'
+	
 	]);
 
 	Route::post('forum/{topicId}/{slug}/reply', [
@@ -615,14 +603,13 @@ General forum
 
 	Route::get('/{category}/{topicId}/{slug}/{postId}/post/report', [
 	'uses'=>'\App\Http\Controllers\GeneralPostController@getReport',
-	'as'=>'generalpost.report',
-	'middleware' => ['auth'],
+	'as'=>'generalpost.report'
+	
 	]);
 
 	Route::post('/{category}/{topicId}/{slug}/{postId}/post/report', [
 	'uses'=>'\App\Http\Controllers\GeneralPostController@postReport',
-	'as'=>'generalpost.report',
-	'middleware' => ['auth'],
+	'as'=>'generalpost.report'
 	]);
 
 	Route::get('{category}/{topicId}/{slug}/{postId}/post/image1/delete', [
@@ -670,14 +657,12 @@ General forum
 
 	Route::get('/{category}/{topicId}/{slug}/report', [
 	'uses'=>'\App\Http\Controllers\GeneralTopicController@getReport',
-	'as'=>'generaltopic.report',
-	'middleware' => ['auth'],
+	'as'=>'generaltopic.report'
 	]);
 
 	Route::post('/{category}/{topicId}/{slug}/report', [
 	'uses'=>'\App\Http\Controllers\GeneralTopicController@postReport',
-	'as'=>'generaltopic.report',
-	'middleware' => ['auth'],
+	'as'=>'generaltopic.report'
 	]);
 
 	Route::post('/{category}/{id}/{slug}/reply', [

@@ -4,7 +4,7 @@
 @stop
 @section('content')
 @include('partials.notificationactivenavigation')
-<br class="visible-lg" />
+<br class="visible-lg visible-md" />
 <div class="row">
 <div class="panel panel-default">
           <div class="panel-heading">

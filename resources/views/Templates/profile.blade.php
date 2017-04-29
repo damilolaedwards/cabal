@@ -4,7 +4,7 @@
 @stop
 @section('content')
 @include('partials.profileactivenavigation')
-<br class="visible-lg" />
+<br class="visible-lg visible-md" />
 @include('partials.alerts')
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12 profile">
@@ -12,8 +12,8 @@
   <div class="panel-body">
           <img src="{{asset($user->getUserProfileImage())}}" class="img-responsive img-circle center-block" alt="">
            <h4 class="text-center"><em>{{$user->getUsername()}}</em></h4>
-           <h5 class="text-center"><strong class="text-capitalize">{{Auth::user()->sex}}</strong></h5>
-            @if(Auth::user()->id === $user->id)
+           <h5 class="text-center"><strong class="text-capitalize">{{$user->sex}}</strong></h5>
+            @if(Auth::check() && Auth::user()->id === $user->id)
             <div class="text-center">
         Status: @if(Auth::user()->is_banned == 0)<span class="label label-success"> Online</span>
         @else
@@ -67,14 +67,14 @@
            <br/>
 
           @endif
-           @if (Auth::user()->id !== $user->id)
+           @if (Auth::check() && Auth::user()->id !== $user->id)
     
            <a class="btn btn-primary pull-right" href="{{route('message.create', ['username' => $user->username])}}" role="button">Send message</a>
 
              <br/>
            <br/>
             @endif
-            @if(Auth::user()->id == $user->id)
+            @if(Auth::check() && Auth::user()->id == $user->id)
           <div class="text-center clearfix">
           <a class="btn btn-primary" href="{{ route('editprofile',['username' => Auth::user()->username]) }}" role="button">Edit profile</a>
           
@@ -108,14 +108,14 @@
             --}}
           
         
-        
+        @if(Auth::check())
         @if(Auth::user()->role == 'administrator' && $user->is_banned == 0 && $user->id != Auth::user()->id)
         <a class="btn btn-danger pull-right btn-xs" href="{{route('user.ban',['username' => $user->username])}}" role="button">Ban</a>
       @endif
        @if(Auth::user()->role == 'administrator' && $user->is_banned == 1)
          <a class="btn btn-primary pull-right btn-xs" href="{{route('user.unban',['username' => $user->username])}}" role="button">Unban</a>
          @endif
-    
+    @endif
           </div>
 
         </div>

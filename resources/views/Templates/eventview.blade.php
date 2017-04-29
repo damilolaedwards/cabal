@@ -6,7 +6,7 @@
 @include('partials.navigation')
 <div class="row">
 
-        @if(Auth::user()->institution_id !== $event->institution_id)
+        @if(Auth::check() && Auth::user()->institution_id !== $event->institution_id)
           @include('partials.eventinstitutionheader')
           @endif
         <h3 class="text-center text-muted">Campus Events</h3>
@@ -21,7 +21,7 @@
             
              <h4>{!! ucfirst(strtolower(htmlentities($event->name))) !!}</h4>
            <p style="white-space: unset;">
-                <img src="{{asset($event->getEventImage())}}" alt="image" width="320" height="240" class="img-responsive img-rounded" style="max-width: unset;">
+                <img src="{{asset($event->getEventImage())}}" alt="image" width="380" height="260" class="img-responsive img-rounded" style="max-width: unset;">
                 </p> 
               @if($event->eventfile !== NULL)
               <p style="white-space: unset;">
@@ -81,16 +81,16 @@
               <div class="text-center" value="{{$event->id}}">
 
               
-              
+              @if(Auth::check())
               <a onclick="eventlike({{$event->id}})" class="btn btn-primary justify eventlike" data-id="{{$event->id}}" href="#" role="button"><span @if($eventlikecount  !== 0) class="badge" @endif id="{{$eventlike}}">@if($eventlikecount  !== 0) {{$eventlikecount}} @endif</span> Like&nbsp;<i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i></a>
               &nbsp;
               
               <a onclick="eventgoing({{$event->id}})" class="btn btn-primary justify eventgoing" data-id="{{$event->id}}" href="#" role="button"><span @if($eventgoingcount  !== 0) class="badge" @endif id="{{$eventgoing}}">@if($eventgoingcount  !== 0)  {{$eventgoingcount}} @endif </span> Going &nbsp;<i class="fa fa-calendar" aria-hidden="true"></i></a>
               &nbsp;
-
+              @endif
              <a class="btn btn-success justify hidden-md hidden-lg" href="whatsapp://send?text={{$event->name. ' ' .Request::url()}}" data-action="share/whatsapp/share">Share on Whatsapp</a>
                &nbsp;
-               @if(Auth::user()->id == $event->user_id || Auth::user()->role == 'administrator')
+               @if(Auth::check() && (Auth::user()->id == $event->user_id || Auth::user()->role == 'administrator'))
               <a class="btn btn-info justify" href="{{route('event.edit',['eventId' => $event->id, 'slug' => $event->slug])}}" role="button"><i class="fa fa-pencil-square-o fa-lg"></i> Edit</a>
                &nbsp;
               <a class="btn btn-danger justify" href="{{route('event.delete',['eventId' => $event->id, 'slug' => $event->slug])}}" role="button"><i class="fa fa-trash-o fa-lg"></i> Delete</a>

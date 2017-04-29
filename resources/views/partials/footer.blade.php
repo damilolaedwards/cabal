@@ -16,9 +16,10 @@
              <h4><small><a href="{{route('logout')}}">Logout</a></small></h4>
               
             </div>
-           @endif
+          
            </div>
-          <div class="text-center pull-up ">
+            @endif
+          <div class="text-center @if(Auth::check()) pull-up @endif ">
             
 
           <small>&nbsp; &copy Mycampus {{date('Y')}}. All Rights Reserved </small>

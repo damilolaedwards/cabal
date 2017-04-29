@@ -1,5 +1,6 @@
-<div class="row hidden-lg">
+<div class="row hidden-lg hidden-md">
         <div class="jumbotron presentation">
+        @if(Auth::check())
           <ul class="nav nav-pills " id="supernav">
             <li role="presentation"   ><a href="{{route('homepage')}}">Home</a></li>
             <li role="presentation" class="active" ><a href="{{ route('profile',['username' => Auth::user()->username]) }}">Profile</a></li>
@@ -12,7 +13,7 @@
                {{$requestcount}}
            </span> @endif</a></li>
           </ul>
-          
+          @endif
           <div class="input-group float col-md-6 col-md-offset-6 col-sm-10 col-sm-offset-2 col-xs-10 col-xs-offset-2 ">
           <form action="{{route('search')}}" role="form">
           <div class="input-group view_button">

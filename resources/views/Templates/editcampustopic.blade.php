@@ -6,7 +6,7 @@
 @include('partials.navigation')
 
 <div class="row">
-<br class="visible-lg" />
+<br class="visible-lg visible-md" />
 <h3 class="text-center forum-header text-muted">Campus Forum</h3>
 
           <div class="panel panel-default">
