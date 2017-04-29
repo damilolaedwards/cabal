@@ -100,7 +100,6 @@
              <label for="institution">Your Institution</label>
             <div class="form-group {{ $errors->has('institution') ?  ' has-error' : '' }}" id="institution" >
               <select class="form-control" name="institution">
-             <option>Institution</option>
                @foreach($institutions as $institution)
                
              <option value="{{ $institution->id }}" @if (old('institution') ==$institution->id) selected="selected" @endif>{{$institution->name}}</option>
