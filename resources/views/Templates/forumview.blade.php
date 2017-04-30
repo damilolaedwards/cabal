@@ -23,7 +23,7 @@
                 <div class="panel panel-default">
                   <div class="panel-heading">
     <p class="panel-title forum-title"><a href="#" style="font-weight: 700;
-    text-decoration: underline;">{{ucfirst(strtolower(htmlentities($campustopic->title)))}}</a>  <a href="{{ route('profile',['username' => \App\User::find($campustopic->user_id)->username])}}"><span class="usercolor">&nbsp;by &nbsp;{{\App\User::find($campustopic->user_id)->username}} &nbsp;<small > {{$campustopic->created_at->diffForHumans()}} </small></span></a></p>
+    text-decoration: underline;">{{ucwords(strtolower(htmlentities($campustopic->title)))}}</a>  <a href="{{ route('profile',['username' => \App\User::find($campustopic->user_id)->username])}}"><span class="usercolor">&nbsp;by &nbsp;{{\App\User::find($campustopic->user_id)->username}} &nbsp;<small > {{$campustopic->created_at->diffForHumans()}} </small></span></a></p>
                   </div>
                   
                   <div class="panel-body less-padding" data-topicid="{{$campustopic->id}}">
