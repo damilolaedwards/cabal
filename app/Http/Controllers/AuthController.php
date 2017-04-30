@@ -99,7 +99,7 @@ public function postFirstSignUp(Request $request)
 		'email' => $data[0]['email'],
 		);
 		 $request->session()->flush();
-		 try {
+		 /*try {
 		 	Mail::send('email.welcome', $mydata, function ($message)  use ($mydata){
     $message->from('Hello@mycampus.ng');
     $message->subject('Welcome to Mycampus');
@@ -110,7 +110,7 @@ public function postFirstSignUp(Request $request)
 		 	
 		 } catch (Exception $e) {
 		 	
-		 }
+		 }*/
 		
 		return redirect()->route('Auth.login')->with('info','You are now registered. A confirmation message has been sent to your email, You may now log in.');
 	}

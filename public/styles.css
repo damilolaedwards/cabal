@@ -113,6 +113,7 @@ margin-right: -15px;
 .forum-title{
 margin-left: -10px;
 color: #23527c;
+
 }
 
 .usercolor{
@@ -241,6 +242,12 @@ footer{
   .nav-tabs.nav-justified > li > a {
     margin-bottom: 0;
   }
+
+}
+@media (max-width: 480px){
+	.forum-small{
+	font-size: 10pt;
+}
 }
    
 
