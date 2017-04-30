@@ -38,7 +38,7 @@ to be considered for addition (and restyled) in version 1.1
               @else
               @foreach ($topics as $topic)
     <li class="list-group-item clearfix " style="text-align: center;"> >> <a href="{{ route('campustopic.view',['slug' => $topic->getTopicSlug(), 'id' => $topic->getTopicId()]) }}" class="darkblue font-less" >
-{!! ucfirst(strtolower(htmlentities($topic->title))) !!}
+{!! ucwords(strtolower(htmlentities($topic->title))) !!}
     </a></li>
      @endforeach
      @endif
