@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => 'sci.ng',
-        'secret' => 'key-44yuwzjc920rdahdig2p3p0s3ohnah75',
+        'domain' => 'https://api.mailgun.net/v3/mycampus.ng',
+        'secret' => 'key-ab6f3576dcffc7fb69df6e5ab8dc1418',
     ],
 
     'mandrill' => [

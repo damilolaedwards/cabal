@@ -100,7 +100,7 @@ public function postFirstSignUp(Request $request)
 		);
 		 $request->session()->flush();
 		Mail::send('email.welcome', $mydata, function ($message)  use ($mydata){
-    $message->from('noreply@mycampus.ng');
+    $message->from('Hello@mycampus.ng');
     $message->subject('Welcome to Mycampus');
     $message->to($mydata['email']);
 		

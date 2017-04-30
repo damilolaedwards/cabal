@@ -45,7 +45,7 @@
             
           </a>
           @if(!Auth::check())
-          <div class="hidden-lg hidden-md pull-right " style="margin-right: 25px;">
+          <div class=" pull-right hidden-lg hidden-md foo" style="margin-right: 25px;">
             <a class="btn btn-primary navbar-btn btn-xs" href="{{route('Auth.login')}}" ><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 
             <a class="btn btn-info navbar-btn btn-xs" href="{{route('Auth.firstsignup')}}"  ><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
@@ -84,7 +84,7 @@
             </span>
             </div>
             @if(!Auth::check())
-             <a class="btn btn-info" href="{{route('Auth.login')}}"  style="margin-left: 150px;"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
+             <a class="btn btn-info" href="{{route('Auth.firstsignup')}}"  style="margin-left: 150px;"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
            
             <a class="btn btn-primary" href="{{route('Auth.login')}}" style="margin-left: 15px;"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
             @endif

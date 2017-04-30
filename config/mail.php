@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'damilolaedwards@sci.ng', 'name' => 'mycampus.ng'],
+    'from' => ['address' => 'noreply@mycampus.ng', 'name' => 'mycampus.ng'],
 
     /*
     |--------------------------------------------------------------------------
