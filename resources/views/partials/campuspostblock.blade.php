@@ -45,10 +45,10 @@
                   <a onclick="campuspostlike({{$post->id}})" href="#" data-like="{{route('campuspost.like', ['postId' => $post->id])}}" class="campuspostlike" >&nbsp;Like</a>
                    &nbsp;
                     &nbsp;
-                    @if($post->user_id !== Auth::user()->id)  
+                    @if(Auth::check() && $post->user_id !== Auth::user()->id)  
                    <a href="{{route('campuspost.report', ['postId' => $post->id])}}">Report</a>
                    @endif
-                    @if($post->user_id == Auth::user()->id || Auth::user()->role == 'administrator') 
+                    @if(Auth::check() && ($post->user_id == Auth::user()->id || Auth::user()->role == 'administrator')) 
                    <a href="{{route('campuspost.update', ['postId' => $post->id, 'topicSlug' => \App\Campustopic::find($post->topic_id)->slug, 'topicId' => $post->topic_id])}}">&nbsp;&nbsp;Edit</a>@endif <a href="#reply" class="pull-right">reply</a>
                    </div>
                    

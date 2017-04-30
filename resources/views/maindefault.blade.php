@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
+    <link rel="canonical" href="https://www.mycampus.ng/">
     <meta name="csrf_token" content="{{ csrf_token() }}">
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Rasa:500" rel="stylesheet">
@@ -13,12 +14,23 @@
    
      <link href="{{ URL::asset('css/css/font-awesome.min.css') }}" rel="stylesheet">
    <title>@yield('title')</title>
-    
+   <meta itemprop="name" content="Cloudflare - The Web Performance & Security Company | Cloudflare">
+    <meta itemprop="description" content="Here at Cloudflare, we make the Internet work the way it should. Offering CDN, DNS, DDoS protection and security, find out how we can help your site.">
+    <meta itemprop="image" content="https://www.cloudflare.com/img/network-map/network-map-gradient.png">
+    <meta name="twitter:title" content="Cloudflare - The Web Performance & Security Company | Cloudflare">
+    <meta name="twitter:description" content="Here at Cloudflare, we make the Internet work the way it should. Offering CDN, DNS, DDoS protection and security, find out how we can help your site.">
+    <meta name="twitter:site" content="@cloudflare">
+    <meta name="twitter:creator" content="@cloudflare">
+    <meta name="twitter:image" content="https://www.cloudflare.com/img/network-map/network-map-gradient.png">
     <meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
   <meta property="og:type"          content="website" />
   <meta property="og:title"         content="Your Website Title" />
   <meta property="og:description"   content="Your description" />
   <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+   <meta property="og:site_name" content="Cloudflare" />
+    <meta class="swiftype" name="language" data-type="string" content="en" />
+    <meta class="swiftype" name="title" data-type="string" content="Cloudflare - The Web Performance & Security Company" />
+    <meta class="swiftype" name="description" data-type="string" content="Here at Cloudflare, we make the Internet work the way it should. Offering CDN, DNS, DDoS protection and security, find out how we can help your site." />
     <!-- Bootstrap Core CSS -->
     
 
@@ -113,6 +125,16 @@
      <script src="{{ URL::asset('js/likes.js') }}"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-98358832-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
    <script type="text/javascript">
             var csrfToken = $('[name="csrf_token"]').attr('content');
 
