@@ -38,18 +38,18 @@
                     $campuspostlikecount = \App\Postlike::where('post_id', $post->id)->count();
                     ?>
 
-                  
+                  @if(Auth::check())
                   <div class="panel-footer" value="{{$post->id}}" >
                   <span id="{{$campuspostlike}}">@if($campuspostlikecount  !== 0){{ $campuspostlikecount}} @endif</span>
 
                   <a onclick="campuspostlike({{$post->id}})" href="#" data-like="{{route('campuspost.like', ['postId' => $post->id])}}" class="campuspostlike" >&nbsp;Like</a>
                    &nbsp;
                     &nbsp;
-                    @if(Auth::check() && $post->user_id !== Auth::user()->id)  
+                    @if( $post->user_id !== Auth::user()->id)  
                    <a href="{{route('campuspost.report', ['postId' => $post->id])}}">Report</a>
                    @endif
-                    @if(Auth::check() && ($post->user_id == Auth::user()->id || Auth::user()->role == 'administrator')) 
+                    @if($post->user_id == Auth::user()->id || Auth::user()->role == 'administrator') 
                    <a href="{{route('campuspost.update', ['postId' => $post->id, 'topicSlug' => \App\Campustopic::find($post->topic_id)->slug, 'topicId' => $post->topic_id])}}">&nbsp;&nbsp;Edit</a>@endif <a href="#reply" class="pull-right">reply</a>
                    </div>
-                   
+                   @endif
                   </div>

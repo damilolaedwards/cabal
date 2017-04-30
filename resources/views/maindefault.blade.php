@@ -14,23 +14,23 @@
    
      <link href="{{ URL::asset('css/css/font-awesome.min.css') }}" rel="stylesheet">
    <title>@yield('title')</title>
-   <meta itemprop="name" content="Cloudflare - The Web Performance & Security Company | Cloudflare">
-    <meta itemprop="description" content="Here at Cloudflare, we make the Internet work the way it should. Offering CDN, DNS, DDoS protection and security, find out how we can help your site.">
-    <meta itemprop="image" content="https://www.cloudflare.com/img/network-map/network-map-gradient.png">
-    <meta name="twitter:title" content="Cloudflare - The Web Performance & Security Company | Cloudflare">
-    <meta name="twitter:description" content="Here at Cloudflare, we make the Internet work the way it should. Offering CDN, DNS, DDoS protection and security, find out how we can help your site.">
-    <meta name="twitter:site" content="@cloudflare">
-    <meta name="twitter:creator" content="@cloudflare">
-    <meta name="twitter:image" content="https://www.cloudflare.com/img/network-map/network-map-gradient.png">
-    <meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+   <meta itemprop="name" content="Mycampus - No.1 Student Online Community | Mycampus">
+    <meta itemprop="description" content="Our purpose at mycampus.ng is to provide an avenue for limitless social and business interactions among students in every campus.">
+    <meta itemprop="image" content="https://www.mycampus.ng/metaimage.jpg">
+    <meta name="twitter:title" content="Mycampus - No.1 Student Online Community | Mycampus">
+    <meta name="twitter:description" content="Our purpose at mycampus.ng is to provide an avenue for limitless social and business interactions among students in every campus.">
+    <meta name="twitter:site" content="@mycampus">
+    <meta name="twitter:creator" content="@mycampus">
+    <meta name="twitter:image" content="https://www.mycampus.ng/metaimage.jpg">
+    <meta property="og:url"           content="https://www.mycampus.ng" />
   <meta property="og:type"          content="website" />
-  <meta property="og:title"         content="Your Website Title" />
-  <meta property="og:description"   content="Your description" />
-  <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
-   <meta property="og:site_name" content="Cloudflare" />
+  <meta property="og:title"         content="Mycampus - No.1 Student Online Community | Mycampus" />
+  <meta property="og:description"   content="Our purpose at mycampus.ng is to provide an avenue for limitless social and business interactions among students in every campus." />
+  <meta property="og:image"         content="https://www.mycampus.ng/metaimage.jpg" />
+   <meta property="og:site_name" content="Mycampus" />
     <meta class="swiftype" name="language" data-type="string" content="en" />
-    <meta class="swiftype" name="title" data-type="string" content="Cloudflare - The Web Performance & Security Company" />
-    <meta class="swiftype" name="description" data-type="string" content="Here at Cloudflare, we make the Internet work the way it should. Offering CDN, DNS, DDoS protection and security, find out how we can help your site." />
+    <meta class="swiftype" name="title" data-type="string" content="Mycampus - No.1 Student Online Community" />
+    <meta class="swiftype" name="description" data-type="string" content="Our purpose at mycampus.ng is to provide an avenue for limitless social and business interactions among students in every campus." />
     <!-- Bootstrap Core CSS -->
     
 

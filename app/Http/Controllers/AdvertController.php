@@ -103,7 +103,7 @@ class AdvertController extends Controller
 
 			]);
 		$advertspot = route('advert.index').'#vqRxsv9Xs';
-		return redirect($advertspot);
+		return redirect($advertspot)->with('info', 'Advert successfully created!.');
 	}
 	public function Like(Request $request){
 		

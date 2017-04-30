@@ -30,12 +30,14 @@ Route::post('forum/{postId}/post/like', [
 	
 	Route::get('forum/{postId}/post/report', [
 	'uses'=>'\App\Http\Controllers\CampusPostController@getReport',
-	'as'=>'campuspost.report'
+	'as'=>'campuspost.report',
+	'middleware' => ['auth']
 	]);
 
 	Route::post('forum/{postId}/post/report', [
 	'uses'=>'\App\Http\Controllers\CampusPostController@postReport',
-	'as'=>'campuspost.report'
+	'as'=>'campuspost.report',
+	'middleware' => ['auth']
 	]);
 
 

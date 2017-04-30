@@ -117,7 +117,7 @@ class EventController extends Controller
 			
 			]);
 		 $eventlocation = route('event.index').'#vSVHgbv9Xs';
-		return redirect($eventlocation);
+		return redirect($eventlocation)->with('info', 'Event successfully created!.');
 	}
 
 	public function Like(Request $request){

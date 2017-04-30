@@ -76,7 +76,7 @@ public function postFirstSignUp(Request $request)
 			return redirect()->back()->withInput()->with('warning', '*Invalid date combination');
 		}
 		$data = $request->session()->get('user');
-		User::create([
+		$user = User::create([
 			 'email'=> $data[0]['email'],
 			'password' => bcrypt($data[0]['password']),
 			'firstname' => $request->input('firstname'),
@@ -92,7 +92,7 @@ public function postFirstSignUp(Request $request)
 		Message::create([
 			'sender_id' => 1,
 			'reciever_id' => User::where('username', $request->input('username'))->firstOrFail()->id,
-			'body' => "Hello, Welcome to Mycampus! \n Here is a quick guide though Mycampus.\n Mycampus is an online community for students of all tertiary institutions in Nigeria:<ul> <li>Meet people, discuss a number of topics on the General discussion forum.</li> <li>Don't be left out! discuss your campus related topic at the Campus forum.</li> <li>Sell and buy goods at the Campus Market place section.</li> <li>Don’t miss any event, post and check for campus events at the Events section.</li> </ul> Everything just perfectly works in your favour.\n <p>NOTE: Topics and posts posted at the general discussion forum would be visible to all members of Mycampus irrespective of their institutions while posts in the campus forum, marketplace and events are only visible to members of your Institution.</p> ",
+			'body' => "Welcome to our world. \n We are super excited to have you as a part of the community. \n <ul> <li>Start or join a discussion to interact with other members in the forum.</li> <li>Buy and sell commodities to members of the community</li> <li>Announce and check out for upcoming events.</li>  </ul> . Your campus life just got better.\n <p>Best wishes, \n Your friends at mycampus.ng.</p> ",
 			]);
 		 $mydata = array(
 		'username' => $request->input('username'), 
@@ -111,8 +111,9 @@ public function postFirstSignUp(Request $request)
 		 } catch (Exception $e) {
 		 	
 		 }*/
+		 Auth::login($user);
 		
-		return redirect()->route('Auth.login')->with('info','You are now registered. A confirmation message has been sent to your email, You may now log in.');
+		return redirect()->route('homepage')->with('info','Welcome!. A confirmation message has been sent to your email, Have fun.');
 	}
 	
 	public function getLogin(){
