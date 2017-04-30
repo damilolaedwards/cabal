@@ -86,16 +86,7 @@ $(function() {
 	});
 });
 
-$(document).ready(function() {
-  $("#myTextarea").on("keyup",function(){
-    var h = $(this).height();
 
-    $(this).css("height","60px");
-    var sh = $(this).prop("scrollHeight");
-    var minh = $(this).css("min-height").replace("px", "");
-    $(this).css("height",Math.max(sh,minh)+"px");  
-  });
-});
 
 
 
