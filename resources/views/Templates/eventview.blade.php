@@ -99,9 +99,14 @@
              
              
                   <br/>
-                  <span class="pull-right clearfix"><small>Posted by&nbsp;<strong><a href="{{ route('profile',['username' => \App\User::find($event->user_id)->username])}}">{{\App\User::find($event->user_id)->username}}</a></strong>&nbsp; {{ $event->created_at->diffForHumans() }}</small></span>
+                  <span class="pull-right clearfix"><small>Posted by&nbsp;<strong><a href="{{ route('profile',['username' => \App\User::find($event->user_id)->username])}}">{{\App\User::find($event->user_id)->username}}</a></strong>&nbsp; {{ $event->updated_at->diffForHumans() }}</small></span>
                   <br/>
+                  {{--
+                  \\the report span removed because it does not render well on mobile view and it is quite not needed yet
                    <span class="pull-right clearfix message_to"><small><strong><a href="{{route('event.report',['eventId' => $event->id, 'slug' => $event->slug])}}">Report</a></strong></small></span>
+                   --}}
+                  }
+                  }
          
             
             </div>

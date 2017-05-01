@@ -23,7 +23,7 @@
     <meta name="twitter:creator" content="@mycampus">
     <meta name="twitter:image" content="https://www.mycampus.ng/metaimage.jpg">
     <meta property="og:url"           content="https://www.mycampus.ng" />
-  <meta property="og:type"          content="website" />
+  <meta property="og:type"          content="article" />
   <meta property="og:title"         content="Mycampus - No.1 Student Online Community | Mycampus" />
   <meta property="og:description"   content="Our purpose at mycampus.ng is to provide an avenue for limitless social and business interactions among students in every campus." />
   <meta property="og:image"         content="https://www.mycampus.ng/metaimage.jpg" />

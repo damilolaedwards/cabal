@@ -95,9 +95,13 @@
               @endif
               </div>
                 <br/>
-                <span class="pull-right"><small>Posted by<strong><a href="{{ route('profile',['username' => \App\User::find($advert->user_id)->username])}}"> {{\App\User::find($advert->user_id)->username}}</a></strong>&nbsp; &nbsp{{ $advert->created_at->diffForHumans() }}</small></span>  
+                <span class="pull-right"><small>Posted by<strong><a href="{{ route('profile',['username' => \App\User::find($advert->user_id)->username])}}"> {{\App\User::find($advert->user_id)->username}}</a></strong>&nbsp; &nbsp{{ $advert->updated_at->diffForHumans() }}</small></span>  
             <br/>
-             <span class="pull-right clearfix message_to"><small><strong><a href="{{route('advert.report',['advertId' => $advert->id, 'slug' => $advert->slug])}}">Report</a></strong></small></span>
+            {{--
+              Report removed because it looks bad on mobile and it is not needed yet
+              <span class="pull-right clearfix message_to"><small><strong><a href="{{route('advert.report',['advertId' => $advert->id, 'slug' => $advert->slug])}}">Report</a></strong></small></span> 
+
+              --}}
             </div>
                </div>
          
