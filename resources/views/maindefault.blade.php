@@ -7,7 +7,6 @@
     <meta name="description" content="">
     <link rel="canonical" href="https://www.mycampus.ng/">
     <meta name="csrf_token" content="{{ csrf_token() }}">
-    <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Rasa:500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
