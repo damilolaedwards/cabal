@@ -92,7 +92,7 @@ public function postFirstSignUp(Request $request)
 		Message::create([
 			'sender_id' => 1,
 			'reciever_id' => User::where('username', $request->input('username'))->firstOrFail()->id,
-			'body' => "Welcome to our world. \n We are super excited to have you as a part of the community. \n <ul> <li>Start or join a discussion to interact with other members in the forum.</li> <li>Buy and sell commodities to members of the community</li> <li>Announce and check out for upcoming events.</li>  </ul> . Your campus life just got better.\n <p>Best wishes, \n Your friends at mycampus.ng.</p> ",
+			'body' => "Welcome to our world. \n We are super excited to have you as a part of the community. \n <ul> <li>Start or join a discussion to interact with other members in the forum.</li> <li>Buy and sell commodities to members of the community</li> <li>Announce and check out for upcoming events.</li>  </ul> . Your campus life just got better.\n <p>Best wishes,</p> \n Your friends at mycampus.ng. ",
 			]);
 		 $mydata = array(
 		'username' => $request->input('username'), 
