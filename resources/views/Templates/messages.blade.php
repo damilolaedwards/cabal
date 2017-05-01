@@ -22,7 +22,7 @@
           @if($message->reciever_deleted == 0 )
 <div class="media text-align3">
 <a class="pull-left visible-lg visible-md" href="{{ route('profile',['username' => \App\User::find($message->sender_id)->username]) }}">
-<img class= "media-object" alt="{{\App\User::find($message->sender_id)->username}}" src="{{asset(\App\User::find($message->sender_id)->getProfileImage())}}">
+<img class= "media-object" width="40px" height="40px" alt="{{\App\User::find($message->sender_id)->username}}" src="{{asset(\App\User::find($message->sender_id)->getProfileImage())}}">
 </a>
 <div class="media-body">
 <p class="panelverdana">
