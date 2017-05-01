@@ -16,17 +16,17 @@
    <title>@yield('title')</title>
    <meta itemprop="name" content="Mycampus - No.1 Student Online Community | Mycampus">
     <meta itemprop="description" content="Our purpose at mycampus.ng is to provide an avenue for limitless social and business interactions among students in every campus.">
-    <meta itemprop="image" content="https://www.mycampus.ng/metaimage.jpg">
+    <meta itemprop="image" content="https://www.mycampus.ng/webcontentimage.jpg">
     <meta name="twitter:title" content="Mycampus - No.1 Student Online Community | Mycampus">
     <meta name="twitter:description" content="Our purpose at mycampus.ng is to provide an avenue for limitless social and business interactions among students in every campus.">
     <meta name="twitter:site" content="@mycampus">
     <meta name="twitter:creator" content="@mycampus">
-    <meta name="twitter:image" content="https://www.mycampus.ng/metaimage.jpg">
+    <meta name="twitter:image" content="https://www.mycampus.ng/webcontentimage.jpg">
     <meta property="og:url"           content="https://www.mycampus.ng" />
   <meta property="og:type"          content="article" />
   <meta property="og:title"         content="Mycampus - No.1 Student Online Community | Mycampus" />
   <meta property="og:description"   content="Our purpose at mycampus.ng is to provide an avenue for limitless social and business interactions among students in every campus." />
-  <meta property="og:image"         content="https://www.mycampus.ng/metaimage.jpg" />
+<meta property="og:image"  content="https://www.mycampus.ng/webcontentimage.jpg" />
    <meta property="og:site_name" content="Mycampus" />
     <meta class="swiftype" name="language" data-type="string" content="en" />
     <meta class="swiftype" name="title" data-type="string" content="Mycampus - No.1 Student Online Community" />
