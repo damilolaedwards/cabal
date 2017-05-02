@@ -40,6 +40,7 @@
             </div>
             
           </div>
+          </div>
             <div class="form-group {{ $errors->has('personal_text') ?  ' has-error' : '' }}">
             
             <textarea class="form-control" rows="3" id="myTextarea" name="personal_text" >{{Auth::user()->personal_text ?: Request::old('personal_text') }}</textarea>
