@@ -42,7 +42,7 @@
               </div>
               @if($event->eventfile !== NULL)
               <p style="white-space: unset;">
-             <img src="{{asset($event->getEventFile())}}"><a href="{{substr(stristr($event->eventfile, '-'), 1)}}" download="{{substr(stristr($event->eventfile, '-'), 1)}}"> Download {{substr(stristr($event->eventfile, '-'), 1)}}</a>
+             <img src="{{asset($event->getEventFile())}}"><a href="{{$event->eventfile}}" download="{{substr(stristr($event->eventfile, '-'), 1)}}"> Download {{substr(stristr($event->eventfile, '-'), 1)}}</a>
             </p>
               @endif
               

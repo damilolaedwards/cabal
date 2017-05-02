@@ -35,7 +35,7 @@
                      @endif
                       @if($topic->forumfile !== NULL)
                       <p style="line-height: 5px;">
-             <img src="{{asset($topic->getTopicFile())}}"><a href="{{substr(stristr($topic->forumfile, '-'), 1)}}" download="{{substr(stristr($topic->forumfile, '-'), 1)}}"> Download {{substr(stristr($topic->forumfile, '-'), 1)}}</a>
+             <img src="{{asset($topic->getTopicFile())}}"><a href="{{$topic->forumfile}}" download="{{substr(stristr($topic->forumfile, '-'), 1)}}"> Download {{substr(stristr($topic->forumfile, '-'), 1)}}</a>
             </p>
               @endif
 

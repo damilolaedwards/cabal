@@ -40,7 +40,7 @@
               </div>
               @if($advert->advertfile && $advert->advertfile !== NULL)
                 <p style="white-space: unset;">
-             <img src="{{asset($advert->getAdvertFile())}}"><a href="{{substr(stristr($advert->advertfile, '-'), 1)}}" download="{{substr(stristr($advert->advertfile, '-'), 1)}}"> Download {{substr(stristr($advert->advertfile, '-'), 1)}}</a>
+             <img src="{{asset($advert->getAdvertFile())}}"><a href="{{$advert->advertfile}}" download="{{substr(stristr($advert->advertfile, '-'), 1)}}"> Download {{substr(stristr($advert->advertfile, '-'), 1)}}</a>
              </p>
               @endif
             </div>

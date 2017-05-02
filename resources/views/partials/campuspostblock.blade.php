@@ -27,7 +27,7 @@
                      @endif
                       @if($post->postfile !== NULL)
                       <p style="line-height: 5px;">
-             <img src="{{asset($post->getPostFile())}}"><a href="{{substr(stristr($post->postfile, '-'), 1)}}" download="{{substr(stristr($post->postfile, '-'), 1)}}"> Download {{substr(stristr($post->postfile, '-'), 1)}}</a>
+             <img src="{{asset($post->getPostFile())}}"><a href="{{$post->postfile}}" download="{{substr(stristr($post->postfile, '-'), 1)}}"> Download {{substr(stristr($post->postfile, '-'), 1)}}</a>
             </p>
               @endif
                     <span class="pull-right text-muted"><small><strong><a href="{{ route('profile',['username' => \App\User::find($post->user_id)->username])}}">{{\App\User::find($post->user_id)->username}}</a></strong>&nbsp; &nbsp;{{ $post->created_at->diffForHumans() }}</small></span>
