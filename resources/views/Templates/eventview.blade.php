@@ -23,11 +23,7 @@
            <p style="white-space: unset;">
                 <img src="{{asset($event->getEventImage())}}" alt="image" width="380" height="260" class="img-responsive img-rounded" style="max-width: unset;">
                 </p> 
-              @if($event->eventfile !== NULL)
-              <p style="white-space: unset;">
-             <img src="{{asset($event->getEventFile())}}"><a href="{{substr(stristr($event->eventfile, '-'), 1)}}" download="{{substr(stristr($event->eventfile, '-'), 1)}}"> Download {{substr(stristr($event->eventfile, '-'), 1)}}</a>
-            </p>
-              @endif
+              
              @if(($event->eventimage_1 !== NULL && $event->eventimage_2 !== NULL) || ($event->eventimage_1 !== NULL && $event->eventimage_3 !== NULL) || ($event->eventimage_2 !== NULL && $event->eventimage_3 !== NULL))
             
            @endif
@@ -44,6 +40,12 @@
               </p>
               @endif
               </div>
+              @if($event->eventfile !== NULL)
+              <p style="white-space: unset;">
+             <img src="{{asset($event->getEventFile())}}"><a href="{{substr(stristr($event->eventfile, '-'), 1)}}" download="{{substr(stristr($event->eventfile, '-'), 1)}}"> Download {{substr(stristr($event->eventfile, '-'), 1)}}</a>
+            </p>
+              @endif
+              
             </div>
 
             <div class="col-md-6">
@@ -105,8 +107,8 @@
                   \\the report span removed because it does not render well on mobile view and it is quite not needed yet
                    <span class="pull-right clearfix message_to"><small><strong><a href="{{route('event.report',['eventId' => $event->id, 'slug' => $event->slug])}}">Report</a></strong></small></span>
                    --}}
-                  }
-                  }
+                  
+                  
          
             
             </div>

@@ -212,7 +212,11 @@ public function Like(Request $request){
 			'postfile'  => $filepath,
 		]);
 	$campuspostIDplus = $post->id - 1;
-	$editURL = $request->input('campuspostredirect').'#'.$campuspostIDplus;
+	//subject to change to allow for paginated links.
+	$newTopicId = $post->topic_id;
+	$slug = \App\Campustopic::find($newTopicId)->slug;
+	$newUrl = url('/').'/forum/'.$newTopicId.'/'.$slug;
+	$editURL = $newUrl.'#'.$campuspostIDplus;
 
 	return redirect($editURL); 
   }

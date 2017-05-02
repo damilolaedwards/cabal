@@ -284,7 +284,10 @@ public function postEditEvent(Request $request, $eventId)
 			
 			
 			]);
-		return redirect($request->input('eventredirect'))->with('info', 'Event successfully updated!');
+		$newEventId = $event->id;
+		$slug = str_slug( $request->input('name'), "-");
+		$newUrl = url('/').'/event/'.$newEventId.'/'.$slug; 
+		return redirect($newUrl)->with('info', 'Event successfully updated!');
 	}
 
 	public function deleteEvent($eventId){

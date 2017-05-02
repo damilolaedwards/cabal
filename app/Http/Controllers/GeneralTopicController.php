@@ -195,6 +195,9 @@ class GeneralTopicController extends Controller
 			'forumimage3' => $path3,
 			'forumfile'  => $filepath,
 		]);
+	$newTopicId = $topic->id;
+		$slug = str_slug( $request->input('topictitle'), "-");
+		$newUrl = url('/').'/'.$category.'/'.$newTopicId.'/'.$slug;
 	return redirect($request->input('generaltopicredirect')); 
 }
 public function deleteFirstImage($topicId){

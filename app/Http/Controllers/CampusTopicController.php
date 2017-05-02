@@ -206,7 +206,10 @@ class CampusTopicController extends Controller
 			'forumimage3' => $path3,
 			'forumfile'  => $filepath,
 		]);
-	return redirect($request->input('campustopicredirect')); 
+	$newTopicId = $topic->id;
+		$slug = str_slug( $request->input('topictitle'), "-");
+		$newUrl = url('/').'/forum/'.$newTopicId.'/'.$slug;
+	return redirect($newUrl); 
 }
    public function deleteFirstImage($topicId){
 	$topic = \App\Campustopic::find($topicId);

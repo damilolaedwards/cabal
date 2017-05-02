@@ -24,11 +24,7 @@
              <p style="white-space: unset;">
                 <img src="{{asset($advert->getAdvertImage())}}" alt="image" class="img-responsive img-rounded" width="380" height="260"">
                 </p>
-                @if($advert->advertfile && $advert->advertfile !== NULL)
-                <p style="white-space: unset;">
-             <img src="{{asset($advert->getAdvertFile())}}"><a href="{{substr(stristr($advert->advertfile, '-'), 1)}}" download="{{substr(stristr($advert->advertfile, '-'), 1)}}"> Download {{substr(stristr($advert->advertfile, '-'), 1)}}</a>
-             </p>
-              @endif
+                
               
              <div id="moreimages">
              @if($advert->advertimage2 !== NULL && $advert->advertimage2 !== $advert->getAdvertImage())
@@ -42,6 +38,11 @@
               </p>
               @endif
               </div>
+              @if($advert->advertfile && $advert->advertfile !== NULL)
+                <p style="white-space: unset;">
+             <img src="{{asset($advert->getAdvertFile())}}"><a href="{{substr(stristr($advert->advertfile, '-'), 1)}}" download="{{substr(stristr($advert->advertfile, '-'), 1)}}"> Download {{substr(stristr($advert->advertfile, '-'), 1)}}</a>
+             </p>
+              @endif
             </div>
             <div class="col-md-6">
              @if($advert->description)

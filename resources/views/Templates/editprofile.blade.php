@@ -58,6 +58,8 @@
           <br/>
               <br/>
           </div>
+          {{--
+          friends functionality to be replaced with followers
        <div class="col-md-8 col-md-offset-2 col-xs-12">
        <div class="list-group panel-forum">
         <li class="list-group-item active">
@@ -80,7 +82,7 @@
       
           </div>
           </div>
-
+--}}
             </div>
              
 

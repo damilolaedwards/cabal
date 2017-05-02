@@ -218,7 +218,7 @@ class AdvertController extends Controller
 			$filepath = $blank;
 	}
 
-		\App\Advert::find($advertId)->update([
+		$advert->update([
 			'user_id' => \Auth::user()->id,
 			'title' => $request->input('title'),
 			'description' => $request->input('description'),
@@ -236,7 +236,10 @@ class AdvertController extends Controller
 			'institution_id' => \Auth::user()->institution_id
 
 			]);
-		return redirect($request->input('advertredirect'))->with('info', 'Advert successfully updated!');
+		$newAdvertId = $advert->id;
+		$slug = str_slug( $request->input('title'), "-");
+		$newUrl = url('/').'/marketplace/'.$newAdvertId.'/'.$slug; 
+		return redirect($newUrl)->with('info', 'Advert successfully updated!');
 	}
 	public function deleteAdvert($advertId){
 		
