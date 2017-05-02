@@ -79,13 +79,16 @@ class CampusPostController extends Controller
 			'body' => $request->input('postbody'),
 			'user_id' => \Auth::user()->id,
 			]);
-
+			$remainder = true;
 			$campusPerPage = $request->input('campusperpage');
 			$campusPageCount = $request->input('campuspagecount');
 			$slug = \App\Campustopic::find($topicId)->slug;
 			$lastPageUrl = $request->input('lastpage');
 			$campusUrlplus = $lastPageUrl + 1;
-	if($campusPageCount == $campusPerPage){
+			if($request->input('total') >= $campusPerPage){
+			$remainder = $request->input('total') % $campusPerPage;
+			}
+	if($remainder == 0){
 	return redirect('forum/' . $topicId . '/'. $slug .'/'. '?page=' . $campusUrlplus . '#Z4n3pdOAX'); 
 	}else
 	return redirect('forum/' . $topicId . '/'. $slug .'/'. '?page=' . $lastPageUrl . '#Z4n3pdOAX'); 
@@ -101,7 +104,6 @@ class CampusPostController extends Controller
 		return view('Templates.editcampuspost')->with('post', $post);
 }
 public function Like(Request $request){  
-
 		$post_id = $request['postId'];
 		
 		$is_like = $request['isLike'] === 'true';

@@ -113,7 +113,7 @@
            <a name="reply"></a>
                     <div class="form-group {{ $errors->has('postbody') ?  ' has-error' : '' }}">
 
-                  <textarea class="form-control textbox" name="postbody" rows="3" id="myTextarea">{{{ Request::old('postbody') }}}</textarea>
+                  <textarea class="form-control textbox" name="postbody" rows="4" id="myTextarea">{{{ Request::old('postbody') }}}</textarea>
                    @if($errors->has('postbody'))
               <span class="help-block">{{$errors->first('postbody')}}</span>
               @endif
@@ -153,9 +153,12 @@
               @endif
            </div>
            </div>
+           
+           <input type="hidden" name="currentpage" value="{{$campusposts->currentPage()}}">
         <input type="hidden" name="campusperpage" value="{{$campusposts->perPage()}}">
         <input type="hidden" name="campuspagecount" value="{{$campusposts->count()}}">
            <input type="hidden" name="lastpage" value="{{$campusposts->lastPage()}}">
+          <input type="hidden" name="total" value="{{$campusposts->total()}}">
            <input type="hidden" name="_token" value="{{Session::token()}}">
 
                            <button type="submit" class="btn btn-primary pull-right">Reply</button>

@@ -50,28 +50,28 @@
 
             <div class="col-md-6">
              @if($event->details)
-              <p class="lead">Details:</p>
+              <h4><p class="lead">Details:</p></h4>
               <p class="text-align panelverdana">{!! str_replace($emotionfaces, $images, Linkify::process(htmlentities($event->details)))!!}</p>
 
               @else
-              <p class="lead">Details:</p>
+              <h4><p class="lead">Details:</p></h4>
               <p class="text-align text-muted">Not Available</p>
               @endif
                @if($event->location)
-              <p class="lead">Location:</p>
+              <h4><p class="lead">Location:</p></h4>
               <p class="text-align">{!! htmlentities($event->location) !!}</p>
                @else
-              <p class="lead">Location:</p>
+              <h4><p class="lead">Location:</p></h4>
               <p class="text-align text-muted">Not Available</p>
               @endif
-               <p class="lead">Date:</p>
+               <h4><p class="lead">Date:</p></h4>
               <p class="text-align">{{$event->day}} {{date("F", mktime(0,0,0, $event->month, 1))}} {{$event->year}}</p>
                @if($event->time)
               
-              <p class="lead">Time:</p>
+              <h4><p class="lead">Time:</p><h4>
               <p class="text-align">{!! htmlentities($event->time) !!}</p>
               @else
-              <p class="lead">Time:</p>
+              <h4><p class="lead">Time:</p></h4>
               <p class="text-align text-muted">Not Available</p>
               @endif
                <?php
@@ -101,7 +101,7 @@
              
              
                   <br/>
-                  <span class="pull-right clearfix"><small>Posted by&nbsp;<strong><a href="{{ route('profile',['username' => \App\User::find($event->user_id)->username])}}">{{\App\User::find($event->user_id)->username}}</a></strong>&nbsp; {{ $event->updated_at->diffForHumans() }}</small></span>
+                  <span class="pull-right clearfix"><small>Posted by&nbsp;<strong><a href="{{ route('profile',['username' => \App\User::find($event->user_id)->username])}}">{{\App\User::find($event->user_id)->username}}</a></strong>&nbsp; {{ $event->created_at->diffForHumans() }}</small></span>
                   <br/>
                   {{--
                   \\the report span removed because it does not render well on mobile view and it is quite not needed yet

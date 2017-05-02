@@ -46,18 +46,18 @@
             </div>
             <div class="col-md-6">
              @if($advert->description)
-              <p class="lead">Description:</p>
+              <h4><p class="lead">Description:</p></h4>
               
                <p class="text-align panelverdana">{!! str_replace($emotionfaces, $images, Linkify::process(htmlentities($advert->description)))!!}</p>
               @else
-              <p class="lead">Description:</p>
+              <h4><p class="lead">Description:</p></h4>
               <p class="text-align">Not Available</p>
               @endif
                @if($advert->price)
-              <p class="lead" >Price:</p>
+              <h4><p class="lead" >Price:</p></h4>
               <p class="text-align">{!! htmlentities($advert->price) !!}</p>
               @else
-              <p class="lead">Price:</p>
+              <h4><p class="lead">Price:</p></h4>
               <p class="text-align">Not Available</p>
               @endif
               
@@ -66,10 +66,10 @@
                
                 @endif 
                 @if($advert->phone_number)
-               <p class="lead">Contact:</p>
+               <h4><p class="lead">Contact:</p></h4>
               <p class="text-align">{!! htmlentities($advert->phone_number) !!}</p>
               @else
-              <p class="lead">Contact:</p>
+              <h4><p class="lead">Contact:</p></h4>
               <p class="text-align text-muted">Not Available</p>
               @endif
 
@@ -96,7 +96,7 @@
               @endif
               </div>
                 <br/>
-                <span class="pull-right"><small>Posted by<strong><a href="{{ route('profile',['username' => \App\User::find($advert->user_id)->username])}}"> {{\App\User::find($advert->user_id)->username}}</a></strong>&nbsp; &nbsp{{ $advert->updated_at->diffForHumans() }}</small></span>  
+                <span class="pull-right"><small>Posted by<strong><a href="{{ route('profile',['username' => \App\User::find($advert->user_id)->username])}}"> {{\App\User::find($advert->user_id)->username}}</a></strong>&nbsp; &nbsp{{ $advert->created_at->diffForHumans() }}</small></span>  
             <br/>
             {{--
               Report removed because it looks bad on mobile and it is not needed yet
