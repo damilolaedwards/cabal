@@ -21,7 +21,7 @@
             
              <h4>{!! ucfirst(strtolower(htmlentities($event->name))) !!}</h4>
            <p style="white-space: unset;">
-                <img src="{{asset($event->getEventImage())}}" alt="image" width="380" height="260" class="img-responsive img-rounded" style="max-width: unset;">
+                <img src="{{asset($event->getEventImage())}}" alt="image" class="img-responsive img-rounded" style="max-width: unset;">
                 </p> 
               
              @if(($event->eventimage_1 !== NULL && $event->eventimage_2 !== NULL) || ($event->eventimage_1 !== NULL && $event->eventimage_3 !== NULL) || ($event->eventimage_2 !== NULL && $event->eventimage_3 !== NULL))
@@ -30,13 +30,13 @@
              <div id="moreimages">
              @if($event->eventimage_2 !==NULL && $event->eventimage_2 !== $event->getEventImage())
             <p style="white-space: unset;">
-             <img src="{{asset($event->getEventImage2())}}" alt="image" width="320" height="240" class="img-responsive img-rounded" style="max-width: unset;">
+             <img src="{{asset($event->getEventImage2())}}" alt="image"  class="img-responsive img-rounded" style="max-width: unset;">
              </p>
              @endif
               @if($event->eventimage_3 !== NULL && $event->eventimage_3 !== $event->getEventImage())
              
             <p style="white-space: unset;">
-              <img src="{{asset($event->getEventImage3())}}" alt="image" width="320" height="240" class="img-responsive img-rounded" style="max-width: unset;">
+              <img src="{{asset($event->getEventImage3())}}" alt="image"  class="img-responsive img-rounded" style="max-width: unset;">
               </p>
               @endif
               </div>

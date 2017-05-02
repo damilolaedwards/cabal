@@ -22,7 +22,7 @@
             <span class="label label-danger">Ad</span>
              <h4>{!! ucfirst(strtolower(htmlentities($advert->title))) !!}</h4>
              <p style="white-space: unset;">
-                <img src="{{asset($advert->getAdvertImage())}}" alt="image" class="img-responsive img-rounded" width="380" height="260"">
+                <img src="{{asset($advert->getAdvertImage())}}" alt="image" class="img-responsive img-rounded" >
                 </p>
                 
               
