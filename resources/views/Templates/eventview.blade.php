@@ -68,7 +68,7 @@
               <p class="text-align">{{$event->day}} {{date("F", mktime(0,0,0, $event->month, 1))}} {{$event->year}}</p>
                @if($event->time)
               
-              <h4><p class="lead">Time:</p><h4>
+              <h4><p class="lead">Time:</p></h4>
               <p class="text-align">{!! htmlentities($event->time) !!}</p>
               @else
               <h4><p class="lead">Time:</p></h4>
