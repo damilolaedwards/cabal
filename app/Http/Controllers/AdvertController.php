@@ -47,7 +47,7 @@ class AdvertController extends Controller
 		if($request->hasfile('advertimage1')){    
 		$image = $request->file('advertimage1');
 		$imagename1 = time(). "-" .$image->getClientOriginalName();
-		Image::make($image->getRealPath())->resize(320,240)->save(public_path('/advertimages/') .$imagename1);
+		Image::make($image->getRealPath())->save(public_path('/advertimages/') .$imagename1);
 		$path1 = '/advertimages/'.$imagename1;
 			}
 		else{
@@ -57,7 +57,7 @@ class AdvertController extends Controller
 		if($request->hasfile('advertimage2')){    
 		$image = $request->file('advertimage2');
 		$imagename2 = time(). "-" .$image->getClientOriginalName();
-		Image::make($image->getRealPath())->resize(320,240)->save(public_path('/advertimages/') .$imagename2);
+		Image::make($image->getRealPath())->save(public_path('/advertimages/') .$imagename2);
 		$path2 = '/advertimages/'.$imagename2;
 		}
 		else{
@@ -69,7 +69,7 @@ class AdvertController extends Controller
 			if($request->hasfile('advertimage3')){    
 		$image = $request->file('advertimage3');
 		$imagename3 = time(). "-" .$image->getClientOriginalName();
-		Image::make($image->getRealPath())->resize(320,240)->save(public_path('/advertimages/') .$imagename3);
+		Image::make($image->getRealPath())->save(public_path('/advertimages/') .$imagename3);
 		$path3 = '/advertimages/'.$imagename3;
 		}
 			else{
@@ -168,7 +168,7 @@ class AdvertController extends Controller
 		unlink(public_path().$imagepath1); }     
 		$image = $request->file('advertimage1');
 		$imagename1 = time(). "-" .$image->getClientOriginalName();
-		Image::make($image->getRealPath())->resize(320,240)->save(public_path('advertimages/') .$imagename1);
+		Image::make($image->getRealPath())->save(public_path('advertimages/') .$imagename1);
 		$path1 = '/advertimages/'.$imagename1;
 
 			}
@@ -182,7 +182,7 @@ class AdvertController extends Controller
 		unlink(public_path().$imagepath2); }     
 		$image = $request->file('advertimage2');
 		$imagename2 = time(). "-" .$image->getClientOriginalName();
-		Image::make($image->getRealPath())->resize(320,240)->save(public_path('advertimages/') .$imagename2);
+		Image::make($image->getRealPath())->save(public_path('advertimages/') .$imagename2);
 		$path2 = '/advertimages/'.$imagename2;
 		}
 		else{
@@ -197,7 +197,7 @@ class AdvertController extends Controller
 		unlink(public_path().$imagepath3); }         
 		$image = $request->file('advertimage3');
 		$imagename3 = time(). "-" .$image->getClientOriginalName();
-		Image::make($image->getRealPath())->resize(320,240)->save(public_path('advertimages/') .$imagename3);
+		Image::make($image->getRealPath())->save(public_path('advertimages/') .$imagename3);
 		$path3 = '/advertimages/'.$imagename3;
 		}
 			else{

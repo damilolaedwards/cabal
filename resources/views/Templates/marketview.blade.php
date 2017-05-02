@@ -29,12 +29,12 @@
              <div id="moreimages">
              @if($advert->advertimage2 !== NULL && $advert->advertimage2 !== $advert->getAdvertImage())
              <p style="white-space: unset;">
-             <img src="{{asset($advert->getAdvertImage2())}}" alt="image"  class="img-responsive img-rounded" style="max-width: unset;">
+             <img src="{{asset($advert->getAdvertImage2())}}" alt="image"  class="img-responsive img-rounded" >
              </p>
              @endif
               @if($advert->advertimage3 !== NULL && $advert->advertimage3 !== $advert->getAdvertImage())
              <p style="white-space: unset;">
-              <img src="{{asset($advert->getAdvertImage3())}}" alt="image"  class="img-responsive img-rounded" style="max-width: unset;">
+              <img src="{{asset($advert->getAdvertImage3())}}" alt="image"  class="img-responsive img-rounded">
               </p>
               @endif
               </div>

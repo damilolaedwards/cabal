@@ -55,7 +55,7 @@ class EventController extends Controller
 		if($request->hasfile('eventimage_1')){    
 		$image = $request->file('eventimage_1');
 		$imagename1 = time(). "-" .$image->getClientOriginalName();
-		Image::make($image->getRealPath())->resize(320,240)->save(public_path('/eventimages/') .$imagename1);
+		Image::make($image->getRealPath())->save(public_path('/eventimages/') .$imagename1);
 		$path1 = '/eventimages/'.$imagename1;
 			}else{
 				$path1 = null;
@@ -65,7 +65,7 @@ class EventController extends Controller
 		if($request->hasfile('eventimage_2')){    
 		$image = $request->file('eventimage_2');
 		$imagename2 = time(). "-" .$image->getClientOriginalName();
-		Image::make($image->getRealPath())->resize(320,240)->save(public_path('/eventimages/') .$imagename2);
+		Image::make($image->getRealPath())->save(public_path('/eventimages/') .$imagename2);
 		$path2 = '/eventimages/'.$imagename2;
 		}else{
 				$path2 = null;
@@ -77,7 +77,7 @@ class EventController extends Controller
 			if($request->hasfile('eventimage_3')){    
 		$image = $request->file('eventimage_3');
 		$imagename3 = time(). "-" .$image->getClientOriginalName();
-		Image::make($image->getRealPath())->resize(320,240)->save(public_path('/eventimages/') .$imagename3);
+		Image::make($image->getRealPath())->save(public_path('/eventimages/') .$imagename3);
 		$path3 = '/eventimages/'.$imagename3;
 		}else{
 				$path3 = null;
@@ -212,7 +212,7 @@ public function postEditEvent(Request $request, $eventId)
 		unlink(public_path().$imagepath1); }      
 		$image = $request->file('eventimage_1');
 		$imagename1 = time(). "-" .$image->getClientOriginalName();
-		Image::make($image->getRealPath())->resize(320,240)->save(public_path('/eventimages/') .$imagename1);
+		Image::make($image->getRealPath())->save(public_path('/eventimages/') .$imagename1);
 		$path1 = '/eventimages/'.$imagename1;
 
 			}else{
@@ -241,7 +241,7 @@ public function postEditEvent(Request $request, $eventId)
 		unlink(public_path().$imagepath3); }   
 		$image = $request->file('eventimage_3');
 		$imagename3 = time(). "-" .$image->getClientOriginalName();
-		Image::make($image->getRealPath())->resize(320,240)->save(public_path('/eventimages/') .$imagename3);
+		Image::make($image->getRealPath())->save(public_path('/eventimages/') .$imagename3);
 		$path3 = '/eventimages/'.$imagename3;
 		}else{
 				$blank = $event->eventimage_3;
