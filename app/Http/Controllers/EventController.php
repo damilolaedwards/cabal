@@ -226,7 +226,7 @@ public function postEditEvent(Request $request, $eventId)
 		unlink(public_path().$imagepath2); }     
 		$image = $request->file('eventimage_2');
 		$imagename2 = time(). "-" .$image->getClientOriginalName();
-		Image::make($image->getRealPath())->resize(320,240)->save(public_path('/eventimages/') .$imagename2);
+		Image::make($image->getRealPath())->save(public_path('/eventimages/') .$imagename2);
 		$path2 = '/eventimages/'.$imagename2;
 		}else{
 				$blank = $event->eventimage_2;
