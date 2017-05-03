@@ -32,7 +32,7 @@
       <div class="container">
         <div class="navbar-header ">
           <a href="{{route('homepage')}}" class="navbar-brand" id="h2">
-            Mycampus<span></span>
+            Mycampus<span style="margin-left: 12px;"></span>
           </a>
           
         </div>

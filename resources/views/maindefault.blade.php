@@ -52,7 +52,7 @@
     <nav class="navbar navbar-default header" role="navigation">
       <div class="container">
         <div class="navbar-header ">
-          <a href="{{route('homepage')}}" class="navbar-brand" id="h2"> Mycampus<span style="margin-left: 10px;"></span>
+          <a href="{{route('homepage')}}" class="navbar-brand" id="h2"> Mycampus<span style="margin-left: 12px;"></span>
             
           </a>
           @if(!Auth::check())
