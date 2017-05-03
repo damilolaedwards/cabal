@@ -47,14 +47,15 @@
               <span class="help-block">{{$errors->first('personal_text')}}</span>
               @endif
             </div>
+            <div class="text-center">
+          <button class="btn btn-primary" type="submit">Update profile</button>
+          </div>
           </div>
             
            
            
            <input type="hidden" name="_token" value="{{Session::token()}}">
-            <div class="text-center">
-          <button class="btn btn-primary" type="submit">Update profile</button>
-          </div>
+
           </form>
          
          
