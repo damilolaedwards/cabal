@@ -40,22 +40,24 @@
             </div>
             
           </div>
-          </div>
-            <div class="form-group {{ $errors->has('personal_text') ?  ' has-error' : '' }}">
+          <div class="form-group {{ $errors->has('personal_text') ?  ' has-error' : '' }}">
             
             <textarea class="form-control" rows="3" id="myTextarea" name="personal_text" >{{Auth::user()->personal_text ?: Request::old('personal_text') }}</textarea>
              @if($errors->has('personal_text'))
               <span class="help-block">{{$errors->first('personal_text')}}</span>
               @endif
             </div>
+          </div>
+            
            
            
            <input type="hidden" name="_token" value="{{Session::token()}}">
-          </form>
-         
-          <div class="text-center">
+            <div class="text-center">
           <button class="btn btn-primary" type="submit">Update profile</button>
           </div>
+          </form>
+         
+         
           <br/>
               <br/>
           </div>

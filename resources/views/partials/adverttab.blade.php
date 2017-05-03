@@ -50,7 +50,7 @@ to be considered for addition (and restyled) in version 1.1
       
             </div>
             <div class="media-body">
-              <h4 class="media-heading"> {!! ucfirst(strtolower(htmlentities($advert->title))) !!}<a class="btn btn-primary view_button" href="{{ route('marketplace.view',['slug' => $advert->slug, 'advertId' => $advert->id]) }}" role="button">View</a></h4>
+              <h4 class="media-heading"> {!! ucfirst(htmlentities($advert->title)) !!}<a class="btn btn-primary view_button" href="{{ route('marketplace.view',['slug' => $advert->slug, 'advertId' => $advert->id]) }}" role="button">View</a></h4>
                
             </div>
 

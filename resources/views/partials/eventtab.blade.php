@@ -44,7 +44,7 @@ to be considered for addition (and restyled) in version 1.1
               </a>
             </div>
             <div class="media-body">
-              <h4 class="media-heading">{!! ucfirst(strtolower(htmlentities($event->name))) !!}<a class="btn btn-primary view_button" href="{{ route('event.view',['slug' => $event->getEventSlug(), 'id' => $event->getEventId()]) }}" role="button">View</a></h4>
+              <h4 class="media-heading">{!! ucfirst(htmlentities($event->name)) !!}<a class="btn btn-primary view_button" href="{{ route('event.view',['slug' => $event->getEventSlug(), 'id' => $event->getEventId()]) }}" role="button">View</a></h4>
     
             </div>
           </div>
