@@ -39,7 +39,7 @@
                 <div id="fileinput" style="display: none">
           <label for="postimage1" class="control-label">Update image(s)</label>
         <div class="form-group {{ $errors->has('postimage1') ?  ' has-error' : '' }}">
-         @if($post->postimage1 !== NULL && Auth::user()->id === $post->user_id)
+         @if($post->postimage1 !== null && Auth::user()->id === $post->user_id)
            <span class="message_to">{{substr(stristr($post->postimage1, '-'), 1)}}</span><a href="{{route('campuspost.image1.delete',['postId' => $post->id, 'topicSlug' => \App\Campustopic::find($post->topic_id)->slug, 'topicId' => $post->topic_id])}}"><div class="btn btn-xs btn-danger delete">delete</div></a>
            @else
             <input type="file" id="postimage1" name="postimage1">
@@ -50,7 +50,7 @@
               @endif
           </div>
       <div class="form-group {{ $errors->has('postimage2') ?  ' has-error' : '' }}"> 
-         @if($post->postimage2 !== NULL && Auth::user()->id === $post->user_id)
+         @if($post->postimage2 !== null && Auth::user()->id === $post->user_id)
            <span class="message_to">{{substr(stristr($post->postimage2, '-'), 1)}}</span><a href="{{route('campuspost.image2.delete',['postId' => $post->id, 'topicSlug' => \App\Campustopic::find($post->topic_id)->slug, 'topicId' => $post->topic_id])}}"><div class="btn btn-xs btn-danger delete">delete</div></a>
            @else
             <input type="file" id="postimage2" name="postimage2" >
@@ -60,7 +60,7 @@
               @endif
           </div>
       <div class="form-group {{ $errors->has('postimage3') ?  ' has-error' : '' }}"> 
-       @if($post->postimage3 !== NULL && Auth::user()->id === $post->user_id)
+       @if($post->postimage3 !== null && Auth::user()->id === $post->user_id)
            <span class="message_to">{{substr(stristr($post->postimage3, '-'), 1)}}</span><a href="{{route('campuspost.image3.delete',['postId' => $post->id, 'topicSlug' => \App\Campustopic::find($post->topic_id)->slug, 'topicId' => $post->topic_id])}}"><div class="btn btn-xs btn-danger delete">delete</div></a>
            @else  
             <input type="file" id="postimage3" name="postimage3" >
