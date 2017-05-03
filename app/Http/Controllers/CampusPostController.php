@@ -224,8 +224,7 @@ public function Like(Request $request){
   }
  
 public function deleteFirstImage($postId){
-	$post = \App\Campuspost::find($postId);
-	dd($post->user_id);
+	$post = \App\Campuspost::where('id', $postId)->first();
 	if($post->user_id !== \Auth::user()->id){
 			return redirect()->back();
 
