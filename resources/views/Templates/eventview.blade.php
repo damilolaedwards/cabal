@@ -19,7 +19,7 @@
             <div class="col-xs-12  col-md-6">
             <span class="label label-primary">Event</span>
             
-             <h4>{!! ucfirst(strtolower(htmlentities($event->name))) !!}</h4>
+             <h4>{!! ucfirst(htmlentities($event->name)) !!}</h4>
            <p style="white-space: unset;">
                 <img src="{{asset($event->getEventImage())}}" alt="image" class="img-responsive img-rounded" >
                 </p> 
