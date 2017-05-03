@@ -234,7 +234,7 @@ public function deleteFirstImage($postId){
 		$post->update([
 	'postimage1' => null,
 	]);
-		
+	dd($post);	
 	return redirect()->back();
 }
 
