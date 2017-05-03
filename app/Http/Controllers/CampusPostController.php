@@ -225,11 +225,10 @@ public function Like(Request $request){
  
 public function deleteFirstImage($postId){
 	$post = \App\Campuspost::where('id', $postId)->first();
-	if($post->user_id !== \Auth::user()->id){
-			return redirect()->back();
+	
 
-		}
 	$imagepath1 = $post->postimage1;
+	dd($imagepath1);
 	unlink(public_path().$imagepath1);
 		$post->update([
 	'postimage1' => null,
