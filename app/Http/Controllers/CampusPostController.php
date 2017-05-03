@@ -230,10 +230,11 @@ public function deleteFirstImage($postId){
 
 		}
 	$imagepath1 = $post->postimage1;
-	unlink(public_path().$imagepath1);
-		$post->update([
+	$post->update([
 	'postimage1' => null,
 	]);
+	unlink(public_path().$imagepath1);
+		
 		
 	return redirect()->back();
 }

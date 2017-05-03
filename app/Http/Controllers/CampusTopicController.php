@@ -213,7 +213,7 @@ class CampusTopicController extends Controller
 }
    public function deleteFirstImage($topicId){
 	$topic = \App\Campustopic::find($topicId);
-	if($topic->user_id !== \Auth::user()->id  || !$topic){
+	if($topic->user_id !== \Auth::user()->id){
 			return redirect()->back();
 
 		}
