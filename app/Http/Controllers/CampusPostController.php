@@ -228,7 +228,7 @@ public function deleteFirstImage($postId){
 	
 
 	$imagepath1 = $post->postimage1;
-	dd($imagepath1);
+	dd($post);
 	unlink(public_path().$imagepath1);
 		$post->update([
 	'postimage1' => null,
