@@ -230,7 +230,6 @@ public function deleteFirstImage($topicId, $topicSlug, $postId){
 			return redirect()->back();
 	}
 	$imagepath1 = $post->postimage1;
-	dd($post);
 	unlink(public_path().$imagepath1);
 		$post->update([
 	'postimage1' => null,
