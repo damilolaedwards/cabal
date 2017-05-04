@@ -45,6 +45,7 @@
                   <a onclick="campuspostlike({{$post->id}})" href="#" data-like="{{route('campuspost.like', ['postId' => $post->id])}}" class="campuspostlike" >&nbsp;Like</a>
                    &nbsp;
                     &nbsp;
+                    @if(!Auth::check())</div>@endif
                     @if(Auth::check())
                     @if( $post->user_id !== Auth::user()->id)  
                    <a href="{{route('campuspost.report', ['postId' => $post->id])}}">Report</a>

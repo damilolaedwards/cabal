@@ -67,7 +67,7 @@ https://www.mycampus.ng/webcontentimage.jpg
                   
                   <div class="panel-footer panel-bottom"  value="{{$campustopic->id}}">
                   @if($campustopiclikes  !== 0)<span id="{{$campuslikes}}">{{$campustopiclikes}}</span>@endif
-
+                  @if(!Auth::check())</div>@endif
                   <a onclick="campuslike({{$campustopic->id}})" data-id="{{$campustopic->id}}" class="like" href="#">&nbsp;Like</a>
 
                    &nbsp;  &nbsp;
