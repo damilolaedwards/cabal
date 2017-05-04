@@ -6,20 +6,20 @@
                    
 
 					                 <p class="panelverdana"><a name="{{$post->id}}"></a>{!! str_replace($emotionfaces, $images, Linkify::process($post->linkifyYouTubeURLs(htmlentities($post->body))))!!}</p>
-					@if($post->postimage1 !== null)
+					@if($post->postimage1 !== NULL)
                     <p style="line-height: 5px;">
 
                     <img src="{{asset($post->getFirstImage())}}" alt="image" class="img-responsive antimoderate" >
                     </p>
                     
                     @endif
-                    @if($post->postimage2 !== null)
+                    @if($post->postimage2 !== NULL)
                     <p style="line-height: 5px;">
                     <img src="{{asset($post->getSecondImage())}}" alt="image" class="img-responsive antimoderate">
                     </p>
                     
                      @endif
-                    @if($post->postimage3 !== null)
+                    @if($post->postimage3 !== NULL)
                     <p style="line-height: 5px;">
                     <img src="{{asset($post->getThirdImage())}}" alt="image" class="img-responsive antimoderate" >
                     </p>

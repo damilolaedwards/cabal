@@ -1,6 +1,12 @@
  @extends('maindefault')
 @section('title')
-    Mycampus | {{$advert->title}} - Marketplace
+Mycampus | {{$advert->title}} - Marketplace
+@stop
+@section('metatitle')
+{{$advert->title}}
+@stop
+@section('metaimage')
+{{asset($advert->getAdvertImage())}}
 @stop
 @section('content')
 @include('partials.navigation')

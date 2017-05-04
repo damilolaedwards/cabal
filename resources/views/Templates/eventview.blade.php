@@ -2,6 +2,12 @@
 @section('title')
     Mycampus | {{$event->name}} - Event
 @stop
+@section('metatitle')
+{{$event->name}}
+@stop
+@section('metaimage')
+{{asset($event->getEventImage())}}
+@stop
 @section('content')
 @include('partials.navigation')
 <div class="row">

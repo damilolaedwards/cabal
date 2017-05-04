@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Image;
 use Mail;
 use Auth;
+use Session;
 class CampusPostController extends Controller
 {
 
@@ -95,7 +96,8 @@ class CampusPostController extends Controller
 	}
 
 	public function getUpdatePost($topicId, $topicSlug, $postId){
-		
+		$url = \URL::previous();
+		session(['returnURL' => $url]);
 		$post = \App\Campuspost::find($postId);
 		if($post->user_id !== \Auth::user()->id){
 			return redirect()->back();
@@ -213,32 +215,31 @@ public function Like(Request $request){
 			'postimage3' => $path3,
 			'postfile'  => $filepath,
 		]);
-	$campuspostIDplus = $post->id - 1;
-	//subject to change to allow for paginated links.
-	$newTopicId = $post->topic_id;
-	$slug = \App\Campustopic::find($newTopicId)->slug;
-	$newUrl = url('/').'/forum/'.$newTopicId.'/'.$slug;
-	$editURL = $newUrl.'#'.$campuspostIDplus;
+	
+	$campuspostIDplus = $post->id;
+	$editURL = session('returnURL');
+	$request->session()->forget('returnURL');
+	$newURL = $editURL.'#'.$campuspostIDplus;
 
 	return redirect($editURL); 
   }
  
-public function deleteFirstImage($postId){
+public function deleteFirstImage($topicId, $topicSlug, $postId){
+	dd($postId);
 	$post = \App\Campuspost::find($postId);
 	if($post->user_id !== \Auth::user()->id){
-			return \Auth::user()->id;
-
-		}
+			return redirect()->back();
+	}
 	$imagepath1 = $post->postimage1;
+	dd($post);
 	unlink(public_path().$imagepath1);
 		$post->update([
 	'postimage1' => null,
-	]);
-	dd($post);	
+	]);	
 	return redirect()->back();
 }
 
-public function deleteSecondImage($postId){
+public function deleteSecondImage($topicId, $topicSlug,$postId){
 	$post = \App\Campuspost::find($postId);
 	if($post->user_id !== \Auth::user()->id){
 			return redirect()->back();
@@ -252,7 +253,7 @@ public function deleteSecondImage($postId){
 	return redirect()->back();
 }
 
-public function deleteThirdImage($postId){
+public function deleteThirdImage($topicId, $topicSlug,$postId){
 	$post = \App\Campuspost::find($postId);
 	if($post->user_id !== \Auth::user()->id){
 			return redirect()->back();
@@ -266,7 +267,7 @@ public function deleteThirdImage($postId){
 	return redirect()->back();
 }
 
-public function deleteFile($postId){
+public function deleteFile($topicId, $topicSlug, $postId){
 	$post = \App\Campuspost::find($postId);
 	if($post->user_id !== \Auth::user()->id){
 			return redirect()->back();

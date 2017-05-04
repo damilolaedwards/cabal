@@ -2,6 +2,12 @@
 @section('title')
    Mycampus | Home
 @stop
+@section('metatitle')
+Mycampus - No.1 Student Online Community | Mycampus
+@stop
+@section('metaimage')
+https://www.mycampus.ng/webcontentimage.jpg
+@stop
 @section('content')
 <br class="visible-lg visible-md" />
 @include('partials.navigation')

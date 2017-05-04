@@ -1,6 +1,12 @@
 @extends('maindefault')
 @section('title')
-    Mycampus | Search results
+Mycampus | Search results
+@stop
+@section('metatitle')
+Mycampus - No.1 Student Online Community | Mycampus
+@stop
+@section('metaimage')
+https://www.mycampus.ng/webcontentimage.jpg
 @stop
 @section('content')
 <br class="visible-lg visible-md" />

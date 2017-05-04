@@ -2,6 +2,12 @@
 @section('title')
     Mycampus | {{$campustopic->title}}
 @stop
+@section('metatitle')
+Mycampus - No.1 Student Online Community | Mycampus
+@stop
+@section('metaimage')
+https://www.mycampus.ng/webcontentimage.jpg
+@stop
 @section('content')
 @include('partials.navigation')
 
@@ -58,14 +64,14 @@
                   $campuslikes = 'campustopiclike'.$campustopic->id;
                  
                   ?>
-                  @if(Auth::check())
+                  
                   <div class="panel-footer panel-bottom"  value="{{$campustopic->id}}">
                   @if($campustopiclikes  !== 0)<span id="{{$campuslikes}}">{{$campustopiclikes}}</span>@endif
 
                   <a onclick="campuslike({{$campustopic->id}})" data-id="{{$campustopic->id}}" class="like" href="#">&nbsp;Like</a>
 
                    &nbsp;  &nbsp;
-                   
+                   @if(Auth::check())
                     @if($campustopic->user_id !== Auth::user()->id)
 
                    <a href="{{route('campustopic.report', ['topicId' => $campustopic->id, 'topicSlug' => $campustopic->slug])}}">&nbsp;  Report</a>

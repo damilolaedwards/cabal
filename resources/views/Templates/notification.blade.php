@@ -1,6 +1,12 @@
 @extends('maindefault')
 @section('title')
-    Mycampus | Notifications
+Mycampus | Notifications
+@stop
+@section('metatitle')
+Mycampus - No.1 Student Online Community | Mycampus
+@stop
+@section('metaimage')
+https://www.mycampus.ng/webcontentimage.jpg
 @stop
 @section('content')
 @include('partials.notificationactivenavigation')
