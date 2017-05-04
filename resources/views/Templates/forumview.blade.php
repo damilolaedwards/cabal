@@ -67,10 +67,11 @@ https://www.mycampus.ng/webcontentimage.jpg
                   
                   <div class="panel-footer panel-bottom"  value="{{$campustopic->id}}">
                   @if($campustopiclikes  !== 0)<span id="{{$campuslikes}}">{{$campustopiclikes}}</span>@endif
-                  @if(!Auth::check())</div>@endif
+                  
                   <a onclick="campuslike({{$campustopic->id}})" data-id="{{$campustopic->id}}" class="like" href="#">&nbsp;Like</a>
 
                    &nbsp;  &nbsp;
+                   @if(!Auth::check())</div>@endif
                    @if(Auth::check())
                     @if($campustopic->user_id !== Auth::user()->id)
 
@@ -95,7 +96,7 @@ https://www.mycampus.ng/webcontentimage.jpg
                   </div>
                  @if(!Auth::check())
                  <br>
-                 <p class="bg-info text-center font-less " style="padding: 15px 0px 15px 0px; font-size: 18px;">You are required to <a href="{{route('Auth.login')}}"><strong>Login</strong></a> or <a href="{{route('Auth.firstsignup')}}"><strong>Sign up</strong></a> to participate in this discussion</p>
+                 <p class="bg-info text-center font-less " style="padding: 15px 0px 15px 0px; font-size: 18px; margin-bottom: 20px;">You are required to <a href="{{route('Auth.login')}}"><strong>Login</strong></a> or <a href="{{route('Auth.firstsignup')}}"><strong>Sign up</strong></a> to participate in this discussion</p>
                  @endif
 
                    @if($campustopic->thread_closed == 0)
