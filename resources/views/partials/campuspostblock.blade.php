@@ -38,13 +38,14 @@
                     $campuspostlikecount = \App\Postlike::where('post_id', $post->id)->count();
                     ?>
 
-                  @if(Auth::check())
+                  
                   <div class="panel-footer" value="{{$post->id}}" >
                   <span id="{{$campuspostlike}}">@if($campuspostlikecount  !== 0){{ $campuspostlikecount}} @endif</span>
 
                   <a onclick="campuspostlike({{$post->id}})" href="#" data-like="{{route('campuspost.like', ['postId' => $post->id])}}" class="campuspostlike" >&nbsp;Like</a>
                    &nbsp;
                     &nbsp;
+                    @if(Auth::check())
                     @if( $post->user_id !== Auth::user()->id)  
                    <a href="{{route('campuspost.report', ['postId' => $post->id])}}">Report</a>
                    @endif
