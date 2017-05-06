@@ -61,8 +61,8 @@ public function postFirstSignUp(Request $request)
 		
 		$this->validate($request, [
 
-			'firstname'=> 'required|max:16|min:3|alpha_dash',
-			'lastname'=> 'required|max:16|min:3|alpha_dash',
+			'firstname'=> 'required|max:16|min:3|string',
+			'lastname'=> 'required|max:16|min:3|string',
 			'username'=> 'required|max:16|min:3|unique:users|alpha_dash|not_in:you',
 			'sex'=> 'required|in:male,female',
 			'day'=>'required|not_in:dd',
