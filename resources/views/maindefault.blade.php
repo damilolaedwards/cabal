@@ -17,7 +17,7 @@
     <meta property="og:url"           content="https://www.mycampus.ng" />
   <meta property="og:type"          content="article" />
   <meta property="og:title"         content= "@yield('metatitle')" />
-  <meta property="og:description"   content="Our purpose at mycampus.ng is to provide an avenue for limitless social and business interactions among students in every campus." />
+  <!-- <meta property="og:description"   content="Our purpose at mycampus.ng is to provide an avenue for limitless social and business interactions among students in every campus." /> -->
 <meta property="og:image"  content="@yield('metaimage')" />
    <meta property="og:site_name" content="Mycampus" />
     
