@@ -33,7 +33,7 @@ https://www.mycampus.ng/webcontentimage.jpg
                   </div>
                   
                   <div class="panel-body less-padding" data-topicid="{{$campustopic->id}}">
-                    <p class="panelverdana"> {!! str_replace($emotionfaces, $images, Linkify::process($campustopic->linkifyYouTubeURLs(htmlentities($campustopic->body)))) !!}</p>
+                    <p class="panelverdana"> {!! str_replace($emotionfaces, $images, Linkify::process($campustopic->body)) !!}</p>
                     
                     @if($campustopic->forumimage1 !==NULL)
                     <p style="line-height: 5px;">

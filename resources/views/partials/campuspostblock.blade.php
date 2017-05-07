@@ -5,7 +5,7 @@
                     
                    
 
-					                 <p class="panelverdana"><a name="{{$post->id}}"></a>{!! str_replace($emotionfaces, $images, Linkify::process($post->linkifyYouTubeURLs(htmlentities($post->body))))!!}</p>
+					                 <p class="panelverdana"><a name="{{$post->id}}"></a>{!! str_replace($emotionfaces, $images, Linkify::process($post->body))!!}</p>
 					@if($post->postimage1 !== NULL)
                     <p style="line-height: 5px;">
 
