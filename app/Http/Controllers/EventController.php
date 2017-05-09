@@ -38,7 +38,7 @@ class EventController extends Controller
 	{
 		$this->validate($request, [
         	'name' => 'required|max:120|string',
-        	'details' => 'required|max:1000|string',
+        	'details' => 'required|max:2500|string',
         	'location' => 'max:120|string',
         	'day'=>'not_in:dd',
 			'month'=>'not_in:mm',
