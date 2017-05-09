@@ -11,7 +11,9 @@ https://www.mycampus.ng/webcontentimage.jpg
 @section('content')
 @include('partials.navigation')
 <div class="row">
+{{--
 @include('partials.institutionheader')
+--}}
         <h3 class="text-center text-muted">Campus Events</h3>
 
   <div class="panel panel-default">

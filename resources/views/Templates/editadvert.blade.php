@@ -8,12 +8,17 @@ Mycampus - No.1 Student Online Community | Mycampus
 @section('metaimage')
 https://www.mycampus.ng/webcontentimage.jpg
 @stop
+
 @section('content')
+
 @include('partials.navigation')
 <div class="row">
- @if(Auth::user()->institution_id !== $advert->institution_id)
+{{--
+@if(Auth::user()->institution_id !== $advert->institution_id)
           @include('partials.eventinstitutionheader')
           @endif
+--}}
+ 
 
         <h3 class="text-center text-muted">Campus Marketplace</h3>
      <div class="panel panel-default panel-forum">
