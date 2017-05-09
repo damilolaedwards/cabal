@@ -103,7 +103,7 @@ https://www.mycampus.ng/webcontentimage.jpg
         </div>
         <div class="form-group {{ $errors->has('time') ?  ' has-error' : '' }}">
           <label for="time">Time</label>
-          <input type="text" class="form-control" id="time" name="time" value=" {{Request::old('location') ?: $event->time }}">
+          <input type="text" class="form-control" id="time" name="time" value=" {{Request::old('time') ?: $event->time }}">
           @if($errors->has('year'))
           <span class="help-block">{{$errors->first('time')}}</span>
           @endif
