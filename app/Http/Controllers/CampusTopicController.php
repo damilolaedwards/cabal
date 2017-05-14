@@ -216,7 +216,7 @@ class CampusTopicController extends Controller
 }
  public function deleteTopic($topicId){
  	$topic = \App\Campustopic::find($topicId);
-	if($topic->user_id !== \Auth::user()->id){
+	if($topic->user_id !== \Auth::user()->id || \Auth::user()->role !== 'administrator'){
 			return redirect()->back();
 	}
 
