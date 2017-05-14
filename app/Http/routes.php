@@ -458,6 +458,12 @@ Campus forum
 	'middleware' => ['auth'],
 	]);	
 
+	Route::get('forum/{topicId}/delete', [
+	'uses'=>'\App\Http\Controllers\CampusTopicController@deleteTopic',
+	'as'=>'campustopic.delete',
+	'middleware' => ['auth'],
+	]);
+
 	Route::get('forum/{topicId}/{slug}/report', [
 	'uses'=>'\App\Http\Controllers\CampusTopicController@getReport',
 	'as'=>'campustopic.report'

@@ -219,7 +219,7 @@ public function Like(Request $request){
 	$campuspostIDplus = $post->id;
 	$editURL = session('returnURL');
 	$request->session()->forget('returnURL');
-	$newURL = $editURL.'#'.$campuspostIDplus;
+	$newURL = $editURL.'#Z4n3pdOAX';
 
 	return redirect($editURL); 
   }

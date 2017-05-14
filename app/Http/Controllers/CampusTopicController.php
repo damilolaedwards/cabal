@@ -93,6 +93,9 @@ class CampusTopicController extends Controller
 		$images[] = '<img src="/images/smilies/icon_'.$emotions[$i].'.gif " id="addSmiley" alt="" />';
 		}
 		$campustopic = \App\Campustopic::where('id', $id)->first();
+		if(!$campustopic){
+			return redirect()->back();
+		}
 		$campusposts = \App\Campuspost::where('topic_id', $id)->paginate(40);
 		$lastPage = $campusposts->lastPage();
 		return view('Templates.forumview')->with('campustopic', $campustopic)->with('images', $images)->with('emotions', $emotions)->with('emotionfaces', $emotionfaces)->with('campusposts', $campusposts)->with('campustopiclikes', $campustopiclikes)->with('lastPage', $lastPage);
@@ -211,6 +214,17 @@ class CampusTopicController extends Controller
 		$newUrl = url('/').'/forum/'.$newTopicId.'/'.$slug;
 	return redirect($newUrl); 
 }
+ public function deleteTopic($topicId){
+ 	$topic = \App\Campustopic::find($topicId);
+	if($topic->user_id !== \Auth::user()->id){
+			return redirect()->back();
+	}
+
+	$topic->delete();
+	return redirect()->route('homepage')->with('info', 'Thread successfully deleted!');
+
+ }
+
    public function deleteFirstImage($topicId){
 	$topic = \App\Campustopic::find($topicId);
 	if($topic->user_id !== \Auth::user()->id){

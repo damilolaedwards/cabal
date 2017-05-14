@@ -78,7 +78,10 @@ https://www.mycampus.ng/webcontentimage.jpg
                    <a href="{{route('campustopic.report', ['topicId' => $campustopic->id, 'topicSlug' => $campustopic->slug])}}">&nbsp;  Report</a>
 
                     @endif @if($campustopic->user_id == \Auth::user()->id || Auth::user()->role == 'administrator') 
-                    <a href="{{route('campustopic.update', ['topicId' => $campustopic->id, 'topicSlug' => $campustopic->slug])}}">&nbsp;&nbsp;Edit</a>@endif 
+                    <a href="{{route('campustopic.update', ['topicId' => $campustopic->id, 'topicSlug' => $campustopic->slug])}}">&nbsp;&nbsp;Edit</a>
+                  
+                    <a href="{{route('campustopic.delete', ['topicId' => $campustopic->id])}}">&nbsp;&nbsp;&nbsp;Delete</a>
+                    @endif 
 
                     <a href="#reply" class="pull-right">reply</a>
 
@@ -119,7 +122,7 @@ https://www.mycampus.ng/webcontentimage.jpg
           </div>
            <a name="reply"></a>
                     <div class="form-group {{ $errors->has('postbody') ?  ' has-error' : '' }}">
-
+                 
                   <textarea class="form-control textbox" name="postbody" rows="4" id="myTextarea">{{{ Request::old('postbody') }}}</textarea>
                    @if($errors->has('postbody'))
               <span class="help-block">{{$errors->first('postbody')}}</span>
